@@ -10,6 +10,13 @@ window.LESSONS = (window.LESSONS || []).concat([
       "Cặp b/p, d/t, g/k: âm thứ hai (p, t, k) bật hơi mạnh hơn âm thứ nhất (b, d, g). Đặt tay trước miệng để cảm nhận hơi.",
       "Đặt dấu thanh: ưu tiên nguyên âm a, rồi o, rồi e. Nếu có i và u, đặt dấu lên nguyên âm đứng sau (guì, liù)."
     ],
+    sound: {
+      inits: ["b", "p", "m", "f", "d", "t", "n", "l", "g", "k", "h"],
+      finals: ["a", "o", "e", "i", "u", "ü", "ai", "ei", "ao", "ou", "an", "en", "ang", "eng", "ong"],
+      tones: true,
+      rules: [["i", "yi"], ["u", "wu"], ["ü", "yu"]],
+      ruleNote: "Khi vận mẫu i, u, ü đứng một mình (không có thanh mẫu) thì viết lại thành yi, wu, yu."
+    },
     drill: [
       { title: "Thanh mẫu b · p · m · f", note: "Đọc từng cột, giữ nguyên vận mẫu a, đổi thanh điệu.", items: ["bā", "bá", "bǎ", "bà", "pā", "pá", "pǎ", "pà", "mā", "má", "mǎ", "mà", "fā", "fá", "fǎ", "fà"] },
       { title: "Thanh mẫu d · t · n · l", note: "d/t là cặp bật hơi; n/l khác nhau ở vị trí lưỡi.", items: ["dā", "dá", "tā", "tá", "nā", "ná", "lā", "lá", "nǐ", "lǐ", "dǐ", "tǐ"] },
@@ -51,6 +58,13 @@ window.LESSONS = (window.LESSONS || []).concat([
       "ü đọc như u nhưng môi tròn và lưỡi ở vị trí của i. Sau j, q, x viết ü thành u: jū, qū, xū (vẫn đọc là ü).",
       "不 vốn đọc bù. Trước thanh 4 đọc bú: bú qù (không đi). Trước thanh 1, 2, 3 vẫn đọc bù: bù hǎo (không tốt)."
     ],
+    sound: {
+      inits: ["j", "q", "x"],
+      finals: ["ia", "ie", "iao", "iu", "ian", "in", "iang", "ing", "iong", "üe", "üan", "ün"],
+      tones: false,
+      rules: [["ia", "ya"], ["ie", "ye"], ["iao", "yao"], ["iou", "you · iu"], ["ian", "yan"], ["in", "yin"], ["iang", "yang"], ["ing", "ying"], ["iong", "yong"], ["üe", "yue"], ["üan", "yuan"], ["ün", "yun"], ["j q x + ü", "ju qu xu"]],
+      ruleNote: "Vận mẫu bắt đầu bằng i hoặc ü: không có thanh mẫu thì đổi i→y, ü→yu. Sau j, q, x thì bỏ hai chấm của ü."
+    },
     drill: [
       { title: "j · q · x + ü", note: "Viết u nhưng đọc ü.", items: ["jū", "jú", "jǔ", "jù", "qū", "qú", "qǔ", "qù", "xū", "xú", "xǔ", "xù"] },
       { title: "j · q · x + i và ia / ie / iao", note: "Âm mặt lưỡi kết hợp với các vần có i.", items: ["jī", "qī", "xī", "jiā", "qié", "xiǎo", "jiǔ", "qiān", "xīn", "jiāng"] },
@@ -93,6 +107,13 @@ window.LESSONS = (window.LESSONS || []).concat([
       "er là vận mẫu cuốn lưỡi: lưỡi cong lên khi phát âm (èr, ér).",
       "一 đọc yì trước thanh 1, 2, 3 (yì bān) và đọc yí trước thanh 4 (yí gè)."
     ],
+    sound: {
+      inits: ["z", "c", "s", "zh", "ch", "sh", "r"],
+      finals: ["-i", "ua", "uo", "uai", "ui", "uan", "un", "uang", "ueng", "er"],
+      tones: false,
+      rules: [["ua", "wa"], ["uo", "wo"], ["uai", "wai"], ["uei", "wei · ui"], ["uan", "wan"], ["uen", "wen · un"], ["uang", "wang"], ["ueng", "weng"], ["er", "er (cuốn lưỡi)"]],
+      ruleNote: "Vận mẫu bắt đầu bằng u: không có thanh mẫu thì đổi u→w. Có thanh mẫu thì uei viết ui, uen viết un. -i chỉ đi với z c s zh ch sh r."
+    },
     drill: [
       { title: "z · c · s", note: "Đầu lưỡi phẳng, sau răng cửa.", items: ["zā", "cā", "sā", "zī", "cī", "sī", "zì", "cí", "sì", "zǎn", "cān", "sān"] },
       { title: "zh · ch · sh · r", note: "Đầu lưỡi cong lên vòm cứng.", items: ["zhī", "chī", "shī", "rì", "zhàn", "chǎn", "shān", "rán", "zhè", "chè", "shì", "rè"] },

@@ -151,9 +151,12 @@
 
   function vocabHtml(l) {
     if (l.level === 'PH') {
-      return '<div class="grid">' + l.drill.map((g) =>
-        '<div class="card drill"><h3 class="blk-h">' + esc(g.title) + '</h3><p class="muted small" style="margin:0 0 8px">' + esc(g.note) + '</p>' +
-        '<div class="syl">' + g.items.map((s) => '<span class="syl-chip">' + esc(s) + '</span>').join('') + '</div></div>').join('') + '</div>';
+      return '<div class="grid">' + (l.sound ? H.soundHtml(l) : '') +
+        '<div class="card drill"><h3 class="blk-h">Luyện đọc theo nhóm</h3><p class="muted small snd-sub">Chạm vào âm tiết để nghe. Đọc to theo, rồi đối chiếu thanh điệu.</p>' +
+        l.drill.map((g) =>
+          '<div class="drill-grp"><h4>' + esc(g.title) + '</h4><p class="muted small" style="margin:0 0 8px">' + esc(g.note) + '</p>' +
+          '<div class="syl">' + g.items.map((s) => '<button type="button" class="syl-chip" data-syl="' + esc(s) + '">' + esc(s) + '</button>').join('') + '</div></div>').join('') +
+        '</div></div>';
     }
     return '<div class="toolbar-row">' + switchHtml('sPy', 'Pinyin', !ui.hidePy) + switchHtml('sVi', 'Nghĩa', !ui.hideVi) + '</div>' +
       '<div class="card list vlist' + (ui.hidePy ? ' hide-py' : '') + (ui.hideVi ? ' hide-vi' : '') + '" id="vlist">' + l.vocab.map((v) =>
@@ -223,7 +226,7 @@
       '</div><div class="feedback" hidden></div></div>').join('') + '</div>';
   }
   const SEC_HINT = {
-    vocab: (l) => (l.level === 'PH' ? 'Đọc to từng nhóm âm, đối chiếu thanh điệu.' : l.vocab.length + ' từ mới. Chạm vào từ để tra nhanh; nút bút để xem cách viết.'),
+    vocab: (l) => (l.level === 'PH' ? 'Nghe từng thanh mẫu, vận mẫu và bảng ghép âm. Chạm để phát âm thành tiếng.' : l.vocab.length + ' từ mới. Chạm vào từ để tra nhanh; nút bút để xem cách viết.'),
     pron: () => 'Quy tắc đọc và lưu ý thanh điệu của bài.',
     writing: (l) => H.lessonChars(l).length + ' chữ. Mỗi chữ có thứ tự nét, bộ thủ và chế độ luyện viết.',
     grammar: (l) => l.grammar.length + ' điểm. Chạm vào từ trong ví dụ để tra nhanh.',
@@ -292,6 +295,10 @@
       vi.addEventListener('change', () => { ui.hideVi = !vi.checked; target.classList.toggle('hide-vi', ui.hideVi); });
     };
     toggles();
+    if (sec === 'vocab' && l.level === 'PH') {
+      H.warmSyllables();
+      const mx = $('#mx'); if (mx) H.fillMatrix(mx);
+    }
     if (sec === 'writing') {
       H.loadInfo().then((info) => {
         $$('.char-tile').forEach((t) => {
@@ -573,7 +580,15 @@
      ====================================================== */
   document.addEventListener('click', (e) => {
     const say = e.target.closest('[data-say]');
-    if (say) { H.speak(say.getAttribute('data-say')); return; }
+    if (say) { H.speak(say.getAttribute('data-say'), say.hasAttribute('data-slow') ? 0.65 : undefined); return; }
+    const syl = e.target.closest('[data-syl]');
+    if (syl) {
+      syl.classList.add('playing'); setTimeout(() => syl.classList.remove('playing'), 700);
+      H.speakPinyin(syl.getAttribute('data-syl'));
+      return;
+    }
+    const base = e.target.closest('[data-base]');
+    if (base) { H.openSyllable(base.getAttribute('data-base')); return; }
     if (e.target.closest('#sheet')) return; // sheet tự xử lý
     const tok = e.target.closest('[data-word]');
     if (tok) { H.openWord(tok.getAttribute('data-word'), tok.getAttribute('data-lid') || null); return; }

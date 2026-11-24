@@ -37,11 +37,32 @@
     destroyWriter();
     const top = stack[stack.length - 1];
     if (!top) return;
-    box.innerHTML = top.kind === 'word' ? wordHtml(top) : charHtml(top);
+    box.innerHTML = top.kind === 'word' ? wordHtml(top) : top.kind === 'syl' ? sylHtml(top) : charHtml(top);
     if (!dlg.open) dlg.showModal();
     box.scrollTop = 0;
     const body = $('.sh-body', box); if (body) body.scrollTop = 0;
-    if (top.kind === 'word') afterWord(top); else afterChar(top);
+    if (top.kind === 'word') afterWord(top); else if (top.kind === 'char') afterChar(top);
+  }
+  H.openSyllable = (base) => {
+    H.loadSyllables().then(() => { stack.push({ kind: 'syl', base }); render(); }).catch(() => { /* chưa có dữ liệu */ });
+  };
+
+  /* ---------- popup âm tiết (4 thanh) ---------- */
+  function sylHtml(top) {
+    const base = top.base;
+    const arr = (H.syllables() || {})[base] || ['', '', '', ''];
+    return header('Phát âm âm tiết') + '<div class="sh-body">' +
+      H.voiceNoteHtml() +
+      '<div class="syl-head"><div class="syl-big">' + esc(base) + '</div>' +
+      '<button class="btn btn-primary" type="button" data-act="playall">' + ICONS.speaker + '<span>Nghe cả 4 thanh</span></button></div>' +
+      '<div class="tone-grid big">' + [1, 2, 3, 4].map((t) => {
+        const ch = arr[t - 1];
+        const inner = H.toneContour(t) + '<b>' + esc(H.addTone(base, t)) + '</b>';
+        return ch
+          ? '<button type="button" class="tone-btn" data-say="' + esc(ch) + '" data-slow="1">' + inner + '<span class="tone-hz">' + esc(ch) + '</span><small>' + esc(H.toneName(t)) + '</small></button>'
+          : '<div class="tone-btn off">' + inner + '<small>không có chữ thông dụng</small></div>';
+      }).join('') + '</div>' +
+      '<p class="muted small" style="margin:12px 0 0">Mỗi thanh dùng một chữ Hán thông dụng để máy đọc đúng âm. Chạm để nghe lại.</p></div>';
   }
   H.openWord = (zh, lid) => { stack.push({ kind: 'word', zh, lid: lid || null }); render(); };
   H.openChar = (ch, ctx) => { stack.push({ kind: 'char', ch, ctx: ctx || { list: [ch] } }); render(); };
@@ -241,6 +262,11 @@
       const a = act.getAttribute('data-act');
       if (a === 'close') { H.closeSheet(); return; }
       if (a === 'back') { stack.pop(); render(); return; }
+      if (a === 'playall') {
+        const arr = ((H.syllables() || {})[top.base] || []).filter(Boolean);
+        if (arr.length) H.speakSeq(arr, 0.7, 450);
+        return;
+      }
       if (a === 'animate') { doAnimate(); return; }
       if (a === 'quiz') { doQuiz(top); return; }
       if (a === 'reset') { if (writer) { stopQuiz(); writer.showCharacter(); writer.showOutline(); status('Đã làm lại. Chọn “Xem nét viết” hoặc “Luyện viết”.'); } return; }

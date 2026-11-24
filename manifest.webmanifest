@@ -1,16 +1,46 @@
 {
+  "id": "/hsk-hoc-tieng-trung/",
   "name": "Học tiếng Trung HSK",
   "short_name": "HSK",
-  "description": "Học tiếng Trung HSK: từ mới, cách đọc, cách viết, ngữ pháp, flashcard và ôn tập.",
-  "start_url": "./index.html",
+  "description": "Học tiếng Trung HSK 1, HSK 2 và phát âm: từ mới, cách viết chữ Hán, ngữ pháp, câu ví dụ, flashcard, ôn tập. Dùng được khi offline.",
+  "lang": "vi",
+  "dir": "ltr",
+  "start_url": "./index.html#/lessons",
   "scope": "./",
   "display": "standalone",
-  "orientation": "portrait-primary",
-  "background_color": "#eef2f7",
-  "theme_color": "#3730a3",
-  "lang": "vi",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#f6f3ee",
+  "theme_color": "#2d3a8c",
+  "categories": ["education", "books", "reference"],
+  "prefer_related_applications": false,
   "icons": [
     { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    {
+      "name": "Flashcard",
+      "short_name": "Flashcard",
+      "description": "Ôn từ vựng bằng thẻ lật",
+      "url": "./index.html#/flash",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Ôn tập",
+      "short_name": "Ôn tập",
+      "description": "Làm bài ôn tập từ và ngữ pháp",
+      "url": "./index.html#/review",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Tiến độ",
+      "short_name": "Tiến độ",
+      "description": "Xem tiến độ học",
+      "url": "./index.html#/progress",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    }
   ]
 }

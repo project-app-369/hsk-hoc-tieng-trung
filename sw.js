@@ -1,10 +1,11 @@
 // Service worker: cache app shell để mở được khi mất mạng sau lần đầu truy cập.
-const CACHE = 'hsk-app-v6';
+const CACHE = 'hsk-app-v7';
 const SHELL = [
   './',
   './index.html',
   './css/style.css',
   './js/core.js',
+  './js/pinyin.js',
   './js/sheet.js',
   './js/app.js',
   './js/data-ph.js',
@@ -14,11 +15,12 @@ const SHELL = [
   './js/data-extra.js',
   './js/vendor/hanzi-writer.min.js',
   './manifest.webmanifest',
+  './favicon.ico',
   './icons/icon-192.png',
   './icons/icon-512.png'
 ];
 // Dữ liệu chữ Hán khá nặng: tải nền, lỗi thì bỏ qua (sẽ được cache khi dùng lần đầu).
-const DATA = ['./data/hanzi-info.json', './data/hanzi-strokes.json'];
+const DATA = ['./data/hanzi-info.json', './data/hanzi-strokes.json', './data/syllables.json'];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(

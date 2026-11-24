@@ -132,29 +132,63 @@
     return !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
   };
   HSK.getThemePref = () => { try { return localStorage.getItem(THEME_KEY) || 'auto'; } catch (e) { return 'auto'; } };
+  // Màu thanh trạng thái trình duyệt: có 2 thẻ meta theo prefers-color-scheme; chọn theme thủ công thì ghi đè cả hai.
+  const paintThemeColor = (t) => {
+    const m = document.querySelectorAll('meta[name="theme-color"]');
+    const set = (a, b) => { if (m[0]) m[0].setAttribute('content', a); if (m[1]) m[1].setAttribute('content', b); };
+    if (t === 'light') set('#f6f3ee', '#f6f3ee'); else if (t === 'dark') set('#14161d', '#14161d'); else set('#f6f3ee', '#14161d');
+  };
   HSK.applyTheme = (t) => {
     const root = document.documentElement;
     if (t === 'auto') root.removeAttribute('data-theme'); else root.setAttribute('data-theme', t);
     try { localStorage.setItem(THEME_KEY, t); } catch (e) { /* bỏ qua */ }
-    const meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.setAttribute('content', HSK.themeIsDark() ? '#14161d' : '#f6f3ee');
+    paintThemeColor(t);
   };
   (() => {
     const t = HSK.getThemePref();
-    if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+    if (t === 'light' || t === 'dark') { document.documentElement.setAttribute('data-theme', t); paintThemeColor(t); }
   })();
 
   /* ---------- phát âm ---------- */
-  HSK.speak = (text) => {
+  const pickVoice = () => {
     try {
-      if (!('speechSynthesis' in window)) return;
+      const vs = window.speechSynthesis.getVoices();
+      return vs.find((v) => /^zh[-_]CN/i.test(v.lang)) || vs.find((v) => /^zh/i.test(v.lang)) || null;
+    } catch (e) { return null; }
+  };
+  // true: có giọng tiếng Trung · false: chưa có · null: chưa biết (danh sách giọng chưa nạp)
+  HSK.hasZhVoice = () => {
+    try {
+      if (!('speechSynthesis' in window)) return false;
+      const vs = window.speechSynthesis.getVoices();
+      if (!vs.length) return null;
+      return vs.some((v) => /^zh/i.test(v.lang));
+    } catch (e) { return false; }
+  };
+  HSK.speak = (text, rate, onend) => {
+    try {
+      if (!('speechSynthesis' in window)) { if (onend) onend(); return; }
       const u = new SpeechSynthesisUtterance(text);
       u.lang = 'zh-CN';
-      u.rate = 0.85;
+      u.rate = rate || 0.85;
+      const v = pickVoice();
+      if (v) u.voice = v;
+      if (onend) { u.onend = onend; u.onerror = onend; }
       window.speechSynthesis.cancel();
       window.speechSynthesis.speak(u);
-    } catch (e) { /* thiết bị không hỗ trợ */ }
+    } catch (e) { if (onend) onend(); }
   };
+  // Đọc lần lượt nhiều chuỗi (vd. 4 thanh của một âm tiết)
+  HSK.speakSeq = (list, rate, gap) => {
+    let i = 0; const token = (HSK._seq = (HSK._seq || 0) + 1);
+    const next = () => {
+      if (token !== HSK._seq || i >= list.length) return;
+      const t = list[i++];
+      HSK.speak(t, rate, () => { setTimeout(next, gap == null ? 350 : gap); });
+    };
+    next();
+  };
+  try { if ('speechSynthesis' in window) window.speechSynthesis.onvoiceschanged = () => { /* nạp danh sách giọng */ }; } catch (e) { /* bỏ qua */ }
 
   /* ---------- từ điển + phân đoạn câu ---------- */
   const wordMap = new Map();

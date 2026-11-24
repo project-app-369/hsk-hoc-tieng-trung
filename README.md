@@ -28,8 +28,16 @@ Dữ liệu nằm trong thư mục `data/` và được sinh bằng script, ch�
 node scripts/collect-chars.js
 node scripts/fetch-hanzi.js
 node scripts/build-hanzi.js
+node scripts/build-syllables.js
 node scripts/export-knowledge.js
 ```
+
+- `scripts/build-syllables.js`: dựng `data/syllables.json`, chọn một chữ Hán thông dụng cho mỗi âm tiết và thanh để giọng đọc tiếng Trung của thiết bị phát âm đúng.
+- `scripts/make-icons.py`: tạo lại icon ứng dụng (any, maskable, Apple touch, favicon) và ảnh chia sẻ `icons/og-image.png` (cần Pillow và font Windows).
+
+## Phát âm
+
+Mỗi buổi phát âm có: thanh mẫu và vận mẫu mới (chạm để nghe), quy tắc viết (i→yi, u→wu, ü→yu…), bốn thanh điệu có đường cao độ, **bảng ghép thanh mẫu × vận mẫu** (chạm một ô để mở popup nghe cả 4 thanh) và các nhóm luyện đọc. Âm thanh dùng giọng đọc tiếng Trung (`zh-CN`) có sẵn của thiết bị; nếu chưa có, ứng dụng hiện hướng dẫn cài giọng.
 
 - `scripts/collect-chars.js`: gom mọi chữ trong bài và báo các từ trong câu chưa có trong từ điển (bổ sung ở `js/data-extra.js`).
 - `scripts/fetch-hanzi.js`: tải dữ liệu nét chữ và từ điển (cần mạng).
