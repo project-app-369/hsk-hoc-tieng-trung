@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Học tiếng Trung HSK</title>
-<meta name="description" content="Học tiếng Trung HSK: từ mới, cách đọc, cách viết, ngữ pháp, đọc câu, flashcard và ôn tập.">
-<meta name="theme-color" content="#3730a3">
+<meta name="description" content="Học tiếng Trung HSK: từ mới, cách đọc, cách viết chữ Hán, ngữ pháp, câu ví dụ, flashcard và ôn tập.">
+<meta name="theme-color" content="#f6f3ee">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icons/icon-192.png">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
@@ -32,7 +32,7 @@
       <button class="iconbtn" id="themeBtn" type="button" aria-label="Đổi giao diện"></button>
       <button class="btn btn-install" id="installBtn" type="button" hidden>
         <svg class="btn-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11M7.5 9.5L12 14l4.5-4.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><rect x="4" y="18" width="16" height="3" rx="1.5" fill="currentColor"/></svg>
-        <span>Cài app</span>
+        <span class="btn-txt">Cài app</span>
       </button>
     </div>
   </div>
@@ -47,6 +47,11 @@
   <a href="#/progress" data-nav="progress"><span class="ti"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="12" width="4.5" height="9" rx="1.2" fill="currentColor" opacity=".5"/><rect x="9.75" y="7" width="4.5" height="14" rx="1.2" fill="currentColor"/><rect x="16.5" y="3" width="4.5" height="18" rx="1.2" fill="currentColor" opacity=".75"/></svg></span><span>Tiến độ</span></a>
 </nav>
 
+<!-- Sheet: tra nhanh từ vựng và bảng cách viết chữ -->
+<dialog id="sheet" class="sheet" aria-label="Tra nhanh">
+  <div id="sheetBody"></div>
+</dialog>
+
 <dialog id="dlg" aria-labelledby="dlgTitle">
   <div class="dlg-body">
     <h2 id="dlgTitle">Cài đặt ứng dụng</h2>
@@ -59,6 +64,10 @@
 <script src="js/data-hsk1a.js"></script>
 <script src="js/data-hsk1b.js"></script>
 <script src="js/data-hsk2.js"></script>
+<script src="js/data-extra.js"></script>
+<script src="js/vendor/hanzi-writer.min.js"></script>
+<script src="js/core.js"></script>
+<script src="js/sheet.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>

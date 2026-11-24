@@ -15,6 +15,28 @@ Mỗi bài có 6 phần, theo đúng trình tự của file giáo trình:
 
 Ngoài ra có **Flashcard** (lặp lại ngắt quãng), **Ôn tập** (trộn từ và ngữ pháp) và **Tiến độ**.
 
+## Cách viết chữ Hán và tra nhanh từ
+
+- Phần **Cách viết** liệt kê mọi chữ trong bài. Chạm vào một chữ để mở bảng: nét viết có số thứ tự, bộ thủ, số nét, loại chữ, thành phần, nút **Xem nét viết**, **Luyện viết** (tự viết bằng tay hoặc chuột, có gợi ý khi viết sai), **Nghe**.
+- Tab **Câu ví dụ** liệt kê tất cả câu ví dụ trong bài (ngữ pháp và bài đọc). Chạm vào từng từ trong câu để mở popup tra nhanh: nghĩa, pinyin, cách viết từng chữ, bài chứa từ và các câu khác có từ đó.
+
+## Dữ liệu chữ Hán
+
+Dữ liệu nằm trong thư mục `data/` và được sinh bằng script, chạy theo thứ tự khi thêm bài mới:
+
+```powershell
+node scripts/collect-chars.js
+node scripts/fetch-hanzi.js
+node scripts/build-hanzi.js
+node scripts/export-knowledge.js
+```
+
+- `scripts/collect-chars.js`: gom mọi chữ trong bài và báo các từ trong câu chưa có trong từ điển (bổ sung ở `js/data-extra.js`).
+- `scripts/fetch-hanzi.js`: tải dữ liệu nét chữ và từ điển (cần mạng).
+- `scripts/build-hanzi.js`: dựng `data/hanzi-info.json`. Tên Hán Việt và tên bộ thủ ở `scripts/vi-tables.js`.
+
+Nguồn: dữ liệu nét chữ và bộ thủ từ Make Me a Hanzi (Arphic Public License); thư viện Hanzi Writer (MIT).
+
 ## Cập nhật khi có file giáo trình mới
 
 Dữ liệu nằm trong thư mục `js/`:
