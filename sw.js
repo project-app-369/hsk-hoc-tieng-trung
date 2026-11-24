@@ -1,5 +1,5 @@
 // Service worker: cache app shell để mở được khi mất mạng sau lần đầu truy cập.
-const CACHE = 'hsk-app-v7';
+const CACHE = 'hsk-app-v8';
 const SHELL = [
   './',
   './index.html',
@@ -58,7 +58,8 @@ self.addEventListener('fetch', (e) => {
     return;
   }
   e.respondWith(
-    fetch(req).then(keep).catch(() =>
+    // cache: 'no-cache' = luôn hỏi lại server (304 nếu không đổi), tránh dùng bản cũ trong bộ nhớ đệm HTTP của GitHub Pages
+    fetch(req, { cache: 'no-cache' }).then(keep).catch(() =>
       caches.match(req, { ignoreSearch: true }).then((hit) => hit || caches.match('./index.html'))
     )
   );
