@@ -1,5 +1,5 @@
 // Service worker: cache app shell so the app opens offline after first visit.
-const CACHE = 'hsk-app-v3';
+const CACHE = 'hsk-app-v4';
 const SHELL = [
   './',
   './index.html',

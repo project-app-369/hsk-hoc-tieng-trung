@@ -18,7 +18,81 @@
 
   var LESSONS = window.LESSONS || [];
   var byId = {};
-  LESSONS.forEach(function (l) { byId[l.id] = l; });
+  LESSONS.forEach(function (l) {
+    byId[l.id] = l;
+    l.vocab = l.vocab || []; l.grammar = l.grammar || []; l.read = l.read || [];
+    l.quiz = l.quiz || []; l.pron = l.pron || []; l.writing = l.writing || [];
+    l.drill = l.drill || []; l.strokes = l.strokes || []; l.chars = l.chars || [];
+  });
+
+  /* Icon phẳng (SVG), dùng thay cho emoji */
+  var ICONS = {
+    book: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 5.5C3 4.1 4.1 3 5.5 3H11v17H5.5C4.1 20 3 21.1 3 22.5z"/><path fill="currentColor" opacity=".5" d="M13 3h5.5C19.9 3 21 4.1 21 5.5v17c0-1.4-1.1-2.5-2.5-2.5H13z"/></svg>',
+    cards: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="13" height="14" rx="2.5" fill="currentColor" opacity=".45"/><rect x="8" y="3" width="13" height="14" rx="2.5" fill="currentColor"/></svg>',
+    check: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M7.5 12.5l3 3 6-6.5" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    chart: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="12" width="4.5" height="9" rx="1.2" fill="currentColor" opacity=".5"/><rect x="9.75" y="7" width="4.5" height="14" rx="1.2" fill="currentColor"/><rect x="16.5" y="3" width="4.5" height="18" rx="1.2" fill="currentColor" opacity=".75"/></svg>',
+    speaker: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 9.5h4.2L12 5.5v13l-4.8-4H3z"/><path d="M15.5 9a4.2 4.2 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+    sun: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+    moon: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/></svg>',
+    install: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11M7.5 9.5L12 14l4.5-4.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><rect x="4" y="18" width="16" height="3" rx="1.5" fill="currentColor"/></svg>',
+    play: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 4.5v15l12-7.5z"/></svg>'
+  };
+
+  function sectionLabel(l, s) {
+    if (l.level === 'PH') {
+      if (s.id === 'vocab') return 'Luyện âm';
+      if (s.id === 'writing') return 'Nét & thứ tự';
+    }
+    return s.label;
+  }
+  function themeIsDark() {
+    var t = document.documentElement.getAttribute('data-theme');
+    if (t) return t === 'dark';
+    return !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  }
+  function strokeIcon(d) {
+    return '<svg class="stk-ic" viewBox="0 0 48 48" aria-hidden="true"><path d="' + d +
+      '" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  }
+  function drillHtml(l) {
+    return l.drill.map(function (g) {
+      return '<div class="card drill"><h3 class="blk-h">' + esc(g.title) + '</h3>' +
+        '<p class="muted small" style="margin:0 0 8px">' + esc(g.note) + '</p><div class="syl">' +
+        g.items.map(function (s) { return '<span class="syl-chip">' + esc(s) + '</span>'; }).join('') +
+        '</div></div>';
+    }).join('');
+  }
+  function charSvgHtml(c, id) {
+    var paths = c.strokes.map(function (s, i) {
+      var m = /M\s*([\d.]+)[ ,]([\d.]+)/.exec(s.d);
+      var x = m ? +m[1] : 50, y = m ? +m[2] : 50;
+      var bx = Math.max(7, Math.min(93, x - 9)), by = Math.max(7, Math.min(93, y - 9));
+      return '<path class="stk-path" pathLength="100" style="animation-delay:' + (i * 0.6) + 's" d="' + s.d + '"/>' +
+        '<g class="stk-badge"><circle cx="' + bx + '" cy="' + by + '" r="7"/><text x="' + bx + '" y="' + (by + 3.5) + '">' + (i + 1) + '</text></g>';
+    }).join('');
+    return '<svg class="char-svg" id="' + id + '" viewBox="0 0 100 100" role="img" aria-label="Thứ tự nét chữ ' + esc(c.zh) + '">' +
+      '<rect x="3" y="3" width="94" height="94" rx="6" class="grid-box"/>' +
+      '<line x1="50" y1="3" x2="50" y2="97" class="grid-l"/><line x1="3" y1="50" x2="97" y2="50" class="grid-l"/>' +
+      '<line x1="3" y1="3" x2="97" y2="97" class="grid-l"/><line x1="97" y1="3" x2="3" y2="97" class="grid-l"/>' +
+      paths + '</svg>';
+  }
+  function strokesHtml(l) {
+    var basics = '<div class="card"><h3 class="blk-h">Nét cơ bản</h3><div class="stk-grid">' +
+      l.strokes.map(function (s) {
+        return '<div class="stk">' + strokeIcon(s.icon) + '<div><div><b>' + esc(s.name) + '</b> <span class="muted small">' + esc(s.py) + '</span></div>' +
+          '<div class="small">' + esc(s.vi) + '</div></div></div>';
+      }).join('') + '</div></div>';
+    var chars = l.chars.map(function (c, idx) {
+      var id = 'ch-' + l.id + '-' + idx;
+      return '<div class="card char-card"><div class="char-head"><div><div class="char-zh">' + esc(c.zh) + '</div>' +
+        '<div class="small muted">' + esc(c.py) + ' · ' + esc(c.vi) + '</div></div>' +
+        '<button class="btn btn-sm" type="button" data-anim="' + id + '">' + ICONS.play + '<span>Xem nét</span></button></div>' +
+        charSvgHtml(c, id) +
+        '<ol class="stk-order">' + c.strokes.map(function (s) { return '<li>' + esc(s.name) + '</li>'; }).join('') + '</ol>' +
+        '<p class="small" style="margin:6px 0 0">' + esc(c.note) + '</p></div>';
+    }).join('');
+    return basics + '<div class="grid cols">' + chars + '</div>';
+  }
 
   /* ---------- helpers ---------- */
   var app = document.getElementById('app');
@@ -103,7 +177,7 @@
     var pct = Math.round(seen / SECTIONS.length * 100);
     var cls = l.level === 'PH' ? 'ph' : (l.level === 'HSK2' ? 'h2' : '');
     var status = db.done[l.id]
-      ? '<span class="tick">✓ Xong</span>'
+      ? '<span class="tick">' + ICONS.check + '<span>Xong</span></span>'
       : '<span class="pct">' + pct + '%</span>';
     return '<a class="lesson-card" href="#/lesson/' + esc(l.id) + '/vocab">' +
       '<div class="num ' + cls + '">' + esc(label(l)) + '</div>' +
@@ -155,18 +229,23 @@
     return '<div class="ex"><div><div class="ez">' + esc(zh) + '</div>' +
       (py ? '<div class="ep">' + esc(py) + '</div>' : '') +
       '<div class="ev">' + esc(vi) + '</div></div>' +
-      '<button class="speak" type="button" data-say="' + esc(zh) + '" aria-label="Nghe ' + esc(zh) + '">🔊</button></div>';
+      '<button class="speak" type="button" data-say="' + esc(zh) + '" aria-label="Nghe ' + esc(zh) + '">' + ICONS.speaker + '</button></div>';
   }
   function renderSection(l, sec) {
     var out = '';
-    if (sec === 'vocab') {
-      out += '<p class="muted small">' + l.vocab.length + ' từ mới · nhấn 🔊 để nghe</p>';
+    if (sec === 'vocab' && l.level === 'PH') {
+      out += '<p class="muted small" style="margin:0 0 10px">Luyện đọc theo nhóm âm. Đọc to từng dòng, rồi đối chiếu thanh điệu.</p>' +
+        '<div class="grid">' + drillHtml(l) + '</div>';
+    } else if (sec === 'writing' && l.level === 'PH') {
+      out += strokesHtml(l);
+    } else if (sec === 'vocab') {
+      out += '<p class="muted small">' + l.vocab.length + ' từ mới · nhấn nút loa để nghe</p>';
       out += '<div class="card list">' + l.vocab.map(function (v) {
         return '<div class="vrow"><div><span class="v-zh">' + esc(v[0]) + '</span>' +
           '<span class="v-pos">' + esc(v[2]) + '</span>' +
           '<div class="v-py">' + esc(v[1]) + '</div>' +
           '<div class="v-vi">' + esc(v[3]) + '</div></div>' +
-          '<button class="speak" type="button" data-say="' + esc(v[0]) + '" aria-label="Nghe ' + esc(v[0]) + '">🔊</button></div>';
+          '<button class="speak" type="button" data-say="' + esc(v[0]) + '" aria-label="Nghe ' + esc(v[0]) + '">' + ICONS.speaker + '</button></div>';
       }).join('') + '</div>';
     }
     if (sec === 'pron') {
@@ -192,7 +271,7 @@
     if (sec === 'read') {
       out += '<div class="grid">' + (l.read || []).map(function (r) {
         return '<div class="card sent"><div class="sent-row"><div class="sz">' + esc(r.zh) + '</div>' +
-          '<button class="speak" type="button" data-say="' + esc(r.zh) + '" aria-label="Nghe câu">🔊</button></div>' +
+          '<button class="speak" type="button" data-say="' + esc(r.zh) + '" aria-label="Nghe câu">' + ICONS.speaker + '</button></div>' +
           '<div class="sp">' + esc(r.py) + '</div>' +
           '<div class="sv">' + esc(r.vi) + '</div>' +
           (r.note ? '<div class="sn">' + esc(r.note) + '</div>' : '') + '</div>';
@@ -234,14 +313,14 @@
           return '<a class="stab" href="#/lesson/' + esc(l.id) + '/' + s.id + '"' +
             (s.id === sec ? ' aria-current="page"' : '') + '>' +
             (seen.indexOf(s.id) >= 0 ? '<span class="dot" aria-hidden="true"></span>' : '') +
-            esc(s.label) + '</a>';
+            esc(sectionLabel(l, s)) + '</a>';
         }).join('') +
       '</nav>' +
       '<section id="sec" aria-live="polite">' + renderSection(l, sec) + '</section>' +
       '<div class="done-bar">' +
         (prev ? '<a class="btn" href="#/lesson/' + esc(prev.id) + '/vocab">← Bài trước</a>' : '<span></span>') +
         '<button class="btn ' + (isDone ? 'btn-ok' : 'btn-primary') + '" id="doneBtn" type="button">' +
-          (isDone ? '✓ Đã hoàn thành' : 'Đánh dấu hoàn thành') + '</button>' +
+          (isDone ? 'Đã hoàn thành' : 'Đánh dấu hoàn thành') + '</button>' +
         (next ? '<a class="btn" href="#/lesson/' + esc(next.id) + '/vocab">Bài sau →</a>' : '<span></span>') +
       '</div>';
     $('#doneBtn').addEventListener('click', function () {
@@ -355,7 +434,7 @@
       return;
     }
     if (fIdx >= fQueue.length) {
-      stage.innerHTML = '<div class="card empty" style="width:100%;max-width:520px"><p style="font-size:18px;color:var(--ink);font-weight:700;margin:0 0 8px">Xong phiên này 🎉</p>' +
+      stage.innerHTML = '<div class="card empty" style="width:100%;max-width:520px"><p style="font-size:18px;color:var(--ink);font-weight:700;margin:0 0 8px">Xong phiên này</p>' +
         '<p class="muted" style="margin:0 0 14px">Các thẻ đến hạn sẽ hiện lại sau.</p>' +
         '<button class="btn btn-primary" type="button" id="fAgain">Bắt đầu phiên mới</button></div>';
       $('#fAgain').addEventListener('click', function () { fQueue = buildQueue(fLv, fLesson); fIdx = 0; viewFlash(); });
@@ -594,7 +673,26 @@
   document.addEventListener('click', function (e) {
     var s = e.target.closest('[data-say]');
     if (s) speak(s.getAttribute('data-say'));
+    var an = e.target.closest('[data-anim]');
+    if (an) {
+      var svg = document.getElementById(an.getAttribute('data-anim'));
+      if (svg) { svg.classList.remove('play'); void svg.getBoundingClientRect(); svg.classList.add('play'); }
+    }
   });
+
+  /* ---------- Nút đổi theme (topbar) ---------- */
+  var themeBtn = document.getElementById('themeBtn');
+  function paintThemeBtn() {
+    var dark = themeIsDark();
+    themeBtn.innerHTML = dark ? ICONS.sun : ICONS.moon;
+    themeBtn.setAttribute('aria-label', dark ? 'Chuyển sang giao diện sáng' : 'Chuyển sang giao diện tối');
+    themeBtn.setAttribute('title', dark ? 'Giao diện sáng' : 'Giao diện tối');
+  }
+  themeBtn.addEventListener('click', function () {
+    applyTheme(themeIsDark() ? 'light' : 'dark');
+    paintThemeBtn();
+  });
+  paintThemeBtn();
 
   /* ---------- Cài đặt PWA ---------- */
   var installBtn = document.getElementById('installBtn');

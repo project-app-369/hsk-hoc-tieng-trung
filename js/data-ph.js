@@ -1,4 +1,4 @@
-/* Dữ liệu: Phát âm (Buổi 1–3). Mỗi bài theo 6 phần: vocab, pron, writing, grammar, read, quiz. */
+/* Dữ liệu: Phát âm (Buổi 1–3). Trọng tâm: luyện âm, nét cơ bản, thứ tự nét. */
 window.LESSONS = (window.LESSONS || []).concat([
   {
     id: "ph1", level: "PH", n: 1,
@@ -7,115 +7,119 @@ window.LESSONS = (window.LESSONS || []).concat([
     pron: [
       "Mỗi âm tiết pinyin gồm 3 phần: thanh mẫu (phụ âm đầu) + vận mẫu (phần vần) + thanh điệu.",
       "Bốn thanh điệu: thanh 1 ¯ cao và đều; thanh 2 ´ lên; thanh 3 ˇ xuống rồi lên; thanh 4 ` xuống dứt khoát.",
-      "Cặp b/p, d/t, g/k: âm thứ hai (p, t, k) bật hơi mạnh hơn âm thứ nhất (b, d, g). Đặt tay trước miệng để cảm nhận hơi."
+      "Cặp b/p, d/t, g/k: âm thứ hai (p, t, k) bật hơi mạnh hơn âm thứ nhất (b, d, g). Đặt tay trước miệng để cảm nhận hơi.",
+      "Đặt dấu thanh: ưu tiên nguyên âm a, rồi o, rồi e. Nếu có i và u, đặt dấu lên nguyên âm đứng sau (guì, liù)."
     ],
-    writing: [
-      { zh: "ā á ǎ à", py: "Thanh 1–4 trên a", note: "Đặt dấu thanh: ưu tiên nguyên âm a, rồi o, rồi e. Nếu có i và u thì đặt dấu lên nguyên âm đứng sau (guì, liù)." }
+    drill: [
+      { title: "Thanh mẫu b · p · m · f", note: "Đọc từng cột, giữ nguyên vận mẫu a, đổi thanh điệu.", items: ["bā", "bá", "bǎ", "bà", "pā", "pá", "pǎ", "pà", "mā", "má", "mǎ", "mà", "fā", "fá", "fǎ", "fà"] },
+      { title: "Thanh mẫu d · t · n · l", note: "d/t là cặp bật hơi; n/l khác nhau ở vị trí lưỡi.", items: ["dā", "dá", "tā", "tá", "nā", "ná", "lā", "lá", "nǐ", "lǐ", "dǐ", "tǐ"] },
+      { title: "Vận mẫu đơn", note: "Khi đứng một mình: i → yi, u → wu, ü → yu.", items: ["ā", "ō", "ē", "yī", "wū", "yú"] }
     ],
-    vocab: [
-      ["妈", "mā", "thanh 1", "mẹ"],
-      ["麻", "má", "thanh 2", "cây gai"],
-      ["马", "mǎ", "thanh 3", "ngựa"],
-      ["骂", "mà", "thanh 4", "mắng"],
-      ["八", "bā", "số", "tám"],
-      ["四", "sì", "số", "bốn"]
+    strokes: [
+      { name: "横", py: "héng", vi: "Ngang: đi từ trái sang phải, hơi nghiêng nhẹ.", d: "M8 24 L40 24", icon: "M6 24 L42 24" },
+      { name: "竖", py: "shù", vi: "Sổ: đi từ trên xuống, thẳng đứng.", d: "M24 6 L24 42", icon: "M24 6 L24 42" },
+      { name: "点", py: "diǎn", vi: "Chấm: ngắn, nhấn xuống rồi nhấc lên.", d: "M18 18 L26 26", icon: "M16 16 L28 28" }
+    ],
+    chars: [
+      { zh: "十", py: "shí", vi: "mười", note: "Viết ngang trước, rồi sổ.", strokes: [
+        { name: "横", d: "M20 50 L80 50" }, { name: "竖", d: "M50 14 L50 86" } ] },
+      { zh: "二", py: "èr", vi: "hai", note: "Hai nét ngang: nét dưới dài hơn.", strokes: [
+        { name: "横", d: "M22 36 L78 36" }, { name: "横", d: "M16 66 L84 66" } ] },
+      { zh: "三", py: "sān", vi: "ba", note: "Ba nét ngang, viết từ trên xuống, cách đều.", strokes: [
+        { name: "横", d: "M20 28 L80 28" }, { name: "横", d: "M18 50 L82 50" }, { name: "横", d: "M16 72 L84 72" } ] }
+    ],
+    read: [
+      { zh: "mā mà mǎ", py: "mā mà mǎ", vi: "Mẹ mắng ngựa", note: "Ba thanh điệu liên tiếp, giữ nhịp đều." },
+      { zh: "bā bá bǎ bà", py: "bā bá bǎ bà", vi: "Bốn thanh với b", note: "Chỉ đổi thanh điệu, giữ nguyên thanh mẫu và vận mẫu." }
     ],
     grammar: [
       { t: "Cấu trúc âm tiết", f: "Thanh mẫu + Vận mẫu + Thanh điệu",
         e: "Ví dụ bā = b (thanh mẫu) + a (vận mẫu) + thanh 1.",
-        ex: [["八", "bā", "tám"], ["马", "mǎ", "ngựa"]] },
-      { t: "Vận mẫu đơn", f: "a · o · e · i · u · ü",
-        e: "Khi đứng một mình: i → yi, u → wu, ü → yu.",
-        ex: [["一", "yī", "một"], ["五", "wǔ", "năm"], ["鱼", "yú", "cá"]] }
-    ],
-    read: [
-      { zh: "mā mà mǎ", py: "mā mà mǎ", vi: "Mẹ mắng ngựa", note: "Luyện ba thanh điệu liên tiếp, giữ nhịp đều." },
-      { zh: "bā bá bǎ bà", py: "bā bá bǎ bà", vi: "Bốn thanh với b", note: "Chỉ đổi thanh điệu, giữ nguyên thanh mẫu và vận mẫu." }
+        ex: [["八", "bā", "tám"], ["马", "mǎ", "ngựa"]] }
     ],
     quiz: [
       { q: "Dấu thanh nào là thanh 2?", o: ["ā", "á", "ǎ", "à"], a: 1, exp: "Dấu sắc ´ là thanh 2, giọng đi lên." },
-      { q: "“mǎ” có nghĩa là gì?", o: ["mẹ", "cây gai", "ngựa", "mắng"], a: 2, exp: "马 mǎ = ngựa (thanh 3)." }
+      { q: "Thứ tự nét đúng khi viết 三 là:", o: ["Sổ trước, ngang sau", "Ba nét ngang, từ trên xuống", "Chấm trước, ngang sau", "Ngang dài trước"], a: 1, exp: "三 gồm ba nét ngang, viết từ trên xuống." }
     ]
   },
   {
     id: "ph2", level: "PH", n: 2,
-    zh: "Phát âm · Buổi 2", vi: "j q x, ü, biến điệu 不, nét chữ Hán",
+    zh: "Phát âm · Buổi 2", vi: "j q x, ü, biến điệu 不, nét cơ bản",
     src: "02. HSK1 - BUỔI 2 (PHÁT ÂM).pptx",
     pron: [
-      "j, q, x là phụ âm mặt lưỡi: đặt đầu lưỡi sau răng dưới, phát âm phẳng và hơi “rít”. Khác với z, c, s.",
-      "ü đọc như u nhưng môi tròn và lưỡi ở vị trí của i. Sau j, q, x viết ü thành u: jū, qū, xū (đọc là ü).",
-      "不 vốn đọc bù. Khi đứng trước thanh 4 đọc bú: bú qù (không đi). Trước thanh 1, 2, 3 vẫn đọc bù: bù hǎo (không tốt)."
+      "j, q, x là phụ âm mặt lưỡi: đặt đầu lưỡi sau răng dưới, phát âm phẳng. Khác với z, c, s.",
+      "ü đọc như u nhưng môi tròn và lưỡi ở vị trí của i. Sau j, q, x viết ü thành u: jū, qū, xū (vẫn đọc là ü).",
+      "不 vốn đọc bù. Trước thanh 4 đọc bú: bú qù (không đi). Trước thanh 1, 2, 3 vẫn đọc bù: bù hǎo (không tốt)."
     ],
-    writing: [
-      { zh: "一 丨 丿 丶", py: "Các nét cơ bản", note: "Ngang (一), sổ (丨), phẩy (丿), chấm (丶)." },
-      { zh: "Bút thuận", py: "Quy tắc viết", note: "Viết từ trên xuống, trái sang phải. Ngang trước sổ sau; phẩy trái trước mác phải sau." }
+    drill: [
+      { title: "j · q · x + ü", note: "Viết u nhưng đọc ü.", items: ["jū", "jú", "jǔ", "jù", "qū", "qú", "qǔ", "qù", "xū", "xú", "xǔ", "xù"] },
+      { title: "j · q · x + i và ia / ie / iao", note: "Âm mặt lưỡi kết hợp với các vần có i.", items: ["jī", "qī", "xī", "jiā", "qié", "xiǎo", "jiǔ", "qiān", "xīn", "jiāng"] },
+      { title: "Biến điệu của 不", note: "Nghe thanh điệu của chữ sau.", items: ["bù hē", "bù nán", "bù hǎo", "bú qù", "bù gāo", "bú xì"] }
     ],
-    vocab: [
-      ["鸡", "jī", "danh", "con gà"],
-      ["七", "qī", "số", "bảy"],
-      ["西", "xī", "danh", "hướng tây"],
-      ["去", "qù", "động", "đi"],
-      ["学", "xué", "động", "học"],
-      ["雨", "yǔ", "danh", "mưa"],
-      ["居", "jū", "động", "cư trú, ở"]
+    strokes: [
+      { name: "撇", py: "piě", vi: "Phẩy: đi từ trên phải xuống dưới trái, nét mảnh dần.", d: "M32 8 L10 40", icon: "M32 8 L10 40" },
+      { name: "捺", py: "nà", vi: "Mác: đi từ trên trái xuống dưới phải, nét dần đậm rồi nhấc.", d: "M12 8 L38 40", icon: "M12 8 L38 40" }
     ],
-    grammar: [
-      { t: "Quy tắc viết ü", f: "j / q / x + ü → viết thành j / q / x + u",
-        e: "Viết ju, qu, xu nhưng đọc là ü. Không viết jǖ hay xǖ.",
-        ex: [["居", "jū", "ở"], ["学", "xué", "học"], ["需要", "xūyào", "cần"]] },
-      { t: "Biến điệu của 不", f: "不 + thanh 1/2/3 → bù · 不 + thanh 4 → bú",
-        e: "Nghe thanh điệu của chữ sau để quyết định cách đọc 不.",
-        ex: [["不喝", "bù hē", "không uống"], ["不去", "bú qù", "không đi"]] }
+    chars: [
+      { zh: "人", py: "rén", vi: "người", note: "Phẩy trước, mác sau.", strokes: [
+        { name: "撇", d: "M52 14 L24 86" }, { name: "捺", d: "M52 30 L80 86" } ] },
+      { zh: "大", py: "dà", vi: "lớn", note: "Ngang trước, phẩy rồi mác.", strokes: [
+        { name: "横", d: "M16 38 L84 38" }, { name: "撇", d: "M50 16 L22 84" }, { name: "捺", d: "M52 40 L82 84" } ] },
+      { zh: "八", py: "bā", vi: "tám", note: "Hai nét: phẩy bên trái và mác bên phải, cùng xuất phát từ một điểm.", strokes: [
+        { name: "撇", d: "M48 18 L20 84" }, { name: "捺", d: "M52 18 L80 84" } ] }
     ],
     read: [
       { zh: "你学不学？", py: "Nǐ xué bu xué?", vi: "Bạn có học không?", note: "Câu hỏi lặp động từ: 学不学 = học hay không." },
       { zh: "我不去。", py: "Wǒ bú qù.", vi: "Tôi không đi.", note: "不 đứng trước 去 (thanh 4) nên đọc bú." },
       { zh: "我们学汉语。", py: "Wǒmen xué Hànyǔ.", vi: "Chúng tôi học tiếng Hán.", note: "我们 = chúng tôi. Hàn 汉 là chữ Hán." }
     ],
+    grammar: [
+      { t: "Quy tắc viết ü", f: "j / q / x + ü → viết thành j / q / x + u",
+        e: "Viết ju, qu, xu nhưng đọc là ü. Không viết jǖ hay xǖ.",
+        ex: [["居", "jū", "ở"], ["学", "xué", "học"], ["需要", "xūyào", "cần"]] }
+    ],
     quiz: [
       { q: "Trong “xū”, ü được viết thành chữ nào?", o: ["xü", "xu", "xǖ", "xv"], a: 1, exp: "Sau j, q, x viết ü thành u." },
-      { q: "不 đọc thế nào khi đứng trước 去 (thanh 4)?", o: ["bù", "bú", "bu", "bǔ"], a: 1, exp: "Trước thanh 4, 不 đọc bú." }
+      { q: "Nét 撇 đi theo hướng nào?", o: ["Từ trái sang phải", "Từ trên phải xuống dưới trái", "Từ dưới lên trên", "Thẳng đứng"], a: 1, exp: "撇 là phẩy: đi xuống bên trái." }
     ]
   },
   {
     id: "ph3", level: "PH", n: 3,
-    zh: "Phát âm · Buổi 3", vi: "z c s, zh ch sh r, er, biến điệu 一",
+    zh: "Phát âm · Buổi 3", vi: "z c s, zh ch sh r, er, nét gập",
     src: "03. HSK1 - BUỔI 3 (PHÁT ÂM).pptx",
     pron: [
       "z, c, s: đầu lưỡi đặt sau răng cửa trên, phát âm phẳng (zì, cí, sì).",
       "zh, ch, sh, r: đầu lưỡi cong lên vòm cứng (zhī, chī, shī, rì). Phân biệt cặp “sì” và “shí”.",
-      "er là vận mẫu cuốn lưỡi: lưỡi cong lên khi phát âm (èr, ér)."
+      "er là vận mẫu cuốn lưỡi: lưỡi cong lên khi phát âm (èr, ér).",
+      "一 đọc yì trước thanh 1, 2, 3 (yì bān) và đọc yí trước thanh 4 (yí gè)."
     ],
-    writing: [
-      { zh: "这", py: "zhè", note: "Gồm bộ 辶 (chỉ sự di chuyển) và phần 文. Viết theo thứ tự bút thuận: trên trước, dưới sau." },
-      { zh: "是", py: "shì", note: "Bộ 日 phía trên, phần 疋 bên dưới." }
+    drill: [
+      { title: "z · c · s", note: "Đầu lưỡi phẳng, sau răng cửa.", items: ["zā", "cā", "sā", "zī", "cī", "sī", "zì", "cí", "sì", "zǎn", "cān", "sān"] },
+      { title: "zh · ch · sh · r", note: "Đầu lưỡi cong lên vòm cứng.", items: ["zhī", "chī", "shī", "rì", "zhàn", "chǎn", "shān", "rán", "zhè", "chè", "shì", "rè"] },
+      { title: "er", note: "Cuốn lưỡi, không kéo dài thành hai âm.", items: ["èr", "ér", "ěr", "ér"] }
     ],
-    vocab: [
-      ["四", "sì", "số", "bốn"],
-      ["十", "shí", "số", "mười"],
-      ["二", "èr", "số", "hai"],
-      ["这", "zhè", "đại từ", "này, đây"],
-      ["是", "shì", "động", "là"],
-      ["日", "rì", "danh", "ngày, mặt trời"],
-      ["中", "zhōng", "danh", "giữa, Trung"],
-      ["字", "zì", "danh", "chữ"],
-      ["词", "cí", "danh", "từ"]
+    strokes: [
+      { name: "折", py: "zhé", vi: "Gập: đi ngang rồi đổi hướng xuống, góc gập gọn.", d: "M8 16 L40 16 L40 40", icon: "M8 16 L40 16 L40 40" },
+      { name: "竖", py: "shù", vi: "Sổ: đi từ trên xuống, thẳng đứng, nét đều.", d: "M24 6 L24 42", icon: "M24 6 L24 42" }
     ],
-    grammar: [
-      { t: "Biến điệu của 一", f: "一 + thanh 1/2/3 → yì · 一 + thanh 4 → yí",
-        e: "Số 一 đổi thanh điệu theo chữ đứng sau.",
-        ex: [["一年", "yì nián", "một năm"], ["一个", "yí gè", "một cái"]] },
-      { t: "er — vận mẫu cuốn lưỡi", f: "er",
-        e: "Cuốn lưỡi khi đọc. Gặp trong 二 (èr) và 儿 (ér).",
-        ex: [["二", "èr", "hai"], ["儿", "ér", "con, nhi (hậu tố)"]] }
+    chars: [
+      { zh: "口", py: "kǒu", vi: "miệng", note: "Sổ bên trái, gập ngang rồi sổ bên phải, cuối cùng ngang đáy.", strokes: [
+        { name: "竖", d: "M30 20 L30 82" }, { name: "折", d: "M30 20 L74 20 L74 82" }, { name: "横", d: "M30 82 L74 82" } ] },
+      { zh: "日", py: "rì", vi: "mặt trời, ngày", note: "Sổ, gập, rồi ngang giữa. Ngang giữa ngắn hơn ngang đáy của 口.", strokes: [
+        { name: "竖", d: "M30 16 L30 84" }, { name: "折", d: "M30 16 L72 16 L72 84" }, { name: "横", d: "M30 50 L72 50" } ] }
     ],
     read: [
       { zh: "我是中国人。", py: "Wǒ shì Zhōngguó rén.", vi: "Tôi là người Trung Quốc.", note: "Chú ý zh trong 中 và sh trong 是." },
       { zh: "十四", py: "shísì", vi: "Mười bốn", note: "sh + ì rồi s + ì: hai âm khác nhau, đọc tách rõ." }
     ],
+    grammar: [
+      { t: "Biến điệu của 一", f: "一 + thanh 1/2/3 → yì · 一 + thanh 4 → yí",
+        e: "Số 一 đổi thanh điệu theo chữ đứng sau.",
+        ex: [["一年", "yì nián", "một năm"], ["一个", "yí gè", "một cái"]] }
+    ],
     quiz: [
       { q: "Thanh mẫu nào là âm cuốn lưỡi?", o: ["z", "c", "s", "zh"], a: 3, exp: "zh, ch, sh, r là nhóm đầu lưỡi cong." },
-      { q: "一 trong “一个” đọc là?", o: ["yī", "yì", "yí", "yǐ"], a: 2, exp: "一 đứng trước thanh 4 (个 gè) đọc yí." }
+      { q: "Trong chữ 口, nét gập được viết ở đâu?", o: ["Nét đầu tiên", "Nét thứ hai, ngang rồi sổ xuống", "Nét cuối cùng", "Nét chấm giữa"], a: 1, exp: "Nét thứ hai là 折: ngang ở trên, rồi sổ xuống bên phải." }
     ]
   }
 ]);

@@ -22,12 +22,31 @@ fs.mkdirSync(outDir, { recursive: true });
 function lessonMd(l) {
   const out = [];
   out.push(`# ${title(l)}`, '', `*${l.vi}*`, '', `Nguồn: \`${l.src}\``, '');
-  out.push('## 1. Từ mới', '', '| Từ | Pinyin | Từ loại | Nghĩa |', '|---|---|---|---|');
-  for (const v of l.vocab) out.push(`| ${v[0]} | ${v[1]} | ${v[2]} | ${v[3]} |`);
-  out.push('', '## 2. Cách đọc', '');
+  if (l.level === 'PH') {
+    out.push('## 1. Luyện âm', '');
+    for (const g of l.drill || []) {
+      out.push(`### ${g.title}`, '', g.note, '', g.items.map((s) => `\`${s}\``).join(' '), '');
+    }
+  } else {
+    out.push('## 1. Từ mới', '', '| Từ | Pinyin | Từ loại | Nghĩa |', '|---|---|---|---|');
+    for (const v of l.vocab) out.push(`| ${v[0]} | ${v[1]} | ${v[2]} | ${v[3]} |`);
+    out.push('');
+  }
+  out.push('## 2. Cách đọc', '');
   for (const p of l.pron) out.push(`- ${p}`);
   out.push('', '## 3. Cách viết', '');
-  for (const w of l.writing) out.push(`- **${w.zh}**${w.py ? ` (${w.py})` : ''}: ${w.note}`);
+  if (l.level === 'PH') {
+    out.push('### Nét cơ bản', '');
+    for (const s of l.strokes || []) out.push(`- **${s.name}** (${s.py}): ${s.vi}`);
+    out.push('');
+    for (const c of l.chars || []) {
+      out.push(`### ${c.zh} (${c.py} — ${c.vi})`, '');
+      c.strokes.forEach((s, i) => out.push(`${i + 1}. ${s.name}`));
+      out.push('', c.note, '');
+    }
+  } else {
+    for (const w of l.writing) out.push(`- **${w.zh}**${w.py ? ` (${w.py})` : ''}: ${w.note}`);
+  }
   out.push('', '## 4. Ngữ pháp', '');
   for (const g of l.grammar) {
     out.push(`### ${g.t}`, '', `Công thức: \`${g.f}\``, '', g.e, '');
@@ -52,7 +71,10 @@ const index = ['# Kiến thức HSK — mục lục', '', `Tổng: ${lessons.len
 let level = null;
 for (const l of lessons) {
   if (l.level !== level) { level = l.level; index.push(`## ${LEVELS[level]}`, ''); }
-  index.push(`- [${title(l)}](${fileName(l)}) — ${l.vocab.length} từ, ${l.grammar.length} điểm ngữ pháp`);
+  const count = l.level === 'PH'
+    ? `${(l.drill || []).length} nhóm luyện âm, ${(l.chars || []).length} chữ viết`
+    : `${(l.vocab || []).length} từ`;
+  index.push(`- [${title(l)}](${fileName(l)}) — ${count}, ${(l.grammar || []).length} điểm ngữ pháp`);
   fs.writeFileSync(path.join(outDir, fileName(l)), lessonMd(l), 'utf8');
 }
 index.push('');

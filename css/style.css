@@ -122,9 +122,26 @@ button { font: inherit; color: inherit; }
   font-family: var(--hanzi); font-weight: 700; font-size: 18px; color: #fff;
   background: linear-gradient(135deg, #3730a3, #7c3aed);
 }
-.brand-txt { font-size: 17px; }
+.brand-txt { font-size: 17px; white-space: nowrap; }
+.btn-install { white-space: nowrap; }
+@media (max-width: 420px) {
+  .brand-txt { font-size: 15px; }
+  .btn-install .btn-txt { display: none; }
+  .btn-install { padding: 0; width: 40px; justify-content: center; }
+  .btn-install .btn-ic { margin-right: 0; }
+}
 .navlinks { display: none; }
-.btn-install { margin-left: auto; }
+.top-actions { margin-left: auto; display: flex; align-items: center; gap: 8px; }
+.iconbtn {
+  width: 40px; height: 40px; border-radius: 12px; border: 1px solid var(--border);
+  background: var(--surface-2); color: var(--ink); display: grid; place-items: center; cursor: pointer; padding: 0;
+}
+.iconbtn svg { width: 20px; height: 20px; }
+.btn-ic { width: 18px; height: 18px; vertical-align: -4px; margin-right: 6px; }
+.btn-sm { min-height: 36px; padding: 6px 12px; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; }
+.btn-sm svg { width: 14px; height: 14px; }
+.tick { display: inline-flex; align-items: center; gap: 4px; }
+.tick svg { width: 16px; height: 16px; }
 
 .btn {
   appearance: none; border: 1px solid var(--border);
@@ -154,7 +171,8 @@ button { font: inherit; color: inherit; }
   gap: 2px; min-height: 52px; border-radius: 14px;
   font-size: 12.5px; font-weight: 600; color: var(--ink-3);
 }
-.tabbar .ti { font-size: 20px; line-height: 1; }
+.tabbar .ti { display: grid; place-items: center; height: 24px; }
+.tabbar .ti svg { width: 24px; height: 24px; }
 .tabbar a[aria-current="page"] { color: var(--accent); background: var(--accent-soft); }
 
 /* ---------- Layout ---------- */
@@ -245,8 +263,37 @@ button { font: inherit; color: inherit; }
 .v-vi { color: var(--ink-2); font-size: 15px; margin-top: 2px; }
 .speak {
   width: 44px; height: 44px; border-radius: 12px; border: 1px solid var(--border);
-  background: var(--surface-2); cursor: pointer; font-size: 18px; display: grid; place-items: center;
+  background: var(--surface-2); color: var(--accent); cursor: pointer; display: grid; place-items: center; padding: 0;
 }
+.speak svg { width: 22px; height: 22px; }
+
+/* ---------- Luyện âm (Phát âm) ---------- */
+.blk-h { margin: 0 0 6px; font-size: 16px; font-weight: 700; }
+.drill h3 { margin: 0; }
+.syl { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.syl-chip {
+  font-size: 17px; font-weight: 600; padding: 6px 12px; border-radius: 10px;
+  background: var(--surface-2); border: 1px solid var(--border); color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.stk-grid { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 8px; }
+.stk { display: grid; grid-template-columns: 48px 1fr; gap: 12px; align-items: center; }
+.stk-ic { width: 48px; height: 48px; padding: 8px; border-radius: 12px; background: var(--accent-soft); color: var(--accent); }
+.char-card { display: grid; gap: 8px; }
+.char-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.char-zh { font-family: var(--hanzi); font-size: 28px; font-weight: 700; line-height: 1.2; }
+.char-svg { width: 100%; max-width: 220px; height: auto; margin: 4px auto; display: block; color: var(--ink); }
+.grid-box { fill: var(--surface-2); stroke: var(--border); stroke-width: 1; }
+.grid-l { stroke: var(--border); stroke-width: 1; stroke-dasharray: 3 3; }
+.stk-path { fill: none; stroke: currentColor; stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 100; stroke-dashoffset: 0; }
+.stk-badge circle { fill: var(--accent); }
+.stk-badge text { fill: #fff; font-size: 9px; font-weight: 700; text-anchor: middle; font-family: var(--text); }
+.char-svg.play .stk-path { stroke-dashoffset: 100; animation: draw 0.6s ease forwards; }
+.char-svg.play .stk-badge { opacity: 0; animation: fadein 0.2s forwards; }
+.char-svg.play .stk-badge:nth-of-type(1) { animation-delay: 0s; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@keyframes fadein { to { opacity: 1; } }
+.stk-order { margin: 0; padding-left: 20px; font-size: 14.5px; color: var(--ink-2); display: grid; gap: 2px; }
 .list { padding: 0; overflow: hidden; }
 
 .note-card { padding: 16px; }

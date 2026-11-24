@@ -4,9 +4,9 @@ Tổng: 24 bài.
 
 ## Phát âm
 
-- [Phát âm — Phát âm · Buổi 1](ph1.md) — 6 từ, 2 điểm ngữ pháp
-- [Phát âm — Phát âm · Buổi 2](ph2.md) — 7 từ, 2 điểm ngữ pháp
-- [Phát âm — Phát âm · Buổi 3](ph3.md) — 9 từ, 2 điểm ngữ pháp
+- [Phát âm — Phát âm · Buổi 1](ph1.md) — 3 nhóm luyện âm, 3 chữ viết, 1 điểm ngữ pháp
+- [Phát âm — Phát âm · Buổi 2](ph2.md) — 3 nhóm luyện âm, 3 chữ viết, 1 điểm ngữ pháp
+- [Phát âm — Phát âm · Buổi 3](ph3.md) — 3 nhóm luyện âm, 2 chữ viết, 1 điểm ngữ pháp
 ## HSK 1
 
 - [HSK 1 · Bài 1 — AI小语，你好！](h1-01.md) — 10 từ, 2 điểm ngữ pháp

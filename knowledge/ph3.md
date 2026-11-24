@@ -1,33 +1,59 @@
 # Phát âm — Phát âm · Buổi 3
 
-*z c s, zh ch sh r, er, biến điệu 一*
+*z c s, zh ch sh r, er, nét gập*
 
 Nguồn: `03. HSK1 - BUỔI 3 (PHÁT ÂM).pptx`
 
-## 1. Từ mới
+## 1. Luyện âm
 
-| Từ | Pinyin | Từ loại | Nghĩa |
-|---|---|---|---|
-| 四 | sì | số | bốn |
-| 十 | shí | số | mười |
-| 二 | èr | số | hai |
-| 这 | zhè | đại từ | này, đây |
-| 是 | shì | động | là |
-| 日 | rì | danh | ngày, mặt trời |
-| 中 | zhōng | danh | giữa, Trung |
-| 字 | zì | danh | chữ |
-| 词 | cí | danh | từ |
+### z · c · s
+
+Đầu lưỡi phẳng, sau răng cửa.
+
+`zā` `cā` `sā` `zī` `cī` `sī` `zì` `cí` `sì` `zǎn` `cān` `sān`
+
+### zh · ch · sh · r
+
+Đầu lưỡi cong lên vòm cứng.
+
+`zhī` `chī` `shī` `rì` `zhàn` `chǎn` `shān` `rán` `zhè` `chè` `shì` `rè`
+
+### er
+
+Cuốn lưỡi, không kéo dài thành hai âm.
+
+`èr` `ér` `ěr` `ér`
 
 ## 2. Cách đọc
 
 - z, c, s: đầu lưỡi đặt sau răng cửa trên, phát âm phẳng (zì, cí, sì).
 - zh, ch, sh, r: đầu lưỡi cong lên vòm cứng (zhī, chī, shī, rì). Phân biệt cặp “sì” và “shí”.
 - er là vận mẫu cuốn lưỡi: lưỡi cong lên khi phát âm (èr, ér).
+- 一 đọc yì trước thanh 1, 2, 3 (yì bān) và đọc yí trước thanh 4 (yí gè).
 
 ## 3. Cách viết
 
-- **这** (zhè): Gồm bộ 辶 (chỉ sự di chuyển) và phần 文. Viết theo thứ tự bút thuận: trên trước, dưới sau.
-- **是** (shì): Bộ 日 phía trên, phần 疋 bên dưới.
+### Nét cơ bản
+
+- **折** (zhé): Gập: đi ngang rồi đổi hướng xuống, góc gập gọn.
+- **竖** (shù): Sổ: đi từ trên xuống, thẳng đứng, nét đều.
+
+### 口 (kǒu — miệng)
+
+1. 竖
+2. 折
+3. 横
+
+Sổ bên trái, gập ngang rồi sổ bên phải, cuối cùng ngang đáy.
+
+### 日 (rì — mặt trời, ngày)
+
+1. 竖
+2. 折
+3. 横
+
+Sổ, gập, rồi ngang giữa. Ngang giữa ngắn hơn ngang đáy của 口.
+
 
 ## 4. Ngữ pháp
 
@@ -39,15 +65,6 @@ Số 一 đổi thanh điệu theo chữ đứng sau.
 
 - 一年 — yì nián — một năm
 - 一个 — yí gè — một cái
-
-### er — vận mẫu cuốn lưỡi
-
-Công thức: `er`
-
-Cuốn lưỡi khi đọc. Gặp trong 二 (èr) và 儿 (ér).
-
-- 二 — èr — hai
-- 儿 — ér — con, nhi (hậu tố)
 
 ## 5. Đọc câu
 
@@ -66,9 +83,9 @@ Cuốn lưỡi khi đọc. Gặp trong 二 (èr) và 儿 (ér).
    - C. s
    - D. zh ✔
    - *Giải thích:* zh, ch, sh, r là nhóm đầu lưỡi cong.
-2. 一 trong “一个” đọc là?
-   - A. yī
-   - B. yì
-   - C. yí ✔
-   - D. yǐ
-   - *Giải thích:* 一 đứng trước thanh 4 (个 gè) đọc yí.
+2. Trong chữ 口, nét gập được viết ở đâu?
+   - A. Nét đầu tiên
+   - B. Nét thứ hai, ngang rồi sổ xuống ✔
+   - C. Nét cuối cùng
+   - D. Nét chấm giữa
+   - *Giải thích:* Nét thứ hai là 折: ngang ở trên, rồi sổ xuống bên phải.

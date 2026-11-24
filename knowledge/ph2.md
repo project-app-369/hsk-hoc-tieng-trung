@@ -1,31 +1,64 @@
 # Phát âm — Phát âm · Buổi 2
 
-*j q x, ü, biến điệu 不, nét chữ Hán*
+*j q x, ü, biến điệu 不, nét cơ bản*
 
 Nguồn: `02. HSK1 - BUỔI 2 (PHÁT ÂM).pptx`
 
-## 1. Từ mới
+## 1. Luyện âm
 
-| Từ | Pinyin | Từ loại | Nghĩa |
-|---|---|---|---|
-| 鸡 | jī | danh | con gà |
-| 七 | qī | số | bảy |
-| 西 | xī | danh | hướng tây |
-| 去 | qù | động | đi |
-| 学 | xué | động | học |
-| 雨 | yǔ | danh | mưa |
-| 居 | jū | động | cư trú, ở |
+### j · q · x + ü
+
+Viết u nhưng đọc ü.
+
+`jū` `jú` `jǔ` `jù` `qū` `qú` `qǔ` `qù` `xū` `xú` `xǔ` `xù`
+
+### j · q · x + i và ia / ie / iao
+
+Âm mặt lưỡi kết hợp với các vần có i.
+
+`jī` `qī` `xī` `jiā` `qié` `xiǎo` `jiǔ` `qiān` `xīn` `jiāng`
+
+### Biến điệu của 不
+
+Nghe thanh điệu của chữ sau.
+
+`bù hē` `bù nán` `bù hǎo` `bú qù` `bù gāo` `bú xì`
 
 ## 2. Cách đọc
 
-- j, q, x là phụ âm mặt lưỡi: đặt đầu lưỡi sau răng dưới, phát âm phẳng và hơi “rít”. Khác với z, c, s.
-- ü đọc như u nhưng môi tròn và lưỡi ở vị trí của i. Sau j, q, x viết ü thành u: jū, qū, xū (đọc là ü).
-- 不 vốn đọc bù. Khi đứng trước thanh 4 đọc bú: bú qù (không đi). Trước thanh 1, 2, 3 vẫn đọc bù: bù hǎo (không tốt).
+- j, q, x là phụ âm mặt lưỡi: đặt đầu lưỡi sau răng dưới, phát âm phẳng. Khác với z, c, s.
+- ü đọc như u nhưng môi tròn và lưỡi ở vị trí của i. Sau j, q, x viết ü thành u: jū, qū, xū (vẫn đọc là ü).
+- 不 vốn đọc bù. Trước thanh 4 đọc bú: bú qù (không đi). Trước thanh 1, 2, 3 vẫn đọc bù: bù hǎo (không tốt).
 
 ## 3. Cách viết
 
-- **一 丨 丿 丶** (Các nét cơ bản): Ngang (一), sổ (丨), phẩy (丿), chấm (丶).
-- **Bút thuận** (Quy tắc viết): Viết từ trên xuống, trái sang phải. Ngang trước sổ sau; phẩy trái trước mác phải sau.
+### Nét cơ bản
+
+- **撇** (piě): Phẩy: đi từ trên phải xuống dưới trái, nét mảnh dần.
+- **捺** (nà): Mác: đi từ trên trái xuống dưới phải, nét dần đậm rồi nhấc.
+
+### 人 (rén — người)
+
+1. 撇
+2. 捺
+
+Phẩy trước, mác sau.
+
+### 大 (dà — lớn)
+
+1. 横
+2. 撇
+3. 捺
+
+Ngang trước, phẩy rồi mác.
+
+### 八 (bā — tám)
+
+1. 撇
+2. 捺
+
+Hai nét: phẩy bên trái và mác bên phải, cùng xuất phát từ một điểm.
+
 
 ## 4. Ngữ pháp
 
@@ -38,15 +71,6 @@ Viết ju, qu, xu nhưng đọc là ü. Không viết jǖ hay xǖ.
 - 居 — jū — ở
 - 学 — xué — học
 - 需要 — xūyào — cần
-
-### Biến điệu của 不
-
-Công thức: `不 + thanh 1/2/3 → bù · 不 + thanh 4 → bú`
-
-Nghe thanh điệu của chữ sau để quyết định cách đọc 不.
-
-- 不喝 — bù hē — không uống
-- 不去 — bú qù — không đi
 
 ## 5. Đọc câu
 
@@ -68,9 +92,9 @@ Nghe thanh điệu của chữ sau để quyết định cách đọc 不.
    - C. xǖ
    - D. xv
    - *Giải thích:* Sau j, q, x viết ü thành u.
-2. 不 đọc thế nào khi đứng trước 去 (thanh 4)?
-   - A. bù
-   - B. bú ✔
-   - C. bu
-   - D. bǔ
-   - *Giải thích:* Trước thanh 4, 不 đọc bú.
+2. Nét 撇 đi theo hướng nào?
+   - A. Từ trái sang phải
+   - B. Từ trên phải xuống dưới trái ✔
+   - C. Từ dưới lên trên
+   - D. Thẳng đứng
+   - *Giải thích:* 撇 là phẩy: đi xuống bên trái.
