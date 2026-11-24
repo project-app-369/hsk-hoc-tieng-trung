@@ -1,0 +1,45 @@
+# Học tiếng Trung HSK
+
+Ứng dụng học tiếng Trung HSK (phát âm, HSK 1, HSK 2) theo dạng PWA: dùng được trên điện thoại, máy tính, cài như app, và mở được khi mất mạng sau lần đầu truy cập.
+
+## Nội dung mỗi bài
+
+Mỗi bài có 6 phần, theo đúng trình tự của file giáo trình:
+
+1. **Từ mới**: từ, pinyin, từ loại, nghĩa tiếng Việt, nghe phát âm.
+2. **Cách đọc**: quy tắc phát âm, thanh điệu, biến điệu.
+3. **Cách viết**: chữ mẫu và cấu tạo bộ phận.
+4. **Ngữ pháp**: công thức, giải thích, ví dụ.
+5. **Đọc câu**: câu mẫu có pinyin, nghĩa và ghi chú cách đọc.
+6. **Ôn tập**: câu hỏi trắc nghiệm có giải thích.
+
+Ngoài ra có **Flashcard** (lặp lại ngắt quãng), **Ôn tập** (trộn từ và ngữ pháp) và **Tiến độ**.
+
+## Cập nhật khi có file giáo trình mới
+
+Dữ liệu nằm trong thư mục `js/`:
+
+| File | Nội dung |
+|---|---|
+| `js/data-ph.js` | Phát âm, buổi 1–3 |
+| `js/data-hsk1a.js` | HSK 1, bài 1–8 |
+| `js/data-hsk1b.js` | HSK 1, bài 9–15 |
+| `js/data-hsk2.js` | HSK 2, bài 1–6 |
+
+Để thêm bài: sao chép một object bài có sẵn, đổi `id`, `n`, tiêu đề, từ vựng, ngữ pháp, câu đọc và câu hỏi. Sau đó tăng phiên bản cache trong `sw.js` (ví dụ `hsk-app-v3`) để người dùng nhận bản mới.
+
+## Chạy thử trên máy
+
+Mở `index.html` bằng một máy chủ tĩnh, ví dụ:
+
+```powershell
+python -m http.server 8000
+```
+
+rồi truy cập http://localhost:8000.
+
+## Ghi chú
+
+- Nội dung là tóm tắt và câu mẫu do người biên soạn viết lại, không sao chép nguyên văn slide giáo trình.
+- Tiến độ, flashcard và kết quả ôn tập được lưu trong trình duyệt của từng người (localStorage). Xóa dữ liệu trình duyệt sẽ mất tiến độ.
+- Tính năng phát âm dùng giọng đọc có sẵn của trình duyệt/thiết bị (tiếng Trung `zh-CN`). Nếu thiết bị chưa có giọng đọc tiếng Trung thì nút 🔊 sẽ không phát tiếng.

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Học tiếng Trung HSK</title>
+<meta name="description" content="Học tiếng Trung HSK: từ mới, cách đọc, cách viết, ngữ pháp, đọc câu, flashcard và ôn tập.">
+<meta name="theme-color" content="#3730a3">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Sans+SC:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="topbar" id="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="#/lessons" aria-label="Trang chủ">
+      <span class="logo" aria-hidden="true">学</span>
+      <span class="brand-txt">HSK Tiếng Trung</span>
+    </a>
+    <nav class="navlinks" aria-label="Điều hướng chính">
+      <a href="#/lessons" data-nav="lessons">Bài học</a>
+      <a href="#/flash" data-nav="flash">Flashcard</a>
+      <a href="#/review" data-nav="review">Ôn tập</a>
+      <a href="#/progress" data-nav="progress">Tiến độ</a>
+    </nav>
+    <button class="btn btn-install" id="installBtn" type="button" hidden>Cài app</button>
+  </div>
+</header>
+
+<main id="app" class="view" tabindex="-1"></main>
+
+<nav class="tabbar" aria-label="Điều hướng dưới">
+  <a href="#/lessons" data-nav="lessons"><span class="ti">📚</span><span>Bài học</span></a>
+  <a href="#/flash" data-nav="flash"><span class="ti">🃏</span><span>Flashcard</span></a>
+  <a href="#/review" data-nav="review"><span class="ti">✅</span><span>Ôn tập</span></a>
+  <a href="#/progress" data-nav="progress"><span class="ti">📊</span><span>Tiến độ</span></a>
+</nav>
+
+<dialog id="dlg" aria-labelledby="dlgTitle">
+  <div class="dlg-body">
+    <h2 id="dlgTitle">Cài đặt ứng dụng</h2>
+    <div id="dlgText"></div>
+    <div class="row-end"><button class="btn" id="dlgClose" type="button">Đóng</button></div>
+  </div>
+</dialog>
+
+<script src="js/data-ph.js"></script>
+<script src="js/data-hsk1a.js"></script>
+<script src="js/data-hsk1b.js"></script>
+<script src="js/data-hsk2.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
