@@ -629,6 +629,12 @@
   refreshInstall();
 
   if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1')) {
+    // Có bản mới thì tải lại một lần để người dùng thấy ngay (chỉ khi trước đó đã có service worker).
+    const hadController = !!navigator.serviceWorker.controller;
+    let reloaded = false;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (hadController && !reloaded) { reloaded = true; location.reload(); }
+    });
     window.addEventListener('load', () => { navigator.serviceWorker.register('sw.js').catch(() => { /* offline không bắt buộc */ }); });
   }
 

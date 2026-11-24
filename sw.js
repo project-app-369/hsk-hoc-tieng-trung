@@ -1,5 +1,5 @@
 // Service worker: cache app shell để mở được khi mất mạng sau lần đầu truy cập.
-const CACHE = 'hsk-app-v5';
+const CACHE = 'hsk-app-v6';
 const SHELL = [
   './',
   './index.html',
@@ -42,16 +42,22 @@ self.addEventListener('fetch', (e) => {
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return; // Google Fonts: để trình duyệt tự cache
+  const keep = (res) => {
+    if (res && res.status === 200) {
+      const copy = res.clone();
+      caches.open(CACHE).then((c) => c.put(req, copy));
+    }
+    return res;
+  };
+  // Dữ liệu chữ Hán và icon ít đổi: ưu tiên cache. Mã và giao diện: ưu tiên mạng để luôn nhận bản mới,
+  // mất mạng thì dùng bản đã lưu.
+  if (/\/(data|icons)\//.test(url.pathname)) {
+    e.respondWith(caches.match(req).then((hit) => hit || fetch(req).then(keep)));
+    return;
+  }
   e.respondWith(
-    caches.match(req, { ignoreSearch: true }).then((hit) => {
-      if (hit) return hit;
-      return fetch(req).then((res) => {
-        if (res && res.status === 200) {
-          const copy = res.clone();
-          caches.open(CACHE).then((c) => c.put(req, copy));
-        }
-        return res;
-      }).catch(() => caches.match('./index.html'));
-    })
+    fetch(req).then(keep).catch(() =>
+      caches.match(req, { ignoreSearch: true }).then((hit) => hit || caches.match('./index.html'))
+    )
   );
 });
