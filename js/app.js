@@ -566,7 +566,7 @@
       '<h2 class="section-title">Giao diện</h2><div class="seg" id="themeSeg" role="group" aria-label="Giao diện">' +
         [['auto', 'Tự động'], ['light', 'Sáng'], ['dark', 'Tối']].map((t) => '<button type="button" data-theme="' + t[0] + '" aria-pressed="' + (theme === t[0]) + '">' + t[1] + '</button>').join('') + '</div>' +
       '<h2 class="section-title">Dữ liệu</h2><div class="row"><button class="btn btn-danger" id="resetBtn" type="button">Xóa tiến độ</button></div>' +
-      '<p class="muted small" style="margin-top:22px">Dữ liệu nét chữ và bộ thủ: Make Me a Hanzi (Arphic Public License). Thư viện viết chữ: Hanzi Writer (MIT).</p>';
+      '<p class="muted small" style="margin-top:22px">Dữ liệu nét chữ và bộ thủ: Make Me a Hanzi (Arphic Public License). Thư viện viết chữ: Hanzi Writer (MIT). Font chữ Hán: AR PL UKai (Arphic Public License), LXGW WenKai (SIL OFL).</p>';
     $('#themeSeg').addEventListener('click', (e) => { const b = e.target.closest('[data-theme]'); if (b) { H.applyTheme(b.getAttribute('data-theme')); paintThemeBtn(); viewProgress(); } });
     const rb = $('#resetBtn'); let armed = false;
     rb.addEventListener('click', () => {

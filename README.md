@@ -43,6 +43,8 @@ Mỗi buổi phát âm có: thanh mẫu và vận mẫu mới (chạm để nghe
 - `scripts/fetch-hanzi.js`: tải dữ liệu nét chữ và từ điển (cần mạng).
 - `scripts/build-hanzi.js`: dựng `data/hanzi-info.json`. Tên Hán Việt và tên bộ thủ ở `scripts/vi-tables.js`.
 
+Font chữ Hán: dùng KaiTi nếu máy có; nếu không dùng AR PL UKai (Arphic Public License) rồi LXGW WenKai (SIL OFL 1.1) đã cắt nhỏ trong `fonts/` (`scripts/build-fonts.py`).
+
 Nguồn: dữ liệu nét chữ và bộ thủ từ Make Me a Hanzi (Arphic Public License); thư viện Hanzi Writer (MIT).
 
 ## Cập nhật khi có file giáo trình mới

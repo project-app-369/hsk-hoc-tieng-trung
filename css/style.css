@@ -2,11 +2,23 @@
    HSK App — mobile first. Nền giấy ấm, chữ mực đậm, mặt kính chỉ ở thanh điều hướng và popup.
    Nội dung luôn nằm trên bề mặt đặc để dễ đọc.
    ========================================================== */
-/* Font khải thư chỉ áp cho chữ Hán (unicode-range). Chữ Latin và tiếng Việt rơi về Be Vietnam Pro nên không bị lỗi dấu. */
+/* Chữ Hán: ưu tiên KaiTi trên máy; không có thì dùng AR PL UKai đóng gói sẵn; rồi đến LXGW WenKai.
+   unicode-range giới hạn trong chữ Hán nên chữ Latin và tiếng Việt rơi về Be Vietnam Pro, không bị lỗi dấu. */
 @font-face {
   font-family: "HanziKai";
-  src: local("KaiTi"), local("楷体"), local("KaiTi_GB2312"), local("STKaiti"), local("Kaiti SC"), local("Kaiti TC"),
-       local("AR PL UKai CN"), local("AR PL UKai TW"), local("LXGW WenKai");
+  src: local("KaiTi"), local("楷体"), local("KaiTi_GB2312"), local("STKaiti"), local("Kaiti SC"), local("Kaiti TC");
+  unicode-range: U+2E80-2FDF, U+3000-303F, U+31C0-31EF, U+3400-4DBF, U+4E00-9FFF, U+F900-FAFF, U+FE30-FE4F, U+FF00-FFEF;
+}
+@font-face {
+  font-family: "HanziUKai";
+  src: url("../fonts/ukai-subset.woff2") format("woff2");
+  font-display: swap;
+  unicode-range: U+2E80-2FDF, U+3000-303F, U+31C0-31EF, U+3400-4DBF, U+4E00-9FFF, U+F900-FAFF, U+FE30-FE4F, U+FF00-FFEF;
+}
+@font-face {
+  font-family: "HanziWenKai";
+  src: url("../fonts/wenkai-subset.woff2") format("woff2");
+  font-display: swap;
   unicode-range: U+2E80-2FDF, U+3000-303F, U+31C0-31EF, U+3400-4DBF, U+4E00-9FFF, U+F900-FAFF, U+FE30-FE4F, U+FF00-FFEF;
 }
 :root {
@@ -36,7 +48,7 @@
   --r: 20px;
   --r-s: 12px;
   --text: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --hanzi: "HanziKai", "Be Vietnam Pro", "Noto Serif SC", "Songti SC", "Microsoft YaHei", system-ui, sans-serif;
+  --hanzi: "HanziKai", "HanziUKai", "HanziWenKai", "Be Vietnam Pro", "Noto Serif SC", "Songti SC", "Microsoft YaHei", system-ui, sans-serif;
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {

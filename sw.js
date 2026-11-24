@@ -1,5 +1,5 @@
 // Service worker: cache app shell để mở được khi mất mạng sau lần đầu truy cập.
-const CACHE = 'hsk-app-v8';
+const CACHE = 'hsk-app-v9';
 const SHELL = [
   './',
   './index.html',
@@ -20,7 +20,7 @@ const SHELL = [
   './icons/icon-512.png'
 ];
 // Dữ liệu chữ Hán khá nặng: tải nền, lỗi thì bỏ qua (sẽ được cache khi dùng lần đầu).
-const DATA = ['./data/hanzi-info.json', './data/hanzi-strokes.json', './data/syllables.json'];
+const DATA = ['./data/hanzi-info.json', './data/hanzi-strokes.json', './data/syllables.json', './fonts/ukai-subset.woff2', './fonts/wenkai-subset.woff2'];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(
@@ -53,7 +53,7 @@ self.addEventListener('fetch', (e) => {
   };
   // Dữ liệu chữ Hán và icon ít đổi: ưu tiên cache. Mã và giao diện: ưu tiên mạng để luôn nhận bản mới,
   // mất mạng thì dùng bản đã lưu.
-  if (/\/(data|icons)\//.test(url.pathname)) {
+  if (/\/(data|icons|fonts)\//.test(url.pathname)) {
     e.respondWith(caches.match(req).then((hit) => hit || fetch(req).then(keep)));
     return;
   }
