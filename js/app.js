@@ -274,9 +274,9 @@
           '<div class="sec-head"><h2>' + esc(H.sectionLabel(l, cur)) + '</h2><p class="muted">' + esc(SEC_HINT[sec](l)) + '</p></div>' +
           '<div id="sec">' + sectionHtml(l, sec) + '</div>' +
           '<div class="done-bar">' +
-            (prev ? '<a class="btn" href="#/lesson/' + esc(prev.id) + '/vocab">' + ICONS.chevL + '<span>Bài trước</span></a>' : '<span></span>') +
-            '<button class="btn ' + (isDone ? 'btn-ok' : 'btn-primary') + '" id="doneBtn" type="button">' + (isDone ? 'Đã hoàn thành' : 'Đánh dấu hoàn thành') + '</button>' +
-            (next ? '<a class="btn" href="#/lesson/' + esc(next.id) + '/vocab"><span>Bài sau</span>' + ICONS.chevR + '</a>' : '<span></span>') +
+            (prev ? '<a class="btn nav-btn" href="#/lesson/' + esc(prev.id) + '/vocab" aria-label="Bài trước" title="Bài trước">' + ICONS.chevL + '<span class="nb-txt">Bài trước</span></a>' : '<span class="nav-btn ghost-slot"></span>') +
+            '<button class="btn done-btn ' + (isDone ? 'btn-ok' : 'btn-primary') + '" id="doneBtn" type="button">' + (isDone ? ICONS.check : '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>') + '<span>' + (isDone ? 'Đã hoàn thành' : 'Hoàn thành') + '</span></button>' +
+            (next ? '<a class="btn nav-btn" href="#/lesson/' + esc(next.id) + '/vocab" aria-label="Bài sau" title="Bài sau"><span class="nb-txt">Bài sau</span>' + ICONS.chevR + '</a>' : '<span class="nav-btn ghost-slot"></span>') +
           '</div>' +
         '</section>' +
       '</div>';
