@@ -45,7 +45,7 @@ window.LESSONS = (window.LESSONS || []).concat([
     ],
     read: [
       { zh: "小明，你们明天开学，你准备好了吗？", py: "Xiǎo Míng, nǐmen míngtiān kāixué, nǐ zhǔnbèi hǎo le ma?", vi: "Tiểu Minh, ngày mai các con khai giảng, con chuẩn bị xong chưa?", note: "准备好: chuẩn bị xong." },
-      { zh: "我的书包你看见了吗？", py: "Wǒ de shūbāo nǐ kànjiàn le ma?", vi: "Cặp sách của con bố thấy chưa?", note: "Câu chủ vị có vị ngữ chủ vị." },
+      { zh: "我的书包你看见了吗？", py: "Wǒ de shūbāo nǐ kànjiàn le ma?", vi: "Cặp sách của tôi bạn thấy chưa?", note: "Câu chủ vị có vị ngữ chủ vị." },
       { zh: "书包在门后面。", py: "Shūbāo zài mén hòumian.", vi: "Cặp sách ở sau cửa.", note: "在 + nơi chốn + 后面." },
       { zh: "这次爸爸帮你，下次你自己准备，好不好？", py: "Zhè cì bàba bāng nǐ, xià cì nǐ zìjǐ zhǔnbèi, hǎo bù hǎo?", vi: "Lần này bố giúp con, lần sau con tự chuẩn bị, được không?", note: "好不好: câu hỏi chính phản xin ý kiến." },
       { zh: "小雪，你在做什么呢？", py: "Xiǎoxuě, nǐ zài zuò shénme ne?", vi: "Tiểu Tuyết, con đang làm gì thế?", note: "在…呢: đang…" },

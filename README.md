@@ -33,6 +33,7 @@ node scripts/export-knowledge.js
 ```
 
 - `scripts/build-syllables.js`: dựng `data/syllables.json`, chọn một chữ Hán thông dụng cho mỗi âm tiết và thanh để giọng đọc tiếng Trung của thiết bị phát âm đúng.
+- `scripts/check-data.js`: kiểm tra chữ Hán, pinyin (cả thanh điệu) và nghĩa khớp nhau, báo từ hoặc câu lệch giữa các bài. Chạy trước khi đăng bài mới.
 - `scripts/make-icons.py`: tạo lại icon ứng dụng (any, maskable, Apple touch, favicon) và ảnh chia sẻ `icons/og-image.png` (cần Pillow và font Windows).
 
 ## Phát âm

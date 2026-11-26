@@ -100,7 +100,7 @@ window.LESSONS = (window.LESSONS || []).concat([
     grammar: [
       { t: "Câu so sánh với 比 (1)", f: "A + 比 + B + tính từ / cụm tính từ",
         e: "Dùng giới từ 比 để so sánh khác biệt về tính chất, trạng thái giữa A và B.",
-        ex: [["我也觉得左边的比右边的好看。", "Wǒ yě juéde zuǒbiān de bǐ yòubiān de hǎokàn.", "Tôi cũng thấy cái bên trái đẹp hơn cái bên phải."], ["今天比昨天冷。", "Jīntiān bǐ zuótiān lěng.", "Hôm nay lạnh hơn hôm qua."], ["他觉得踢足球比打篮球有意思。", "Tā juéde tī zúqiú bǐ dǎ lánqiú yǒu yìsi.", "Anh ấy thấy đá bóng thú vị hơn chơi bóng rổ."], ["姐姐比妹妹高。", "Jiějie bǐ mèimei gāo.", "Chị cao hơn em gái."]] },
+        ex: [["我也觉得左边的比右边的好看。", "Wǒ yě juéde zuǒbian de bǐ yòubian de hǎokàn.", "Tôi cũng thấy cái bên trái đẹp hơn cái bên phải."], ["今天比昨天冷。", "Jīntiān bǐ zuótiān lěng.", "Hôm nay lạnh hơn hôm qua."], ["他觉得踢足球比打篮球有意思。", "Tā juéde tī zúqiú bǐ dǎ lánqiú yǒu yìsi.", "Anh ấy thấy đá bóng thú vị hơn chơi bóng rổ."], ["姐姐比妹妹高。", "Jiějie bǐ mèimei gāo.", "Chị cao hơn em gái."]] },
       { t: "Câu so sánh với 比 (2): thêm 更 / 还", f: "A + 比 + B + 更 / 还 + tính từ",
         e: "Trong câu 比, trước tính từ không dùng 很 hay 非常; muốn nhấn mức độ tăng thì dùng 更 hoặc 还.",
         ex: [["今天比昨天更热。", "Jīntiān bǐ zuótiān gèng rè.", "Hôm nay còn nóng hơn hôm qua."], ["我觉得奶茶比牛奶还好喝。", "Wǒ juéde nǎichá bǐ niúnǎi hái hǎohē.", "Tôi thấy trà sữa còn ngon hơn sữa."], ["网上买比在这里买便宜。", "Wǎngshang mǎi bǐ zài zhèlǐ mǎi piányi.", "Mua trên mạng rẻ hơn mua ở đây."]] },
@@ -170,7 +170,7 @@ window.LESSONS = (window.LESSONS || []).concat([
         ex: [["咖啡店离这儿有点儿远。", "Kāfēidiàn lí zhèr yǒudiǎnr yuǎn.", "Quán cà phê hơi xa chỗ này."], ["学校离医院不远。", "Xuéxiào lí yīyuàn bù yuǎn.", "Trường cách bệnh viện không xa."], ["现在离我的生日还有三天。", "Xiànzài lí wǒ de shēngrì hái yǒu sān tiān.", "Bây giờ còn ba ngày nữa là sinh nhật tôi."]] },
       { t: "Bổ ngữ thời lượng (1)", f: "chủ ngữ + động từ + khoảng thời gian",
         e: "Từ chỉ khoảng thời gian đặt sau động từ để nói hành động hoặc trạng thái kéo dài bao lâu.",
-        ex: [["走半个多小时就到了。", "Zǒu bàn ge duō xiǎoshí jiù dào le.", "Đi bộ hơn nửa tiếng là đến."], ["他们学了两年。", "Tāmen xué le liǎng nián.", "Họ đã học hai năm."], ["我们休息十分钟。", "Wǒmen xiūxi shí fēnzhōng.", "Chúng ta nghỉ mười phút."]] }
+        ex: [["走半个多小时就到了。", "Zǒu bàn ge duō xiǎoshí jiù dào le.", "Đi hơn nửa tiếng là đến."], ["他们学了两年。", "Tāmen xué le liǎng nián.", "Họ đã học hai năm."], ["我们休息十分钟。", "Wǒmen xiūxi shí fēnzhōng.", "Chúng ta nghỉ mười phút."]] }
     ],
     read: [
       { zh: "儿子的裤子坏了，我们给他买条新的吧。", py: "Érzi de kùzi huài le, wǒmen gěi tā mǎi tiáo xīn de ba.", vi: "Quần của con trai hỏng rồi, mình mua cho con cái mới nhé.", note: "条 là lượng từ của quần." },
