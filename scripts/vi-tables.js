@@ -52,7 +52,7 @@ const HV = Object.fromEntries(`
 尝 thường|定 định|姐 tỷ|来 lai|公 công|交 giao|但 đãn|站 trạm|远 viễn|网 võng|万 vạn|票 phiếu|教 giáo|室 thất|漂 phiêu|亮 lượng|出 xuất|租 tô|汽 khí|因 nhân|
 为 vi|所 sở|安 an|累 lụy|回 hồi|洗 tẩy|自 tự|己 kỷ|拿 nã|送 tống|每 mỗi|菜 thái|红 hồng|色 sắc|绿 lục|黑 hắc|颜 nhan|裤 khố|进 tiến|过 quá|
 试 thí|新 tân|虽 tuy|然 nhiên|如 như|礼 lễ|物 vật|奶 nãi|爷 da|等 đẳng|走 tẩu|快 khoái|准 chuẩn|备 bị|迟 trì|别 biệt|乐 lạc|忘 vong|画 họa|笔 bút|
-长 trường|鱼 ngư|肉 nhục|蛋 đản|糕 cao|舒 thư|狗 cẩu|地 địa|笑 tiếu|记 ký
+长 trường|鱼 ngư|肉 nhục|蛋 đản|糕 cao|舒 thư|狗 cẩu|地 địa|笑 tiếu|记 ký|篮 lam|球 cầu|跑 bào|踢 xích|运 vận|动 động|足 túc|泳 vịnh|始 thủy|错 thác|表 biểu|左 tả|右 hữu|比 tỉ|情 tình|片 phiến|花 hoa|妻 thê|丈 trượng|夫 phu|馆 quán|更 canh|牛 ngưu|千 thiên|旁 bàng|坏 hoại|门 môn|离 ly|近 cận|路 lộ|周 chu|钟 chung|后 hậu|考 khảo|词 từ|事 sự|头 đầu|慢 mạn|身 thân|体 thể|最 tối|晴 tình|阴 âm|铁 thiết|楼 lâu|希 hy|望 vọng|告 cáo|诉 tố|园 viên|位 vị|姓 tính|眼 nhãn|睛 tinh|跳 khiêu|舞 vũ|杨 dương|像 tượng|鸟 điểu|陈 trần|往 vãng|您 nâm|什 thập|么 ma|哪 na|爸 ba|妈 ma|做 tố|吃 ngật|喝 hát|找 trảo|懂 đổng|啊 a|咖 ca|啡 phi|而 nhi|且 thả|跟 ngân|着 trước|疼 đông
 `.replace(/\n/g, '').split('|').map((s) => s.trim()).filter(Boolean).map((s) => s.split(' ')));
 
 module.exports = { RAD_VI, HV };

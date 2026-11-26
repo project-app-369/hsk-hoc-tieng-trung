@@ -1,6 +1,6 @@
 # Học tiếng Trung HSK
 
-Ứng dụng học tiếng Trung HSK (phát âm, HSK 1, HSK 2) theo dạng PWA: dùng được trên điện thoại, máy tính, cài như app, và mở được khi mất mạng sau lần đầu truy cập.
+Ứng dụng học tiếng Trung HSK (phát âm, HSK 1, HSK 2: 15 bài) theo dạng PWA: dùng được trên điện thoại, máy tính, cài như app, và mở được khi mất mạng sau lần đầu truy cập.
 
 ## Nội dung mỗi bài
 
@@ -57,6 +57,9 @@ Dữ liệu nằm trong thư mục `js/`:
 | `js/data-hsk1a.js` | HSK 1, bài 1–8 |
 | `js/data-hsk1b.js` | HSK 1, bài 9–15 |
 | `js/data-hsk2.js` | HSK 2, bài 1–6 |
+| `js/data-hsk2b.js` | HSK 2, bài 7–9 |
+| `js/data-hsk2c.js` | HSK 2, bài 10–12 |
+| `js/data-hsk2d.js` | HSK 2, bài 13–15 |
 
 Để thêm bài: sao chép một object bài có sẵn, đổi `id`, `n`, tiêu đề, từ vựng, ngữ pháp, câu đọc và câu hỏi. Sau đó tăng phiên bản cache trong `sw.js` (ví dụ `hsk-app-v3`) để người dùng nhận bản mới.
 

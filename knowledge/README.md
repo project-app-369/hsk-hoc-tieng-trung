@@ -1,6 +1,6 @@
 # Kiến thức HSK — mục lục
 
-Tổng: 24 bài.
+Tổng: 33 bài.
 
 ## Phát âm
 
@@ -32,3 +32,12 @@ Tổng: 24 bài.
 - [HSK 2 · Bài 4 — 你穿红色的很好看](h2-04.md) — 19 từ, 3 điểm ngữ pháp
 - [HSK 2 · Bài 5 — 第一次去中国朋友家](h2-05.md) — 19 từ, 3 điểm ngữ pháp
 - [HSK 2 · Bài 6 — 小雪，生日快乐！](h2-06.md) — 19 từ, 3 điểm ngữ pháp
+- [HSK 2 · Bài 7 — 他篮球打得很好](h2-07.md) — 15 từ, 3 điểm ngữ pháp
+- [HSK 2 · Bài 8 — 虽然你忘了，但是我记得](h2-08.md) — 16 từ, 3 điểm ngữ pháp
+- [HSK 2 · Bài 9 — 我去买杯奶茶](h2-09.md) — 13 từ, 4 điểm ngữ pháp
+- [HSK 2 · Bài 10 — 就要考试了](h2-10.md) — 14 từ, 3 điểm ngữ pháp
+- [HSK 2 · Bài 11 — 我最喜欢吃中国菜](h2-11.md) — 13 từ, 3 điểm ngữ pháp
+- [HSK 2 · Bài 12 — 这里比北京冷多了](h2-12.md) — 11 từ, 3 điểm ngữ pháp
+- [HSK 2 · Bài 13 — 我们爱上中文课](h2-13.md) — 13 từ, 3 điểm ngữ pháp
+- [HSK 2 · Bài 14 — 一个人过年多没意思啊](h2-14.md) — 12 từ, 3 điểm ngữ pháp
+- [HSK 2 · Bài 15 — 我想再去一次中国](h2-15.md) — 12 từ, 3 điểm ngữ pháp

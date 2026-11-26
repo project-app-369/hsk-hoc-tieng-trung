@@ -6,7 +6,7 @@ const vm = require('vm');
 
 const root = path.join(__dirname, '..');
 const outDir = path.join(root, 'knowledge');
-const files = ['js/data-ph.js', 'js/data-hsk1a.js', 'js/data-hsk1b.js', 'js/data-hsk2.js'];
+const files = ['js/data-ph.js', 'js/data-hsk1a.js', 'js/data-hsk1b.js', 'js/data-hsk2.js', 'js/data-hsk2b.js', 'js/data-hsk2c.js', 'js/data-hsk2d.js'];
 
 const ctx = { window: {} };
 vm.createContext(ctx);

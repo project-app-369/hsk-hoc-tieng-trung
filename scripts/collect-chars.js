@@ -7,7 +7,7 @@ const vm = require('vm');
 const root = path.join(__dirname, '..');
 const ctx = { window: {} };
 vm.createContext(ctx);
-for (const f of ['js/data-ph.js', 'js/data-hsk1a.js', 'js/data-hsk1b.js', 'js/data-hsk2.js']) {
+for (const f of ['js/data-ph.js', 'js/data-hsk1a.js', 'js/data-hsk1b.js', 'js/data-hsk2.js', 'js/data-hsk2b.js', 'js/data-hsk2c.js', 'js/data-hsk2d.js']) {
   vm.runInContext(fs.readFileSync(path.join(root, f), 'utf8'), ctx);
 }
 let extra = [];
