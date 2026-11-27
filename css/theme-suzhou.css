@@ -1,0 +1,211 @@
+/* ==========================================================
+   HSK App — Theme "Vườn Tô Châu" (苏州园林)
+   Chỉ là lớp giao diện (màu, chất liệu, viền, bóng, phông tiêu đề). Không đổi bố cục hay chức năng.
+   Giấy da ngà, mực nâu đậm, xanh trúc làm màu nhấn, son đỏ cho dấu ấn; khung viền kép như cửa sổ vườn.
+   Nạp sau style.css và soft.css: redefine token để các quy tắc cũ tự phẳng lại, rồi ghi đè vài trạng thái.
+   ========================================================== */
+
+:root {
+  --bg: #f1ead7; --surface: #f8f3e3; --surface-2: #ece3cb; --surface-3: #ddd2b3;
+  --glass: rgba(241, 234, 215, 0.95);
+  --border: rgba(90, 72, 40, 0.2); --border-strong: rgba(90, 72, 40, 0.42);
+  --ink: #2a2117; --ink-2: #4a3e2d; --ink-3: #66593f;
+  --accent: #3f6a2b; --accent-ink: #ffffff; --accent-soft: #dde8c9;
+  --seal: #b3261e; --seal-soft: #f1d9d1;
+  --ok: #2f6b34; --ok-soft: #dbe8cd; --bad: #a3231c; --bad-soft: #f2d8d2;
+  --outline: #cfc4a4; --grid: rgba(90, 72, 40, 0.24);
+  --sh-l: rgba(255, 255, 255, 0.6); --sh-d: rgba(80, 60, 25, 0.35);
+  --edge: rgba(70, 96, 48, 0.5);
+  --face-1: #f8f3e3; --face-2: #f8f3e3;
+  --acc-sh: rgba(63, 106, 43, 0.3);
+  --raise: 0 1px 2px rgba(70, 52, 22, 0.14), 0 8px 18px -10px rgba(70, 52, 22, 0.3);
+  --raise-s: 0 1px 2px rgba(70, 52, 22, 0.13), 0 5px 12px -8px rgba(70, 52, 22, 0.28);
+  --raise-xs: 0 1px 2px rgba(70, 52, 22, 0.16);
+  --raise-up: 0 12px 22px -12px rgba(70, 52, 22, 0.4), 0 1px 2px rgba(70, 52, 22, 0.14);
+  --inset: inset 0 1px 4px rgba(70, 52, 22, 0.22);
+  --inset-s: inset 0 1px 3px rgba(70, 52, 22, 0.2);
+  --inset-xs: inset 0 1px 2px rgba(70, 52, 22, 0.16);
+  --fill-in: inset 0 -2px 0 rgba(0, 0, 0, 0.18);
+  --shadow: var(--raise-s);
+  --shadow-lg: 0 24px 50px -16px rgba(60, 44, 18, 0.5);
+  --serif: "Noto Serif", "Noto Serif SC", Georgia, "Times New Roman", serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #211c15; --surface: #2b251c; --surface-2: #342d22; --surface-3: #41382a;
+    --glass: rgba(33, 28, 21, 0.95);
+    --border: rgba(240, 228, 196, 0.14); --border-strong: rgba(240, 228, 196, 0.3);
+    --ink: #f1e9d3; --ink-2: #d9ceb2; --ink-3: #b0a487;
+    --accent: #a4c97c; --accent-ink: #172209; --accent-soft: #35422a;
+    --seal: #ff9488; --seal-soft: #4a2723;
+    --ok: #a4d18a; --ok-soft: #2c3b24; --bad: #ffa59d; --bad-soft: #4a2420;
+    --outline: #4a4030; --grid: rgba(240, 228, 196, 0.2);
+    --sh-l: rgba(255, 255, 255, 0.05); --sh-d: rgba(0, 0, 0, 0.6);
+    --edge: rgba(164, 201, 124, 0.4);
+    --face-1: #2b251c; --face-2: #2b251c;
+    --acc-sh: rgba(0, 0, 0, 0.45);
+    --raise: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 18px -10px rgba(0, 0, 0, 0.6);
+    --raise-s: 0 1px 2px rgba(0, 0, 0, 0.38), 0 5px 12px -8px rgba(0, 0, 0, 0.55);
+    --raise-xs: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --raise-up: 0 12px 22px -12px rgba(0, 0, 0, 0.7);
+    --inset: inset 0 1px 4px rgba(0, 0, 0, 0.5); --inset-s: inset 0 1px 3px rgba(0, 0, 0, 0.45); --inset-xs: inset 0 1px 2px rgba(0, 0, 0, 0.4);
+    --fill-in: inset 0 -2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 24px 50px -16px rgba(0, 0, 0, 0.8);
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #211c15; --surface: #2b251c; --surface-2: #342d22; --surface-3: #41382a;
+  --glass: rgba(33, 28, 21, 0.95);
+  --border: rgba(240, 228, 196, 0.14); --border-strong: rgba(240, 228, 196, 0.3);
+  --ink: #f1e9d3; --ink-2: #d9ceb2; --ink-3: #b0a487;
+  --accent: #a4c97c; --accent-ink: #172209; --accent-soft: #35422a;
+  --seal: #ff9488; --seal-soft: #4a2723;
+  --ok: #a4d18a; --ok-soft: #2c3b24; --bad: #ffa59d; --bad-soft: #4a2420;
+  --outline: #4a4030; --grid: rgba(240, 228, 196, 0.2);
+  --sh-l: rgba(255, 255, 255, 0.05); --sh-d: rgba(0, 0, 0, 0.6);
+  --edge: rgba(164, 201, 124, 0.4);
+  --face-1: #2b251c; --face-2: #2b251c;
+  --acc-sh: rgba(0, 0, 0, 0.45);
+  --raise: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 18px -10px rgba(0, 0, 0, 0.6);
+  --raise-s: 0 1px 2px rgba(0, 0, 0, 0.38), 0 5px 12px -8px rgba(0, 0, 0, 0.55);
+  --raise-xs: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --raise-up: 0 12px 22px -12px rgba(0, 0, 0, 0.7);
+  --inset: inset 0 1px 4px rgba(0, 0, 0, 0.5); --inset-s: inset 0 1px 3px rgba(0, 0, 0, 0.45); --inset-xs: inset 0 1px 2px rgba(0, 0, 0, 0.4);
+  --fill-in: inset 0 -2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 24px 50px -16px rgba(0, 0, 0, 0.8);
+}
+
+/* ---------- Nền giấy ---------- */
+body {
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(120% 70% at 50% -10%, rgba(255, 255, 255, 0.35), transparent 60%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .35  0 0 0 0 .27  0 0 0 0 .13  0 0 0 .07 0'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>");
+  background-attachment: fixed;
+}
+:root[data-theme="dark"] body { background-image: radial-gradient(120% 70% at 50% -10%, rgba(255, 240, 200, 0.05), transparent 60%); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) body { background-image: radial-gradient(120% 70% at 50% -10%, rgba(255, 240, 200, 0.05), transparent 60%); } }
+
+/* ---------- Tiêu đề chữ có chân ---------- */
+.page-title, .sec-head h2, .lv-head h2, .lesson-head .lesson-vi, .coll-t, .dlg-head h3, .gram h3 { font-family: var(--serif); }
+.page-title { font-weight: 700; letter-spacing: 0; }
+.eyebrow { color: var(--seal); }
+
+/* ---------- Khung và thẻ ---------- */
+.card, .lesson-card, .mini-stat, .char-tile, .stat, .miss { border: 1px solid var(--edge); border-radius: 14px; background: var(--surface); }
+.card { border-radius: 14px; }
+.lesson-card { border-radius: 14px; }
+.hero, .lesson-head, .fc-face { position: relative; background: var(--surface); border: 1px solid var(--edge); border-radius: 14px; box-shadow: var(--raise-s); }
+.hero::before, .lesson-head::before, .fc-face::before {
+  content: ""; position: absolute; inset: 5px; border: 1px solid var(--edge); border-radius: 9px; pointer-events: none; opacity: 0.75;
+}
+.stat, .miss { background: var(--surface-2); box-shadow: none; border-color: var(--border); }
+.vrow { border-bottom-color: var(--border); }
+.num { border-radius: 12px; box-shadow: none; }
+
+/* ---------- Thanh trên và điều hướng ---------- */
+.topbar { background: var(--glass); border-bottom: 1px solid var(--edge); box-shadow: none; }
+.logo { border-radius: 10px; box-shadow: none; background: linear-gradient(140deg, #3f6a2b, #1f3d17); }
+.tabbar { background: var(--bg); border: 0; border-top: 1px solid var(--edge); border-radius: 0; box-shadow: none; left: 0; right: 0; bottom: 0; padding: 6px 8px calc(6px + env(safe-area-inset-bottom, 0px)); }
+.tabbar a { border-radius: 12px; color: var(--ink-3); }
+.tabbar a[aria-current="page"] { background: transparent; box-shadow: none; color: var(--accent); }
+.tabbar a[aria-current="page"] .ti::after { content: ""; display: block; width: 22px; height: 3px; border-radius: 2px; background: var(--accent); margin: 1px auto -4px; }
+@media (min-width: 900px) {
+  .tabbar { left: 20px; bottom: 16px; border: 1px solid var(--edge); border-radius: 14px; background: var(--surface); box-shadow: var(--raise-s); padding: 12px 10px; }
+  .tabbar a[aria-current="page"] { background: var(--accent-soft); }
+  .tabbar a[aria-current="page"] .ti::after { display: none; }
+}
+.side-link { background: var(--surface); border: 1px solid var(--edge); border-radius: 12px; box-shadow: none; }
+.side-link[aria-current="page"] { background: var(--accent); color: var(--accent-ink); border-color: transparent; box-shadow: none; }
+.side-link[aria-current="page"] .sl-ic, .side-link[aria-current="page"] .sl-tx { color: var(--accent-ink); }
+.side-link[aria-current="page"] .sl-dot { background: var(--accent-ink); }
+@media (min-width: 900px) { .side-link { border-color: transparent; background: transparent; } .side-link:hover { background: var(--surface-2); } }
+
+/* ---------- Nút ---------- */
+.btn { background: var(--surface); color: var(--ink); border: 1px solid var(--border-strong); border-radius: 12px; box-shadow: none; }
+.btn:active { box-shadow: none; transform: translateY(1px) scale(0.98); }
+.btn-primary, .btn-install { background: var(--accent); color: var(--accent-ink); border-color: transparent; box-shadow: 0 2px 0 rgba(0, 0, 0, 0.28); font-weight: 700; }
+.btn-primary:active, .btn-install:active { box-shadow: none; }
+.btn-tonal { background: var(--accent-soft); color: var(--accent); border-color: transparent; box-shadow: none; }
+.btn-ok { background: var(--ok-soft); color: var(--ok); border-color: transparent; box-shadow: none; }
+.btn-danger { background: var(--bad-soft); color: var(--bad); border-color: transparent; box-shadow: none; }
+.btn-ghost { background: transparent; border-color: transparent; }
+.btn-install { border-radius: 12px; }
+.iconbtn { background: var(--surface); border: 1px solid var(--border-strong); border-radius: 12px; box-shadow: none; }
+.speak { background: var(--surface); border: 1px solid var(--border-strong); border-radius: 50%; box-shadow: none; color: var(--accent); }
+.speak.tonal { background: var(--accent-soft); }
+.done-btn.btn-ok { background: var(--ok-soft); color: var(--ok); box-shadow: none; }
+.done-bar .btn { border-radius: 12px; }
+
+/* ---------- Form ---------- */
+.seg { background: var(--surface); border: 1px solid var(--edge); border-radius: 12px; box-shadow: none; padding: 3px; gap: 2px; }
+.seg button { border-radius: 9px; color: var(--ink-2); }
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); box-shadow: none; }
+.chip { background: var(--surface); border: 1px solid var(--border-strong); border-radius: 12px; box-shadow: none; }
+.chip[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: transparent; box-shadow: none; }
+.search, .select, .auth-form input { background: var(--surface); border: 1px solid var(--border-strong); border-radius: 12px; box-shadow: none; }
+.search:focus, .select:focus, .auth-form input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.sw-track { background: var(--surface-3); box-shadow: none; }
+.sw-track::after { background: #fff; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35); }
+.switch input:checked + .sw-track { background: var(--accent); box-shadow: none; }
+.switch input:checked + .sw-track::after { background: #fff; }
+.pill { background: var(--accent-soft); color: var(--accent); box-shadow: none; }
+.tag, .v-pos { background: var(--surface-2); border: 1px solid var(--border); box-shadow: none; }
+.tick, .tick svg { color: var(--ok); }
+.tick { background: var(--ok-soft); box-shadow: none; }
+.bar { background: var(--surface-2); border: 1px solid var(--border); box-shadow: none; height: 10px; }
+.bar > i { background: var(--accent); box-shadow: none; }
+.dots i { background: var(--surface-3); box-shadow: none; }
+.dots i.on { background: var(--accent); }
+.ring { filter: none; }
+.ring-bg { stroke: var(--surface-3); }
+.wk-bar { background: var(--surface-3); box-shadow: none; }
+.wk-bar i { background: var(--accent); }
+
+/* ---------- Nội dung ---------- */
+.formula, .sc-note, .stk-ic, .note-n, .sc-n { background: var(--accent-soft); box-shadow: none; }
+.formula { color: var(--accent); border-radius: 10px; }
+.sc-note { background: var(--surface-2); border-radius: 10px; }
+.syl-chip, .char-chip, .word-chip, .lesson-link { background: var(--surface); border: 1px solid var(--border-strong); border-radius: 12px; box-shadow: none; }
+.char-tile.done { background: var(--ok-soft); border-color: var(--ok); box-shadow: none; }
+.tok:hover, .tok:focus-visible { background: var(--accent-soft); box-shadow: none; }
+.dlg-bubble { background: var(--surface-2); box-shadow: none; border: 1px solid var(--border); border-radius: 14px 14px 14px 4px; }
+.dlg-line.side-b .dlg-bubble { background: var(--accent-soft); box-shadow: none; border-color: var(--border); border-radius: 14px 14px 4px 14px; }
+.vmain:hover { background: var(--surface-2); box-shadow: none; }
+
+/* ---------- Câu hỏi ---------- */
+.opt { background: var(--surface); border: 1px solid var(--border-strong); border-radius: 12px; box-shadow: none; }
+.opt.correct { background: var(--ok-soft); color: var(--ok); border-color: var(--ok); box-shadow: none; }
+.opt.wrong { background: var(--bad-soft); color: var(--bad); border-color: var(--bad); box-shadow: none; }
+.feedback { box-shadow: none; }
+.feedback.ok { background: var(--ok-soft); color: var(--ok); }
+.feedback.bad { background: var(--bad-soft); color: var(--bad); }
+
+/* ---------- Hộp thoại ---------- */
+dialog.sheet, dialog#dlg, .auth-dlg { background: var(--surface); border: 1px solid var(--edge); }
+dialog.sheet { border-radius: 18px 18px 0 0; }
+dialog::backdrop { background: rgba(35, 26, 12, 0.5); }
+.sh-bar { background: var(--glass); box-shadow: none; border-bottom: 1px solid var(--border); }
+.snd-chip:not(.playing), .tone-btn:not(.playing):not(.off) { background: var(--surface); border: 1px solid var(--border-strong); border-radius: 12px; box-shadow: none; }
+.mx-wrap { box-shadow: none; border: 1px solid var(--border); border-radius: 12px; }
+
+/* ---------- Hover (máy có chuột): nhấc nhẹ, không đổ bóng nặng ---------- */
+@media (hover: hover) and (pointer: fine) {
+  .lesson-card:hover, .mini-stat:hover, .char-tile:hover { transform: translateY(-2px); box-shadow: var(--raise-up); border-color: var(--edge); }
+  .btn:not(:disabled):hover, .iconbtn:hover, .speak:hover, .chip:hover { box-shadow: none; border-color: var(--accent); }
+  .btn-primary:not(:disabled):hover { box-shadow: 0 3px 0 rgba(0, 0, 0, 0.28); }
+  .tabbar a:not([aria-current="page"]):hover { background: var(--surface-2); box-shadow: none; }
+}
+
+/* ---------- Họa tiết: tre ở khung chào, mai ở thẻ flashcard (chỉ để trang trí) ---------- */
+.hero::after, .fc-face::after { content: ""; position: absolute; pointer-events: none; background-repeat: no-repeat; background-size: contain; }
+.hero::after {
+  top: 6px; right: 8px; width: 120px; height: 84px; opacity: 0.22;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 84'><g fill='%233f6a2b'><path d='M118 2C98 6 84 16 76 30c18-2 34-12 42-28z'/><path d='M104 30C88 32 76 40 70 52c15 0 28-8 34-22z'/><path d='M92 8C80 12 72 20 68 30c12-2 21-9 24-22z'/><path d='M84 50C72 52 64 58 60 68c11 0 19-6 24-18z'/></g><path d='M118 2C96 22 74 44 52 82' stroke='%233f6a2b' stroke-width='2' fill='none'/></svg>");
+}
+.fc-face::after {
+  bottom: 8px; right: 10px; width: 92px; height: 74px; opacity: 0.35;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 92 74'><path d='M90 72C70 60 56 46 40 30 30 20 22 14 10 10' stroke='%235a4630' stroke-width='3' fill='none' stroke-linecap='round'/><path d='M62 50C66 42 72 38 80 36' stroke='%235a4630' stroke-width='2.5' fill='none' stroke-linecap='round'/><g fill='%23c4524a'><circle cx='12' cy='11' r='6'/><circle cx='34' cy='26' r='6.5'/><circle cx='56' cy='42' r='6'/><circle cx='80' cy='36' r='6.5'/></g><g fill='%23f6d27a'><circle cx='12' cy='11' r='1.8'/><circle cx='34' cy='26' r='1.8'/><circle cx='56' cy='42' r='1.8'/><circle cx='80' cy='36' r='1.8'/></g></svg>");
+}
+.fc-face > * { position: relative; z-index: 1; }
+.fc-back::after { display: none; }
