@@ -208,4 +208,6 @@ dialog::backdrop { background: rgba(35, 26, 12, 0.5); }
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 92 74'><path d='M90 72C70 60 56 46 40 30 30 20 22 14 10 10' stroke='%235a4630' stroke-width='3' fill='none' stroke-linecap='round'/><path d='M62 50C66 42 72 38 80 36' stroke='%235a4630' stroke-width='2.5' fill='none' stroke-linecap='round'/><g fill='%23c4524a'><circle cx='12' cy='11' r='6'/><circle cx='34' cy='26' r='6.5'/><circle cx='56' cy='42' r='6'/><circle cx='80' cy='36' r='6.5'/></g><g fill='%23f6d27a'><circle cx='12' cy='11' r='1.8'/><circle cx='34' cy='26' r='1.8'/><circle cx='56' cy='42' r='1.8'/><circle cx='80' cy='36' r='1.8'/></g></svg>");
 }
 .fc-face > * { position: relative; z-index: 1; }
+/* Hai mặt thẻ phải chồng khít nhau: giữ absolute + inset 0 (khối .hero/.lesson-head ở trên đặt relative) */
+.fc-face { position: absolute; inset: 0; }
 .fc-back::after { display: none; }
