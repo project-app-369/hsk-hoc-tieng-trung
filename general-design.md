@@ -54,7 +54,7 @@ Thang chữ thực tế của app (px, gốc `body` = 16px, `line-height` 1.55):
 
 Bài học rút ra:
 
-1. **Control là `<button>` không tự kế thừa phông** (`button { font: inherit }` có, nhưng nếu gán `font-family` cho phần tử cha thì nút vẫn phải được gán lại). Với app có chữ Hán/ngôn ngữ đặc biệt, gán rõ `font-family` cho lớp control (`.opt { font-family: var(--hanzi) }`).
+1. **Control kế thừa phông của `body` (`--text`), không phải phông của khối chứa nó.** Chữ Hán trong nút nên rơi về phông hệ thống sai kiểu. Với app có chữ Hán/ngôn ngữ đặc biệt, gán rõ `font-family` cho lớp control (`.opt { font-family: var(--hanzi) }`).
 2. **Nội dung hỗn hợp cần cỡ theo loại.** Chữ Hán cần lớn hơn chữ Latin cùng độ đọc được. Đừng đặt một cỡ chung; để JS gắn lớp theo nội dung rồi CSS chọn cỡ:
 
    ```js
