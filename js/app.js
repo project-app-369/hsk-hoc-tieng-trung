@@ -695,7 +695,22 @@
     themeBtn.setAttribute('aria-label', dark ? 'Chuyển sang giao diện sáng' : 'Chuyển sang giao diện tối');
     themeBtn.setAttribute('title', dark ? 'Giao diện sáng' : 'Giao diện tối');
   }
-  themeBtn.addEventListener('click', () => { H.applyTheme(H.themeIsDark() ? 'light' : 'dark'); paintThemeBtn(); });
+  themeBtn.addEventListener('click', () => {
+    const swap = () => { H.applyTheme(H.themeIsDark() ? 'light' : 'dark'); paintThemeBtn(); };
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!document.startViewTransition || reduce) return swap();
+    // Hiệu ứng lan tỏa hình tròn từ vị trí nút
+    const b = themeBtn.getBoundingClientRect();
+    const x = b.left + b.width / 2, y = b.top + b.height / 2;
+    const r = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
+    const t = document.startViewTransition(swap);
+    t.ready.then(() => {
+      document.documentElement.animate(
+        { clipPath: ['circle(0px at ' + x + 'px ' + y + 'px)', 'circle(' + r + 'px at ' + x + 'px ' + y + 'px)'] },
+        { duration: 650, easing: 'cubic-bezier(.4,0,.2,1)', pseudoElement: '::view-transition-new(root)' }
+      );
+    }).catch(() => {});
+  });
   paintThemeBtn();
 
   const installBtn = $('#installBtn');
