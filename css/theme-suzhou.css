@@ -211,3 +211,8 @@ dialog::backdrop { background: rgba(35, 26, 12, 0.5); }
 /* Hai mặt thẻ phải chồng khít nhau: giữ absolute + inset 0 (khối .hero/.lesson-head ở trên đặt relative) */
 .fc-face { position: absolute; inset: 0; }
 .fc-back::after { display: none; }
+
+/* Chuyển theme sáng/tối: lan tỏa tròn từ nút (View Transitions) */
+::view-transition-old(root), ::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+::view-transition-old(root) { z-index: 1; }
+::view-transition-new(root) { z-index: 2; }
