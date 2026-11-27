@@ -1,9 +1,10 @@
 // Service worker: cache app shell để mở được khi mất mạng sau lần đầu truy cập.
-const CACHE = 'hsk-app-v14';
+const CACHE = 'hsk-app-v15';
 const SHELL = [
   './',
   './index.html',
   './css/style.css',
+  './css/soft.css',
   './js/core.js',
   './js/pinyin.js',
   './js/sheet.js',
