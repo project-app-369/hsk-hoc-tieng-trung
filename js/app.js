@@ -242,7 +242,7 @@
   function quizHtml(l) {
     return '<div class="grid">' + l.quiz.map((q, i) =>
       '<div class="card q-card" data-qcard="' + i + '"><p class="q-text">' + esc(q.q) + '</p><div class="opts">' +
-      q.o.map((opt, k) => '<button class="opt" type="button" data-lid="' + esc(l.id) + '" data-qi="' + i + '" data-k="' + k + '">' + esc(opt) + '</button>').join('') +
+      q.o.map((opt, k) => '<button class="opt' + (/[一-鿿]/.test(opt) ? ' zh' : '') + '" type="button" data-lid="' + esc(l.id) + '" data-qi="' + i + '" data-k="' + k + '">' + esc(opt) + '</button>').join('') +
       '</div><div class="feedback" hidden></div></div>').join('') + '</div>';
   }
   const SEC_HINT = {
@@ -533,7 +533,7 @@
     const q = s.items[s.i]; s.answered = false;
     body.innerHTML = '<div class="fc-progress"><div class="bar"><i style="width:' + Math.round(s.i / s.items.length * 100) + '%"></i></div><span class="small muted">Câu ' + (s.i + 1) + ' / ' + s.items.length + '</span></div>' +
       '<div class="card q-card"><p class="q-text">' + esc(q.q) + '</p><div class="opts">' +
-      q.o.map((o, k) => '<button class="opt" type="button" data-k="' + k + '">' + esc(o) + '</button>').join('') + '</div>' +
+      q.o.map((o, k) => '<button class="opt' + (/[一-鿿]/.test(o) ? ' zh' : '') + '" type="button" data-k="' + k + '">' + esc(o) + '</button>').join('') + '</div>' +
       '<div class="feedback" id="rvFb" hidden></div><div class="row-end" id="rvNext" hidden><button class="btn btn-primary" id="rvNextBtn" type="button">' + (s.i + 1 === s.items.length ? 'Xem kết quả' : 'Câu tiếp theo') + ICONS.chevR + '</button></div></div>';
     $$('#rvBody .opt').forEach((b) => b.addEventListener('click', () => answerReview(Number(b.getAttribute('data-k')))));
     $('#rvNextBtn').addEventListener('click', () => { s.i += 1; drawReview(); });
