@@ -44,6 +44,7 @@
     currentView = name;
     setNav(name === 'lesson' ? 'lessons' : name);
     if (name === 'lesson') viewLesson(parts[1], parts[2]);
+    else if (name === 'collect') viewCollect();
     else if (name === 'flash') viewFlash();
     else if (name === 'review') viewReview();
     else if (name === 'progress') viewProgress();
@@ -220,20 +221,22 @@
         '<div class="sc-vi">' + esc(s.vi) + '</div>' +
         (s.note ? '<div class="sc-note">' + esc(s.note) + '</div>' : '') + '</article>').join('') + '</div>';
   }
+  const dlgPlay = (d) => '<button class="btn btn-sm dlg-play" type="button" data-seq="' + esc(JSON.stringify(d.l.map((ln) => ln[2]))) + '">' + ICONS.speaker + '<span>Nghe cả đoạn</span></button>';
+  function dlgLines(d, lid) {
+    const order = [];
+    d.l.forEach((ln) => { if (order.indexOf(ln[0]) < 0) order.push(ln[0]); });
+    return d.l.map((ln) => '<div class="dlg-line side-' + (order.indexOf(ln[0]) % 2 ? 'b' : 'a') + '">' +
+      '<div class="dlg-who"><span class="dlg-name">' + esc(ln[0]) + '</span><span class="dlg-npy">' + esc(ln[1]) + '</span></div>' +
+      '<div class="dlg-bubble"><div class="dlg-row"><div class="sc-zh">' + H.sentenceHtml(ln[2], lid) + '</div>' + speakBtn(ln[2], 'Nghe câu') + '</div>' +
+      '<div class="sc-py">' + esc(ln[3]) + '</div><div class="sc-vi">' + esc(ln[4]) + '</div></div></div>').join('');
+  }
   function dialogueHtml(l) {
     const nLines = l.dialogues.reduce((a, d) => a + d.l.length, 0);
     return '<div class="toolbar-row">' + switchHtml('sPy', 'Pinyin', !ui.hidePy) + switchHtml('sVi', 'Nghĩa', !ui.hideVi) +
       '<span class="pill" style="margin-left:auto">' + nLines + ' câu</span></div>' +
       '<p class="muted small hint-line">' + ICONS.bulb + '<span>Chạm vào từng từ trong câu để tra nghĩa. Nút “Nghe cả đoạn” đọc lần lượt các câu.</span></p>' +
       '<div class="dlg-list' + (ui.hidePy ? ' hide-py' : '') + (ui.hideVi ? ' hide-vi' : '') + '" id="sentList">' + l.dialogues.map((d) => {
-        const order = [];
-        d.l.forEach((ln) => { if (order.indexOf(ln[0]) < 0) order.push(ln[0]); });
-        return '<section class="card dlg"><div class="dlg-head"><h3>' + esc(d.t) + '</h3>' +
-          '<button class="btn btn-sm dlg-play" type="button" data-seq="' + esc(JSON.stringify(d.l.map((ln) => ln[2]))) + '">' + ICONS.speaker + '<span>Nghe cả đoạn</span></button></div>' +
-          d.l.map((ln) => '<div class="dlg-line side-' + (order.indexOf(ln[0]) % 2 ? 'b' : 'a') + '">' +
-            '<div class="dlg-who"><span class="dlg-name">' + esc(ln[0]) + '</span><span class="dlg-npy">' + esc(ln[1]) + '</span></div>' +
-            '<div class="dlg-bubble"><div class="dlg-row"><div class="sc-zh">' + H.sentenceHtml(ln[2], l.id) + '</div>' + speakBtn(ln[2], 'Nghe câu') + '</div>' +
-            '<div class="sc-py">' + esc(ln[3]) + '</div><div class="sc-vi">' + esc(ln[4]) + '</div></div></div>').join('') + '</section>';
+        return '<section class="card dlg"><div class="dlg-head"><h3>' + esc(d.t) + '</h3>' + dlgPlay(d) + '</div>' + dlgLines(d, l.id) + '</section>';
       }).join('') + '</div>';
   }
   function quizHtml(l) {
@@ -545,6 +548,62 @@
     fb.textContent = ok ? 'Chính xác!' : 'Đáp án đúng: ' + q.o[q.a] + (q.exp ? '. ' + q.exp : '');
     $('#rvNext').hidden = false;
     recordAnswer({ q: q.q, o: q.o, a: q.a, exp: q.exp || '' }, ok);
+  }
+
+  /* ======================================================
+     MẪU CÂU: gom hội thoại và mẫu ngữ pháp của mọi bài
+     ====================================================== */
+  const coll = { tab: 'dlg', lv: 'ALL', q: '' };
+  const collLessons = () => LESSONS.filter((l) => l.level !== 'PH' && (coll.lv === 'ALL' || l.level === coll.lv));
+  const norm = (t) => String(t || '').toLowerCase();
+  function viewCollect() {
+    const nDlg = LESSONS.reduce((a, l) => a + l.dialogues.length, 0);
+    const nPat = LESSONS.reduce((a, l) => a + (l.level === 'PH' ? 0 : l.grammar.length), 0);
+    app.innerHTML =
+      '<h1 class="page-title">Hội thoại và mẫu câu</h1>' +
+      '<p class="page-sub">Tất cả đoạn hội thoại và mẫu ngữ pháp trong các bài HSK, gom một chỗ để ôn lại.</p>' +
+      '<div class="toolbar">' +
+        '<label class="search-box">' + ICONS.search + '<input class="search" id="cq" type="search" placeholder="Tìm chữ Hán, pinyin hoặc nghĩa…" aria-label="Tìm hội thoại và mẫu câu" value="' + esc(coll.q) + '"></label>' +
+      '</div>' +
+      '<div class="toolbar">' +
+        '<div class="seg" id="cTab" role="group" aria-label="Loại nội dung">' +
+          '<button type="button" data-t="dlg" aria-pressed="' + (coll.tab === 'dlg') + '">Hội thoại (' + nDlg + ')</button>' +
+          '<button type="button" data-t="pat" aria-pressed="' + (coll.tab === 'pat') + '">Mẫu câu (' + nPat + ')</button></div>' +
+        '<div class="seg" id="cLv" role="group" aria-label="Cấp độ">' +
+          [['ALL', 'Tất cả'], ['HSK1', 'HSK 1'], ['HSK2', 'HSK 2']].map((c) => '<button type="button" data-l="' + c[0] + '" aria-pressed="' + (coll.lv === c[0]) + '">' + c[1] + '</button>').join('') + '</div>' +
+      '</div>' +
+      '<div id="cList"></div>';
+    const paint = () => {
+      const q = norm(coll.q).split(/\s+/).filter(Boolean);
+      const hit = (txt) => { const h = norm(txt); return q.every((w) => h.indexOf(w) >= 0); };
+      let html = '';
+      collLessons().forEach((l) => {
+        let items = '';
+        if (coll.tab === 'dlg') {
+          l.dialogues.forEach((d) => {
+            if (q.length && !hit(d.t + ' ' + d.l.map((ln) => ln.join(' ')).join(' '))) return;
+            items += '<details class="card coll-item"><summary><span class="num sm ' + numCls(l) + '">' + esc(H.lessonTag(l)) + '</span>' +
+              '<span class="coll-sum"><span class="lc-lv">' + esc(H.lessonTitle(l)) + '</span><span class="coll-t">' + esc(d.t) + '</span>' +
+              '<span class="coll-pv">' + esc(d.l[0][2]) + '</span></span></summary>' +
+              '<div class="coll-body">' + dlgPlay(d) + dlgLines(d, l.id) +
+              '<div class="row-end"><a class="btn btn-sm" href="#/lesson/' + esc(l.id) + '/dialogue">Mở bài học</a></div></div></details>';
+          });
+        } else {
+          l.grammar.forEach((g) => {
+            if (q.length && !hit(g.t + ' ' + g.f + ' ' + g.e + ' ' + g.ex.map((e) => e.join(' ')).join(' '))) return;
+            items += '<div class="card gram"><div class="lc-lv">' + esc(H.lessonTitle(l)) + '</div><h3>' + esc(g.t) + '</h3><div class="formula">' + esc(g.f) + '</div>' +
+              '<p style="margin:6px 0 0">' + esc(g.e) + '</p>' + g.ex.map((e) => exRow(e, l.id)).join('') +
+              '<div class="row-end"><a class="btn btn-sm" href="#/lesson/' + esc(l.id) + '/grammar">Mở bài học</a></div></div>';
+          });
+        }
+        if (items) html += '<section class="lv-group"><div class="lv-head"><h2>' + esc(H.lessonTitle(l)) + ' · ' + esc(l.zh) + '</h2></div><div class="grid coll-grid">' + items + '</div></section>';
+      });
+      $('#cList').innerHTML = html || '<div class="empty card">Không có nội dung nào khớp. Thử từ khóa khác.</div>';
+    };
+    $('#cq').addEventListener('input', (e) => { coll.q = e.target.value.trim(); paint(); });
+    $('#cTab').addEventListener('click', (e) => { const b = e.target.closest('[data-t]'); if (!b) return; coll.tab = b.getAttribute('data-t'); viewCollect(); });
+    $('#cLv').addEventListener('click', (e) => { const b = e.target.closest('[data-l]'); if (!b) return; coll.lv = b.getAttribute('data-l'); viewCollect(); });
+    paint();
   }
 
   /* ======================================================
