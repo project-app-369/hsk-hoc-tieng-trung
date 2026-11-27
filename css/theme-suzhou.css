@@ -216,3 +216,6 @@ dialog::backdrop { background: rgba(35, 26, 12, 0.5); }
 ::view-transition-old(root), ::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
 ::view-transition-old(root) { z-index: 1; }
 ::view-transition-new(root) { z-index: 2; }
+
+/* Đáp án trắc nghiệm (button) không tự kế thừa phông → dùng bộ phông có chữ Hán Khải */
+.opt { font-family: var(--hanzi); }
