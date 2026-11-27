@@ -2,7 +2,7 @@
 const fs = require('fs'), vm = require('vm'), path = require('path');
 const root = path.join(__dirname, '..');
 const win = { LESSONS: [] }; vm.createContext(win); win.window = win;
-for (const f of ['data-ph', 'data-hsk1a', 'data-hsk1b', 'data-hsk2', 'data-hsk2b', 'data-hsk2c', 'data-hsk2d', 'data-extra'])
+for (const f of ['data-ph', 'data-hsk1a', 'data-hsk1b', 'data-hsk2', 'data-hsk2b', 'data-hsk2c', 'data-hsk2d', 'data-extra', 'data-dialogues'])
   vm.runInContext(fs.readFileSync(path.join(root, 'js', f + '.js'), 'utf8'), win);
 const info = JSON.parse(fs.readFileSync(path.join(root, 'data/hanzi-info.json'), 'utf8'));
 const MARK = { ā:'a',á:'a',ǎ:'a',à:'a',ē:'e',é:'e',ě:'e',è:'e',ī:'i',í:'i',ǐ:'i',ì:'i',ō:'o',ó:'o',ǒ:'o',ò:'o',ū:'u',ú:'u',ǔ:'u',ù:'u',ǖ:'ü',ǘ:'ü',ǚ:'ü',ǜ:'ü' };
@@ -28,7 +28,7 @@ function sylls(py) { // tách pinyin thành âm tiết; ’ và khoảng trắng
 const problems = [];
 const say = (loc, msg) => problems.push(loc + ': ' + msg);
 const clean = (py) => py.toLowerCase().replace(/[^a-zāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜüv]/g, '').replace(/v/g, 'ü');
-const FL = { '一': ['yī','yí','yì','yi'], '不': ['bù','bú','bu'], '了': ['le','liǎo','liao'], '的': ['de','dí','dì','dī'], '得': ['de','dé','děi'], '地': ['de','dì'], '着': ['zhe','zháo','zhuó'], '么': ['me','ma'], '们': ['men'], '子': ['zi','zǐ'], '吗': ['ma','mǎ'], '吧': ['ba','bā'], '呢': ['ne','ní'], '啊': ['a','ya','na','wa','á','ā'], '呀': ['ya','yā','a'], '儿': ['r','er','ér'], '喂': ['wèi','wéi'], '谁': ['shéi','shuí'], '便': ['pián','biàn'], '觉': ['jiào','jué'], '长': ['cháng','zhǎng'], '好': ['hǎo','hào','hāo'], '教': ['jiāo','jiào'], '会': ['huì','huǐ','kuài'], '妮': ['nī','ní'] };
+const FL = { '一': ['yī','yí','yì','yi','yāo','yao'], '不': ['bù','bú','bu'], '了': ['le','liǎo','liao'], '的': ['de','dí','dì','dī'], '得': ['de','dé','děi'], '地': ['de','dì'], '着': ['zhe','zháo','zhuó'], '么': ['me','ma'], '们': ['men'], '子': ['zi','zǐ'], '吗': ['ma','mǎ'], '吧': ['ba','bā'], '呢': ['ne','ní'], '啊': ['a','ya','na','wa','á','ā'], '呀': ['ya','yā','a'], '儿': ['r','er','ér'], '喂': ['wèi','wéi'], '谁': ['shéi','shuí'], '便': ['pián','biàn'], '觉': ['jiào','jué'], '长': ['cháng','zhǎng'], '好': ['hǎo','hào','hāo'], '教': ['jiāo','jiào'], '会': ['huì','huǐ','kuài'], '妮': ['nī','ní'], '兴': ['xīng','xìng'], '只': ['zhī','zhǐ'], '都': ['dōu','dū'] };
 function cands(c, strict) {
   const e = info[c]; let list = [...(FL[c] || []), ...((e && e.py) || [])].map((x) => x.toLowerCase());
   if (!strict) list = list.map(base);
@@ -51,7 +51,9 @@ function align(han, str, strict) {
 function checkPair(loc, zh, py) {
   const han = [...zh].filter(isHan);
   if (!han.length) return;
-  const raw = clean(py); const strictStr = raw; const baseStr = base(raw);
+  let pyc = py; // chữ Latin trong câu Hán (vd. AI) có mặt nguyên văn trong pinyin
+  for (const m of zh.match(/[A-Za-z]+/g) || []) pyc = pyc.replace(new RegExp(m, 'i'), ' ');
+  const raw = clean(pyc); const strictStr = raw; const baseStr = base(raw);
   if (align(han, strictStr, true)) return;
   if (align(han, baseStr, false)) return say(loc, `SAI THANH | ${zh} | ${py}`);
   say(loc, `SAI ÂM | ${zh} | ${py}`);
@@ -65,7 +67,15 @@ for (const l of win.LESSONS) {
   for (const e of sent) { nS++; checkPair(l.id + ' câu', e[0], e[1]); if (!e[2]) say(l.id, 'thiếu nghĩa câu ' + e[0]); }
 }
 for (const w of win.EXTRA_WORDS) { nV++; checkPair('extra', w[0], w[1]); }
-console.log('từ:', nV, '| câu:', nS, '| lỗi:', problems.length);
+let nD = 0;
+for (const [id, secs] of Object.entries(win.DIALOGUES || {})) {
+  if (!win.LESSONS.some((l) => l.id === id)) say(id, 'hội thoại cho bài không tồn tại');
+  for (const sec of secs) for (const ln of sec.l) {
+    nD++; checkPair(id + ' hội thoại', ln[0], ln[1]); checkPair(id + ' hội thoại', ln[2], ln[3]);
+    if (!ln[4] || ln[4].length < 2) say(id, 'thiếu nghĩa hội thoại ' + ln[2]);
+  }
+}
+console.log('từ:', nV, '| câu:', nS, '| câu hội thoại:', nD, '| lỗi:', problems.length);
 console.log(problems.join('\n'));
 
 // Nhất quán chéo: cùng chữ nhưng khác pinyin / khác nghĩa giữa các bài, và câu trùng khác bản dịch

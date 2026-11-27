@@ -7,7 +7,7 @@
   const DAY = 86400000;
   const INTERVALS = [0, 1, 3, 7, 14, 30]; // ngày đến lần ôn kế tiếp theo hộp (Leitner)
   const db = () => H.db();
-  const SEC_ICON = { vocab: 'list', pron: 'speaker', writing: 'pen', grammar: 'bulb', examples: 'book', quiz: 'check' };
+  const SEC_ICON = { vocab: 'list', pron: 'speaker', writing: 'pen', grammar: 'bulb', dialogue: 'chat', examples: 'book', quiz: 'check' };
 
   /* ---------- trạng thái giao diện (không lưu) ---------- */
   const ui = { hidePy: false, hideVi: false, exFilter: { lid: '', tag: 'ALL' } };
@@ -74,14 +74,15 @@
   }
   function lessonCard(l) {
     const seen = db().seen[l.id] || [];
-    const pct = Math.round(seen.length / SECTIONS.length * 100);
+    const secs = H.secsOf(l);
+    const pct = Math.round(seen.length / secs.length * 100);
     const done = !!db().done[l.id];
-    const dots = SECTIONS.map((s) => '<i class="' + (seen.indexOf(s.id) >= 0 ? 'on' : '') + '"></i>').join('');
+    const dots = secs.map((s) => '<i class="' + (seen.indexOf(s.id) >= 0 ? 'on' : '') + '"></i>').join('');
     return '<a class="lesson-card" href="#/lesson/' + esc(l.id) + '/vocab">' +
       '<div class="num ' + numCls(l) + '">' + esc(H.lessonTag(l)) + '</div>' +
       '<div class="lc-body"><div class="lc-lv">' + esc(H.lessonTitle(l)) + '</div>' +
       '<div class="lc-zh">' + esc(l.zh) + '</div><div class="lc-vi">' + esc(l.vi) + '</div>' +
-      '<div class="dots" role="img" aria-label="Đã xem ' + seen.length + '/' + SECTIONS.length + ' phần">' + dots + '</div></div>' +
+      '<div class="dots" role="img" aria-label="Đã xem ' + seen.length + '/' + secs.length + ' phần">' + dots + '</div></div>' +
       '<div class="lc-end">' + (done ? '<span class="tick">' + ICONS.check + '<span>Xong</span></span>' : '<span class="pct">' + pct + '%</span>') + '</div></a>';
   }
   function viewLessons() {
@@ -219,6 +220,22 @@
         '<div class="sc-vi">' + esc(s.vi) + '</div>' +
         (s.note ? '<div class="sc-note">' + esc(s.note) + '</div>' : '') + '</article>').join('') + '</div>';
   }
+  function dialogueHtml(l) {
+    const nLines = l.dialogues.reduce((a, d) => a + d.l.length, 0);
+    return '<div class="toolbar-row">' + switchHtml('sPy', 'Pinyin', !ui.hidePy) + switchHtml('sVi', 'Nghĩa', !ui.hideVi) +
+      '<span class="pill" style="margin-left:auto">' + nLines + ' câu</span></div>' +
+      '<p class="muted small hint-line">' + ICONS.bulb + '<span>Chạm vào từng từ trong câu để tra nghĩa. Nút “Nghe cả đoạn” đọc lần lượt các câu.</span></p>' +
+      '<div class="dlg-list' + (ui.hidePy ? ' hide-py' : '') + (ui.hideVi ? ' hide-vi' : '') + '" id="sentList">' + l.dialogues.map((d) => {
+        const order = [];
+        d.l.forEach((ln) => { if (order.indexOf(ln[0]) < 0) order.push(ln[0]); });
+        return '<section class="card dlg"><div class="dlg-head"><h3>' + esc(d.t) + '</h3>' +
+          '<button class="btn btn-sm dlg-play" type="button" data-seq="' + esc(JSON.stringify(d.l.map((ln) => ln[2]))) + '">' + ICONS.speaker + '<span>Nghe cả đoạn</span></button></div>' +
+          d.l.map((ln) => '<div class="dlg-line side-' + (order.indexOf(ln[0]) % 2 ? 'b' : 'a') + '">' +
+            '<div class="dlg-who"><span class="dlg-name">' + esc(ln[0]) + '</span><span class="dlg-npy">' + esc(ln[1]) + '</span></div>' +
+            '<div class="dlg-bubble"><div class="dlg-row"><div class="sc-zh">' + H.sentenceHtml(ln[2], l.id) + '</div>' + speakBtn(ln[2], 'Nghe câu') + '</div>' +
+            '<div class="sc-py">' + esc(ln[3]) + '</div><div class="sc-vi">' + esc(ln[4]) + '</div></div></div>').join('') + '</section>';
+      }).join('') + '</div>';
+  }
   function quizHtml(l) {
     return '<div class="grid">' + l.quiz.map((q, i) =>
       '<div class="card q-card" data-qcard="' + i + '"><p class="q-text">' + esc(q.q) + '</p><div class="opts">' +
@@ -230,6 +247,7 @@
     pron: () => 'Quy tắc đọc và lưu ý thanh điệu của bài.',
     writing: (l) => H.lessonChars(l).length + ' chữ. Mỗi chữ có thứ tự nét, bộ thủ và chế độ luyện viết.',
     grammar: (l) => l.grammar.length + ' điểm. Chạm vào từ trong ví dụ để tra nhanh.',
+    dialogue: (l) => l.dialogues.length + ' đoạn hội thoại trong bài. Chạm vào từ để tra nhanh, nút loa để nghe từng câu hoặc cả đoạn.',
     examples: (l) => l.examples.length + ' câu ví dụ trong bài (ngữ pháp và bài đọc).',
     quiz: (l) => l.quiz.length + ' câu hỏi trắc nghiệm có giải thích.'
   };
@@ -239,6 +257,7 @@
       case 'pron': return pronHtml(l);
       case 'writing': return writingHtml(l);
       case 'grammar': return grammarHtml(l);
+      case 'dialogue': return dialogueHtml(l);
       case 'examples': return examplesHtml(l);
       default: return quizHtml(l);
     }
@@ -250,22 +269,23 @@
       return;
     }
     let sec = secId === 'read' ? 'examples' : secId;
-    if (!SECTIONS.some((s) => s.id === sec)) sec = 'vocab';
+    const secs = H.secsOf(l);
+    if (!secs.some((s) => s.id === sec)) sec = 'vocab';
     markSeen(l.id, sec);
     const seen = db().seen[l.id] || [];
     const idx = LESSONS.indexOf(l);
     const prev = LESSONS[idx - 1], next = LESSONS[idx + 1];
     const isDone = !!db().done[l.id];
-    const cur = SECTIONS.find((s) => s.id === sec);
+    const cur = secs.find((s) => s.id === sec);
     app.innerHTML =
       '<div class="lesson-layout">' +
         '<aside class="lesson-aside">' +
           '<a class="back-link" href="#/lessons">' + ICONS.chevL + '<span>Danh sách bài</span></a>' +
           '<div class="card lesson-head"><div class="lc-lv">' + esc(H.lessonTitle(l)) + '</div>' +
             '<div class="lesson-hanzi">' + esc(l.zh) + '</div><div class="lesson-vi">' + esc(l.vi) + '</div>' +
-            '<div class="bar"><i style="width:' + Math.round(seen.length / SECTIONS.length * 100) + '%"></i></div>' +
-            '<div class="small muted" style="margin-top:6px">' + seen.length + '/' + SECTIONS.length + ' phần đã xem</div></div>' +
-          '<nav class="side-nav" aria-label="Các phần của bài">' + SECTIONS.map((s) =>
+            '<div class="bar"><i style="width:' + Math.round(seen.length / secs.length * 100) + '%"></i></div>' +
+            '<div class="small muted" style="margin-top:6px">' + seen.length + '/' + secs.length + ' phần đã xem</div></div>' +
+          '<nav class="side-nav" aria-label="Các phần của bài">' + secs.map((s) =>
             '<a class="side-link" href="#/lesson/' + esc(l.id) + '/' + s.id + '"' + (s.id === sec ? ' aria-current="page"' : '') + '>' +
             '<span class="sl-ic">' + ICONS[SEC_ICON[s.id]] + '</span><span class="sl-tx">' + esc(H.sectionLabel(l, s)) + '</span>' +
             (seen.indexOf(s.id) >= 0 ? '<span class="sl-dot" aria-label="đã xem"></span>' : '') + '</a>').join('') + '</nav>' +
@@ -534,7 +554,7 @@
   function viewProgress() {
     const total = LESSONS.length;
     const doneN = LESSONS.filter((l) => db().done[l.id]).length;
-    const totalSec = total * SECTIONS.length;
+    const totalSec = LESSONS.reduce((a, l) => a + H.secsOf(l).length, 0);
     const seenSec = LESSONS.reduce((a, l) => a + (db().seen[l.id] || []).length, 0);
     const cards = allCards('ALL', 'ALL');
     const mastered = cards.filter((c) => boxOf(c.id) >= 4).length;
@@ -579,6 +599,8 @@
      SỰ KIỆN CHUNG: popup từ, bảng chữ, phát âm
      ====================================================== */
   document.addEventListener('click', (e) => {
+    const seq = e.target.closest('[data-seq]');
+    if (seq) { try { H.speakSeq(JSON.parse(seq.getAttribute('data-seq')), 0.85, 500); } catch (err) { /* bỏ qua */ } return; }
     const say = e.target.closest('[data-say]');
     if (say) { H.speak(say.getAttribute('data-say'), say.hasAttribute('data-slow') ? 0.65 : undefined); return; }
     const syl = e.target.closest('[data-syl]');

@@ -10,6 +10,7 @@ Mỗi bài có 6 phần, theo đúng trình tự của file giáo trình:
 2. **Cách đọc**: quy tắc phát âm, thanh điệu, biến điệu.
 3. **Cách viết**: chữ mẫu và cấu tạo bộ phận.
 4. **Ngữ pháp**: công thức, giải thích, ví dụ.
+5. **Hội thoại**: các đoạn 课文 của bài, có người nói, pinyin, nghĩa, nghe từng câu hoặc cả đoạn.
 5. **Đọc câu**: câu mẫu có pinyin, nghĩa và ghi chú cách đọc.
 6. **Ôn tập**: câu hỏi trắc nghiệm có giải thích.
 
@@ -61,6 +62,8 @@ Dữ liệu nằm trong thư mục `js/`:
 | `js/data-hsk2b.js` | HSK 2, bài 7–9 |
 | `js/data-hsk2c.js` | HSK 2, bài 10–12 |
 | `js/data-hsk2d.js` | HSK 2, bài 13–15 |
+| `js/data-dialogues.js` | Hội thoại (课文) của từng bài, sinh từ `scripts/dialogues-h1.txt`, `dialogues-h2.txt` bằng `scripts/build-dialogues.py` |
+| `js/firebase-config.js`, `js/auth.js` | Đăng nhập Firebase Authentication (Google, email/mật khẩu) |
 
 Để thêm bài: sao chép một object bài có sẵn, đổi `id`, `n`, tiêu đề, từ vựng, ngữ pháp, câu đọc và câu hỏi. Sau đó tăng phiên bản cache trong `sw.js` (ví dụ `hsk-app-v3`) để người dùng nhận bản mới.
 
@@ -79,3 +82,7 @@ rồi truy cập http://localhost:8000.
 - Nội dung là tóm tắt và câu mẫu do người biên soạn viết lại, không sao chép nguyên văn slide giáo trình.
 - Tiến độ, flashcard và kết quả ôn tập được lưu trong trình duyệt của từng người (localStorage). Xóa dữ liệu trình duyệt sẽ mất tiến độ.
 - Tính năng phát âm dùng giọng đọc có sẵn của trình duyệt/thiết bị (tiếng Trung `zh-CN`). Nếu thiết bị chưa có giọng đọc tiếng Trung thì nút 🔊 sẽ không phát tiếng.
+
+## Đăng nhập (Firebase)
+
+Nút tài khoản ở thanh đầu mở hộp đăng nhập bằng Google hoặc email/mật khẩu. Cần bật trong Firebase Console của dự án: **Authentication → Sign-in method** (Google, Email/Password) và thêm tên miền `project-app-369.github.io` vào **Authentication → Settings → Authorized domains**. Tiến độ học hiện vẫn lưu trên thiết bị.

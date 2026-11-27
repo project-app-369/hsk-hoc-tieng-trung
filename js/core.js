@@ -12,9 +12,12 @@
     { id: 'pron', label: 'Cách đọc' },
     { id: 'writing', label: 'Cách viết' },
     { id: 'grammar', label: 'Ngữ pháp' },
+    { id: 'dialogue', label: 'Hội thoại' },
     { id: 'examples', label: 'Câu ví dụ' },
     { id: 'quiz', label: 'Ôn tập' }
   ];
+  // Các phần có trong một bài (Hội thoại chỉ hiện khi bài có đoạn hội thoại)
+  HSK.secsOf = (l) => HSK.SECTIONS.filter((x) => x.id !== 'dialogue' || (l && l.dialogues && l.dialogues.length));
   const isHan = (c) => /[㐀-鿿]/.test(c);
   HSK.isHan = isHan;
 
@@ -46,6 +49,7 @@
   HSK.byId = byId;
   LESSONS.forEach((l) => {
     byId[l.id] = l;
+    l.dialogues = (window.DIALOGUES && window.DIALOGUES[l.id]) || [];
     ['vocab', 'grammar', 'read', 'quiz', 'pron', 'writing', 'drill', 'strokes', 'chars'].forEach((k) => { l[k] = l[k] || []; });
     // Gộp mọi câu ví dụ trong bài (ngữ pháp + đọc câu), bỏ trùng.
     const seen = new Map();
@@ -109,6 +113,7 @@
     sun: svg('<circle cx="12" cy="12" r="4.5" fill="currentColor"/>' + stroke('M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8', 2)),
     moon: svg('<path fill="currentColor" d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/>'),
     install: svg(stroke('M12 3v11M7.5 9.5L12 14l4.5-4.5') + '<rect x="4" y="18" width="16" height="3" rx="1.5" fill="currentColor"/>'),
+    chat: svg('<path fill="currentColor" d="M4 4h11a2.5 2.5 0 0 1 2.5 2.5v5A2.5 2.5 0 0 1 15 14H9l-4 3.5V14a2.5 2.5 0 0 1-1-2z"/><path fill="currentColor" opacity=".5" d="M18.5 9H19a2 2 0 0 1 2 2v5.5a2 2 0 0 1-1 1.7V21l-3.2-2.5H12a2 2 0 0 1-1.7-1h4.7a3.5 3.5 0 0 0 3.5-3.5z"/>'),
     play: svg('<path fill="currentColor" d="M7 4.5v15l12-7.5z"/>'),
     replay: svg(stroke('M5.2 12a7 7 0 1 0 2.1-5') + '<path fill="currentColor" d="M3 3.5V10h6.5z"/>'),
     pen: svg('<path fill="currentColor" d="M3 17.25V21h3.75L18.4 9.35l-3.75-3.75z"/><path fill="currentColor" opacity=".55" d="M20.7 7.05a1 1 0 0 0 0-1.4l-2.35-2.35a1 1 0 0 0-1.4 0l-1.5 1.5 3.75 3.75z"/>'),

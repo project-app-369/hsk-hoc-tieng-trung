@@ -7,7 +7,7 @@ const vm = require('vm');
 const root = path.join(__dirname, '..');
 const ctx = { window: {} };
 vm.createContext(ctx);
-for (const f of ['js/data-ph.js', 'js/data-hsk1a.js', 'js/data-hsk1b.js', 'js/data-hsk2.js', 'js/data-hsk2b.js', 'js/data-hsk2c.js', 'js/data-hsk2d.js']) {
+for (const f of ['js/data-ph.js', 'js/data-hsk1a.js', 'js/data-hsk1b.js', 'js/data-hsk2.js', 'js/data-hsk2b.js', 'js/data-hsk2c.js', 'js/data-hsk2d.js', 'js/data-dialogues.js']) {
   vm.runInContext(fs.readFileSync(path.join(root, f), 'utf8'), ctx);
 }
 let extra = [];
@@ -31,6 +31,7 @@ L.forEach((l) => {
   (l.quiz || []).forEach((q) => { add(q.q); q.o.forEach(add); });
 });
 extra.forEach((w) => add(w[0]));
+Object.values(ctx.window.DIALOGUES || {}).forEach((secs) => secs.forEach((sec) => sec.l.forEach((ln) => { sentences.push(ln[2]); add(ln[2]); add(ln[0]); })));
 fs.mkdirSync(path.join(root, 'data'), { recursive: true });
 fs.writeFileSync(path.join(root, 'data/_chars.txt'), [...chars].join(''), 'utf8');
 

@@ -639,3 +639,49 @@ dialog#dlg { border: 1px solid var(--border-strong); border-radius: 20px; paddin
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
+
+/* ---------- Hội thoại ---------- */
+.dlg-list { display: grid; gap: 16px; }
+.dlg { display: grid; gap: 12px; }
+.dlg-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.dlg-head h3 { margin: 0; font-size: 17px; }
+.dlg-play svg { width: 18px; height: 18px; }
+.dlg-line { display: grid; grid-template-columns: 74px minmax(0, 1fr); gap: 10px; align-items: start; }
+.dlg-who { display: grid; gap: 1px; text-align: center; padding-top: 6px; }
+.dlg-name { font-family: var(--hanzi); font-weight: 700; font-size: 15px; line-height: 1.25; word-break: keep-all; }
+.dlg-npy { font-size: 11px; color: var(--ink-3); line-height: 1.2; }
+.dlg-bubble { background: var(--surface-2); border-radius: 14px 14px 14px 4px; padding: 10px 12px; display: grid; gap: 4px; min-width: 0; }
+.dlg-line.side-b .dlg-bubble { background: var(--accent-soft); }
+.dlg-row { display: flex; align-items: flex-start; gap: 8px; justify-content: space-between; }
+.dlg-row .sc-zh { font-size: 22px; }
+.hide-py .sc-py, .hide-vi .sc-vi { filter: blur(7px); user-select: none; }
+@media (max-width: 420px) { .dlg-line { grid-template-columns: 58px minmax(0, 1fr); gap: 8px; } .dlg-name { font-size: 13px; } }
+@media (min-width: 900px) { .dlg-list { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; } }
+
+/* ---------- Đăng nhập ---------- */
+#authBtn svg { width: 22px; height: 22px; }
+#authBtn img, .auth-me img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+#authBtn.signed { padding: 3px; overflow: hidden; }
+.av { display: grid; place-items: center; width: 100%; height: 100%; border-radius: 50%; background: var(--accent); color: var(--accent-ink); font-weight: 700; font-size: 15px; }
+.av.lg { width: 48px; height: 48px; font-size: 20px; flex: none; }
+.auth-dlg { border: 0; padding: 0; border-radius: 18px; background: var(--surface); color: inherit; width: min(420px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); box-shadow: 0 20px 60px rgba(0,0,0,.35); }
+.auth-dlg::backdrop { background: rgba(0,0,0,.5); }
+.auth-box { display: grid; gap: 14px; padding: 20px; }
+.auth-head { display: flex; align-items: center; justify-content: space-between; }
+.auth-head h2 { margin: 0; font-size: 20px; }
+.auth-google { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 46px; }
+.auth-google svg { width: 20px; height: 20px; }
+.auth-or { display: flex; align-items: center; gap: 10px; color: var(--ink-3); font-size: 13px; }
+.auth-or::before, .auth-or::after { content: ""; flex: 1; height: 1px; background: currentColor; opacity: .25; }
+.auth-form { display: grid; gap: 12px; }
+.auth-form label { display: grid; gap: 4px; font-size: 14px; font-weight: 600; }
+.auth-form input { font: inherit; font-size: 16px; padding: 10px 12px; border-radius: 10px; border: 1px solid var(--border-strong); background: transparent; color: inherit; min-height: 44px; }
+.auth-form input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.auth-msg { margin: 0; font-size: 14px; }
+.auth-msg.err { color: var(--bad); }
+.auth-msg.ok { color: var(--ok); }
+.auth-links { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.auth-links button { background: none; border: 0; color: var(--accent); font: inherit; font-size: 14px; padding: 6px 0; cursor: pointer; }
+.auth-me { display: flex; align-items: center; gap: 12px; }
+.auth-me img { width: 48px; height: 48px; flex: none; }
+.auth-name { font-weight: 700; }

@@ -1,5 +1,5 @@
 // Service worker: cache app shell để mở được khi mất mạng sau lần đầu truy cập.
-const CACHE = 'hsk-app-v13';
+const CACHE = 'hsk-app-v14';
 const SHELL = [
   './',
   './index.html',
@@ -16,6 +16,9 @@ const SHELL = [
   './js/data-hsk2c.js',
   './js/data-hsk2d.js',
   './js/data-extra.js',
+  './js/data-dialogues.js',
+  './js/firebase-config.js',
+  './js/auth.js',
   './js/vendor/hanzi-writer.min.js',
   './manifest.webmanifest',
   './favicon.ico',

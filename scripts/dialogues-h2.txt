@@ -1,0 +1,364 @@
+# Nguồn hội thoại HSK 2 (trích từ mục 课文/Bài khóa trong slide). Định dạng như dialogues-h1.txt.
+
+@h2-01
+# Bài khóa 1 · Đón ở sân bay
+白家月|请问，您是王一飞老师的姐姐吗？|Xin hỏi, chị có phải là chị của thầy Vương Nhất Phi không ạ?
+王一雪|是的，你们就是她的学生吧？|Đúng vậy, các em là học sinh của nó phải không?
+白家月|对。我是白家月，她是安妮。|Vâng. Em là Bạch Gia Nguyệt, bạn ấy là Annie.
+王一雪|你们好，我叫王一雪。一飞给我打电话了，让我来接你们。|Chào các em, chị tên là Vương Nhất Tuyết. Nhất Phi đã gọi điện cho chị, nhờ chị đến đón các em.
+白家月|谢谢您。|Cảm ơn chị ạ.
+王一雪|不客气。|Không có gì.
+# Bài khóa 2 · Lần đầu đến Bắc Kinh
+王一雪|你们是第一次来北京吗？|Các em lần đầu đến Bắc Kinh à?
+白家月|是的，我们都是第一次来。|Vâng, chúng em đều là lần đầu đến.
+王一雪|你们是来学中文的吗？|Các em đến để học tiếng Trung à?
+安妮|不是，我们是来旅游的。|Không ạ, chúng em đến du lịch.
+王一雪|我这几天都不忙，你们有事就找我。|Mấy ngày nay chị đều không bận, các em có việc gì cứ tìm chị.
+白家月|好的，谢谢您。|Vâng, cảm ơn chị.
+# Bài khóa 3 · Nhờ Lý Văn giúp
+陈天中|喂，家月，你明天有时间吗？我想请你帮个忙。|A lô, Gia Nguyệt, ngày mai bạn có thời gian không? Tôi muốn nhờ bạn một việc.
+白家月|不好意思，天中，我已经到北京了。|Xin lỗi Thiên Trung, tôi đã đến Bắc Kinh rồi.
+陈天中|你是什么时候到的？|Bạn đến từ khi nào vậy?
+白家月|我是今天早上到的。你有事可以叫李文帮忙，他还在学校呢。|Tôi đến sáng nay. Bạn có việc thì có thể nhờ Lý Văn giúp, cậu ấy vẫn còn ở trường.
+陈天中|好的，那我给他打个电话。|Được, vậy tôi gọi điện cho cậu ấy.
+白家月|好，再见！|Được, tạm biệt!
+
+@h2-02
+# Bài khóa 1 · Hỏi đường đến Đại học Bắc Kinh
+白家月|请问，这儿有到北京大学的公交车吗？|Xin hỏi, ở đây có xe buýt đến Đại học Bắc Kinh không?
+服务员|有，但车站有点儿远。|Có, nhưng trạm xe hơi xa một chút.
+白家月|这儿好打车吗？|Ở đây có dễ bắt taxi không?
+服务员|好打车。|Dễ bắt.
+白家月|谢谢。安妮，我们还是打车去吧。|Cảm ơn. Annie, chúng ta vẫn nên đi taxi nhé.
+安妮|好，没问题。|Được, không vấn đề gì.
+# Bài khóa 2 · Trong khuôn viên trường
+白家月|学校里人真多啊！|Trong trường đông người thật!
+安妮|是啊，北京大学有四万多名学生呢！|Đúng vậy, Đại học Bắc Kinh có hơn bốn vạn sinh viên cơ đấy!
+白家月|你是怎么知道的？|Sao bạn biết vậy?
+安妮|是网上说的，网上还说北京大学有三千多名外国学生。|Trên mạng nói đấy, trên mạng còn nói Đại học Bắc Kinh có hơn ba nghìn sinh viên nước ngoài.
+白家月|我也想来这儿学习。|Tôi cũng muốn đến đây học.
+安妮|那边就有一间教室，我们去看一下吧。|Bên kia có một phòng học, chúng ta đến xem thử đi.
+# Bài khóa 3 · Rạp chiếu phim trong trường
+安妮|家月，你看，学校里有家电影院呢！|Gia Nguyệt, bạn xem, trong trường có cả rạp chiếu phim kìa!
+白家月|是啊，电影院还不小。|Đúng vậy, rạp còn không nhỏ nữa.
+安妮|他们卖的电影票也很便宜。|Vé xem phim họ bán cũng rất rẻ.
+白家月|天啊！有的还不到二十块钱。|Trời ơi! Có vé còn chưa đến hai mươi tệ.
+安妮|那你想不想去看个电影？|Vậy bạn có muốn đi xem phim không?
+白家月|还是别看电影了，北京大学就很好看！|Thôi đừng xem phim nữa, bản thân Đại học Bắc Kinh đã rất đẹp rồi!
+
+@h2-03
+# Bài khóa 1 · Về nhà muộn
+王一雪|今天回来这么晚啊！|Hôm nay về muộn thế!
+刘明|工作太多了，下班的时候没做完。|Việc nhiều quá, lúc tan làm vẫn chưa làm xong.
+王一雪|菜都做好了，过来吃饭吧。|Thức ăn nấu xong cả rồi, lại ăn cơm đi.
+刘明|我想休息一下，喝杯水。|Anh muốn nghỉ một chút, uống cốc nước.
+王一雪|好的。|Được.
+# Bài khóa 2 · Bàn chuyện đi du lịch
+刘明|我们找个时间去旅游，怎么样？|Chúng mình tìm thời gian đi du lịch, em thấy sao?
+王一雪|好啊，我也很想一起出去玩。|Hay đấy, em cũng rất muốn cùng đi chơi.
+刘明|你想去哪儿？|Em muốn đi đâu?
+王一雪|我还没想好呢。|Em vẫn chưa nghĩ ra.
+刘明|那你再想一想，你想好了，我来买票。|Vậy em nghĩ thêm đi, nghĩ xong anh sẽ mua vé.
+# Bài khóa 3 · Vì sao muốn đi Tây An?
+刘明|吃个苹果吧，我都洗好了。|Ăn quả táo đi, anh rửa xong cả rồi.
+王一雪|好的。|Vâng.
+刘明|就在桌子上，你自己拿。|Ở ngay trên bàn, em tự lấy nhé.
+王一雪|我去洗洗手。对了，我们去西安旅游，怎么样？|Em đi rửa tay đã. À này, chúng mình đi Tây An du lịch, anh thấy sao?
+刘明|为什么想去西安？|Vì sao em muốn đi Tây An?
+王一雪|我看了看网上的介绍，这个时候去西安很不错。|Em xem giới thiệu trên mạng, lúc này đi Tây An rất tuyệt.
+
+@h2-04
+# Bài khóa 1 · Đi dạo trung tâm thương mại
+刘小雪|妈妈，我们来过这家商场吗？|Mẹ ơi, chúng ta đã đến trung tâm thương mại này chưa?
+王一雪|没来过，这是新开的。|Chưa đến, đây mới mở.
+刘小雪|我们进去看看吧。|Chúng ta vào xem thử đi.
+王一雪|好啊！你想买点儿什么？|Được thôi! Con muốn mua gì?
+刘小雪|我想买条裤子。|Con muốn mua một chiếc quần.
+王一雪|没问题。|Không vấn đề gì.
+# Bài khóa 2 · Chọn quần
+刘小雪|妈妈，我想买这条白色的裤子。|Mẹ ơi, con muốn mua chiếc quần màu trắng này.
+王一雪|你有很多白色的衣服，为什么还买白色的？|Con có rất nhiều quần áo màu trắng, sao còn mua màu trắng?
+刘小雪|因为我喜欢白色啊！|Vì con thích màu trắng mà!
+王一雪|我觉得这条白色的不太好看，你试试那条红色的吧。|Mẹ thấy chiếc trắng này không đẹp lắm, con thử chiếc màu đỏ kia đi.
+刘小雪|我没穿过红色的，红色的好看吗？|Con chưa mặc màu đỏ bao giờ, màu đỏ có đẹp không?
+王一雪|就是因为没穿过，所以要试试啊！|Chính vì chưa mặc bao giờ nên mới phải thử chứ!
+# Bài khóa 3 · Mua cặp sách mới
+刘小雪|妈妈，我想买个新书包。|Mẹ ơi, con muốn mua một chiếc cặp mới.
+王一雪|好，那边卖书包，我们过去看看吧。|Được, bên kia bán cặp, chúng ta qua xem thử.
+刘小雪|这么多漂亮的书包！|Nhiều cặp đẹp thế!
+王一雪|红色的、绿色的、黑色的，你想买哪个？|Cặp đỏ, xanh lá, đen, con muốn mua cái nào?
+刘小雪|绿色的吧。|Cái màu xanh lá đi.
+王一雪|不错，我也觉得绿色的更好看。|Hay đấy, mẹ cũng thấy màu xanh lá đẹp hơn.
+
+@h2-05
+# Bài khóa 1 · Chuẩn bị đến nhà bạn người Trung Quốc
+安妮|家月，快下来吧，第一次去中国朋友家，别晚了。|Gia Nguyệt, xuống nhanh đi, lần đầu đến nhà bạn người Trung Quốc, đừng đến muộn.
+白家月|还有时间，你上来吧。|Vẫn còn thời gian, bạn lên đây đi.
+安妮|我不上去了，就在下面等你。|Tôi không lên đâu, đợi bạn ở dưới này.
+白家月|那我一会儿就下去。|Vậy lát nữa tôi xuống ngay.
+安妮|你快点儿吧。|Bạn nhanh lên nhé.
+白家月|没事，一雪姐说十一点前到就可以。|Không sao, chị Nhất Tuyết nói trước mười một giờ đến là được.
+# Bài khóa 2 · Gặp gia đình chị Nhất Tuyết
+王一雪|家月、安妮，快进来！我给你们介绍一下，这是孩子们的爷爷、奶奶。|Gia Nguyệt, Annie, vào nhanh đi! Chị giới thiệu một chút, đây là ông bà của bọn trẻ.
+白家月|你们好！|Chúng cháu chào ông bà ạ!
+王一雪|爸，妈，这是白家月，这是安妮。她们都是一飞的学生。|Bố, mẹ, đây là Bạch Gia Nguyệt, đây là Annie. Hai bạn đều là học sinh của Nhất Phi.
+爷爷奶奶|家月、安妮，你们好！|Gia Nguyệt, Annie, chào các cháu!
+白家月|这是送你们的礼物。|Đây là quà tặng mọi người.
+王一雪|你们太客气了，还拿这么多礼物来！|Các em khách sáo quá, còn mang nhiều quà thế này đến!
+白家月|一雪姐，这是给孩子们准备的礼物。|Chị Nhất Tuyết, đây là quà em chuẩn bị cho các cháu.
+王一雪|谢谢！你们别客气，快坐吧！|Cảm ơn! Các em đừng khách sáo, ngồi nhanh đi!
+# Bài khóa 3 · Dùng bữa
+王一雪|都十二点了，我们吃饭吧。|Mười hai giờ rồi, chúng ta ăn cơm thôi.
+白家月|这么多好吃的，您太客气了！|Nhiều món ngon thế này, chị khách sáo quá!
+王一雪|都是我自己做的，你们多吃点儿。|Đều là chị tự nấu, các em ăn nhiều vào.
+白家月|奶茶也很好喝，是您自己做的吗？|Trà sữa cũng rất ngon, là chị tự làm ạ?
+王一雪|不是，奶茶是爷爷买的。|Không phải, trà sữa là ông mua.
+白家月|在哪儿买的？我还没喝过这么好喝的奶茶。|Mua ở đâu vậy ạ? Em chưa từng uống trà sữa nào ngon thế này.
+王一雪|就在前面的商场，吃完饭你们可以跟我去看看。|Ngay ở trung tâm thương mại phía trước, ăn xong các em có thể đi cùng chị đến xem.
+
+@h2-06
+# Bài khóa 1 · Chọn quà sinh nhật
+王一雪|明天就是女儿的生日了。|Ngày mai là sinh nhật con gái rồi.
+刘明|你不说，我还真忘了。我们给她准备个什么礼物呢？|Em không nói thì anh quên mất thật. Chúng mình chuẩn bị quà gì cho con đây?
+王一雪|她喜欢画画，你觉得画笔怎么样？|Con thích vẽ, anh thấy bút vẽ thế nào?
+刘明|就送画笔吧！那我明天上午就去买。|Tặng bút vẽ đi! Vậy sáng mai anh đi mua.
+王一雪|好的！我再给她买个大大的生日蛋糕。|Được! Em sẽ mua thêm cho con một chiếc bánh sinh nhật thật to.
+# Bài khóa 2 · Chúc mừng sinh nhật
+刘明|小雪，生日快乐！|Tiểu Tuyết, chúc mừng sinh nhật!
+刘小明|姐姐，生日快乐！|Chị ơi, chúc mừng sinh nhật!
+王一雪|小雪，这是爸爸、妈妈送你的礼物。|Tiểu Tuyết, đây là quà bố mẹ tặng con.
+刘明|你打开看看喜欢不喜欢。|Con mở ra xem có thích không.
+# Bài khóa 3 · Bữa tiệc sinh nhật
+刘明|小雪，看看今天有什么好吃的。|Tiểu Tuyết, xem hôm nay có món gì ngon này.
+刘小雪|长长的面条儿，大大的蛋糕。|Mì thật dài, bánh thật to.
+刘明|你看，还有鱼啊肉啊什么的，都是你喜欢吃的。|Con xem, còn có cá, có thịt nữa, toàn món con thích ăn.
+刘小雪|谢谢爸爸、妈妈！|Cảm ơn bố mẹ!
+王一雪|快去叫弟弟过来吃饭吧，吃完饭我们还要出去玩呢。|Mau gọi em lại ăn cơm đi, ăn xong chúng ta còn phải ra ngoài chơi nữa.
+刘小雪|过生日真好啊！|Được đón sinh nhật thật tuyệt!
+王一雪|是的，过生日就要吃好吃的，还要高高兴兴地玩。|Đúng vậy, đón sinh nhật là phải ăn món ngon, còn phải chơi thật vui vẻ.
+
+@h2-07
+# Bài khóa 1 · Đi chơi bóng rổ
+陈天中|安妮，你是什么时候从北京回来的？|Annie, bạn từ Bắc Kinh về khi nào vậy?
+安妮|昨天下午。天中，你怎么一下课就往外跑？|Chiều hôm qua. Thiên Trung, sao vừa tan học bạn đã chạy ra ngoài?
+陈天中|我跟同学说好了，一起去打篮球。|Tôi hẹn với bạn học rồi, cùng đi chơi bóng rổ.
+安妮|我也想跟你们一起玩。|Tôi cũng muốn chơi cùng các bạn.
+陈天中|没问题，走吧。|Không vấn đề gì, đi thôi.
+# Bài khóa 2 · Thích môn thể thao nào?
+安妮|天中，你是不是很喜欢打篮球？|Thiên Trung, có phải bạn rất thích chơi bóng rổ không?
+陈天中|没错。|Đúng vậy.
+安妮|你还喜欢什么运动？|Bạn còn thích môn thể thao nào?
+陈天中|我还喜欢踢足球，一到星期天就跟朋友们去踢球。|Tôi còn thích đá bóng, cứ đến Chủ nhật là đi đá bóng với bạn bè.
+安妮|你踢得怎么样？|Bạn đá thế nào?
+陈天中|我踢得还可以。|Tôi đá cũng tạm được.
+# Bài khóa 3 · Chạy bộ và bơi lội
+陈天中|你篮球打得怎么样？|Bạn chơi bóng rổ thế nào?
+安妮|打得还可以。|Cũng tạm được.
+陈天中|跑步呢？你跑得快不快？|Còn chạy bộ thì sao? Bạn chạy có nhanh không?
+安妮|我跑得不快，也不太喜欢跑步。|Tôi chạy không nhanh, cũng không thích chạy bộ lắm.
+陈天中|那你喜欢游泳吗？|Vậy bạn có thích bơi không?
+安妮|喜欢，但我游泳游得不快。|Thích, nhưng tôi bơi không nhanh.
+
+@h2-08
+# Bài khóa 1 · Chọn đồng hồ
+王一雪|你看，这两块手表怎么样？|Anh xem, hai chiếc đồng hồ này thế nào?
+刘明|都不错！|Đều không tệ!
+王一雪|我喜欢左边这个。|Em thích chiếc bên trái này.
+刘明|我也觉得左边的比右边的好看。|Anh cũng thấy chiếc bên trái đẹp hơn chiếc bên phải.
+王一雪|你看看要多少钱！|Anh xem giá bao nhiêu này!
+刘明|真不便宜！八千八！|Đắt thật! Tám nghìn tám!
+# Bài khóa 2 · Chọn phim
+刘明|今天有不少电影，我们看个电影吧。|Hôm nay có khá nhiều phim, chúng ta xem phim đi.
+王一雪|好啊！我们看哪个？|Hay đấy! Chúng ta xem phim nào?
+刘明|我记得你喜欢看爱情片，我们看那个爱情片，怎么样？|Anh nhớ em thích xem phim tình cảm, mình xem phim tình cảm kia nhé?
+王一雪|还是看这个吧，我看网上说这个电影比那个爱情片更有意思。|Hay là xem phim này đi, em thấy trên mạng nói phim này thú vị hơn phim tình cảm kia.
+刘明|好。我去买票。|Được. Anh đi mua vé.
+王一雪|到网上买吧，网上买比在这里买便宜。|Mua trên mạng đi, mua trên mạng rẻ hơn mua ở đây.
+# Bài khóa 3 · Sinh nhật bất ngờ
+刘明|您好！就要这几个菜吧，谢谢！|Chào chị! Cho chúng tôi mấy món này thôi, cảm ơn!
+王一雪|怎么点这么多菜？|Sao gọi nhiều món thế?
+刘明|你想想，今天是几月几号？|Em nghĩ xem, hôm nay là ngày bao nhiêu tháng mấy?
+王一雪|八月二十七号。啊！我的生日！|Ngày 27 tháng 8. A! Sinh nhật của em!
+刘明|生日快乐！虽然你忘了，但是我记得。看看这是什么？|Chúc mừng sinh nhật! Tuy em quên, nhưng anh nhớ. Xem đây là gì nào?
+王一雪|手表！吃饭、看电影、买手表，今天花了不少钱吧？|Đồng hồ! Ăn cơm, xem phim, mua đồng hồ, hôm nay tốn không ít tiền nhỉ?
+刘明|虽然花了一些钱，但是我们过了一个快乐的生日。|Tuy tốn một ít tiền, nhưng chúng ta đã có một ngày sinh nhật vui vẻ.
+
+@h2-09
+# Bài khóa 1 · Mua quần cho con trai
+王一雪|儿子的裤子坏了，我们给他买条新的吧。|Quần của con trai rách rồi, chúng mình mua cho nó chiếc mới nhé.
+刘明|好啊。|Được thôi.
+王一雪|你看这条黑色的怎么样？|Anh xem chiếc màu đen này thế nào?
+刘明|没有你上次买的那条好看。|Không đẹp bằng chiếc em mua lần trước.
+王一雪|旁边那个男孩儿就穿了这样的裤子，我觉得很好看啊！|Cậu bé bên cạnh mặc đúng kiểu quần này, em thấy đẹp mà!
+刘明|儿子的个子没有他那么高，穿上就不会太好看。|Con trai không cao bằng cậu bé đó, mặc vào sẽ không đẹp lắm.
+王一雪|好吧，我们再去那边看看。|Được rồi, chúng mình sang bên kia xem thêm.
+# Bài khóa 2 · Uống trà sữa hay cà phê
+王一雪|门口有家奶茶店。你想喝杯奶茶吗？|Ở cổng có một quán trà sữa. Anh có muốn uống một ly trà sữa không?
+刘明|我想喝咖啡，还是去咖啡店吧。|Anh muốn uống cà phê, hay là đến quán cà phê đi.
+王一雪|咖啡店离这儿有点儿远。|Quán cà phê cách đây hơi xa.
+刘明|没关系，那家店的咖啡很好喝。|Không sao, cà phê quán đó rất ngon.
+王一雪|那你等一下，我去买杯奶茶。|Vậy anh đợi một chút, em đi mua ly trà sữa.
+刘明|你不想喝咖啡吗？|Em không muốn uống cà phê à?
+王一雪|喝了咖啡，晚上就别想睡觉了。|Uống cà phê rồi, tối đừng mong ngủ được.
+# Bài khóa 3 · Về nhà
+刘明|我们打车回去吧。|Chúng mình đi taxi về nhé.
+王一雪|这里离家很近，还是走路吧。|Chỗ này cách nhà rất gần, vẫn nên đi bộ.
+刘明|要走多长时间？|Đi bộ mất bao lâu?
+王一雪|走半个多小时就到了。|Đi hơn nửa tiếng là đến.
+刘明|好的。每天上下班都坐车，今天运动运动吧。|Được rồi. Ngày nào đi làm cũng đi xe, hôm nay vận động một chút.
+
+@h2-10
+# Bài khóa 1 · Chuẩn bị khai giảng
+刘明|小明，你们明天开学，你准备好了吗？|Tiểu Minh, ngày mai các con khai giảng, con chuẩn bị xong chưa?
+刘小明|明天就开学吗？爸爸，我的书包你看见了吗？|Ngày mai đã khai giảng rồi ạ? Bố ơi, bố có thấy cặp của con không?
+刘明|书包在门后面。|Cặp ở sau cánh cửa.
+刘小明|书在哪儿呢？笔呢？|Sách đâu rồi ạ? Còn bút đâu?
+刘明|书在床上，笔在桌子上。|Sách ở trên giường, bút ở trên bàn.
+刘小明|太好了！现在都准备好了。|Tuyệt quá! Bây giờ đã chuẩn bị xong hết rồi.
+刘明|这次爸爸帮你，下次你自己准备，好不好？|Lần này bố giúp con, lần sau con tự chuẩn bị, được không?
+刘小明|好！|Vâng!
+# Bài khóa 2 · Ôn thi
+王一雪|小雪，你在做什么呢？|Tiểu Tuyết, con đang làm gì đấy?
+刘小雪|明天考试，我在看书呢。|Mai thi, con đang đọc sách ạ.
+王一雪|这些词要好好看看。|Những từ này phải xem kỹ.
+刘小雪|我看过了，意思也都懂了。|Con xem rồi, nghĩa cũng hiểu hết rồi.
+王一雪|你的本子呢？本子上做错的题也要看一看。|Vở của con đâu? Những bài làm sai trong vở cũng phải xem lại.
+刘小雪|妈妈，是您准备考试还是我准备考试？|Mẹ ơi, là mẹ ôn thi hay con ôn thi vậy ạ?
+# Bài khóa 3 · Thi xong
+刘小雪|妈妈，我回来了！|Mẹ ơi, con về rồi!
+王一雪|我买了奶茶，就在桌子上，自己去拿吧。|Mẹ mua trà sữa rồi, ở trên bàn đấy, con tự lấy nhé.
+刘小雪|谢谢妈妈！|Con cảm ơn mẹ!
+王一雪|今天考试考得怎么样？|Hôm nay con thi thế nào?
+刘小雪|我觉得比上次好。|Con thấy tốt hơn lần trước.
+王一雪|真不错！饭菜快要做好了，你叫弟弟一起去洗手吧。|Giỏi lắm! Cơm sắp nấu xong rồi, con gọi em cùng đi rửa tay đi.
+刘小明|妈妈，我是第一名，姐姐还没洗完呢。|Mẹ ơi, con là nhất, chị vẫn chưa rửa xong ạ.
+王一雪|你洗得真快啊！|Con rửa nhanh thật đấy!
+
+@h2-11
+# Bài khóa 1 · Đau đầu
+王一飞|家月，都下课了，你怎么还不回家？|Gia Nguyệt, tan học rồi, sao em vẫn chưa về nhà?
+白家月|我头疼，不太舒服。|Em đau đầu, không khỏe lắm.
+王一飞|你这几天经常头疼，去医院看看吧。|Mấy hôm nay em hay đau đầu, đến bệnh viện khám đi.
+白家月|我想休息一下，现在不能动，一动就疼。|Em muốn nghỉ một chút, bây giờ không cử động được, cứ động là đau.
+王一飞|那你在这儿坐着，我去开车，一会儿送你去医院。|Vậy em ngồi đây, thầy đi lấy xe, lát nữa đưa em đến bệnh viện.
+白家月|谢谢王老师。|Em cảm ơn thầy Vương.
+# Bài khóa 2 · Trên đường đến bệnh viện
+王一飞|现在路上车多，还下着雪，我开慢一点儿。|Bây giờ trên đường nhiều xe, lại còn đang có tuyết, thầy lái chậm một chút.
+白家月|没问题，现在头没那么疼了。|Không sao ạ, bây giờ đầu không đau đến thế nữa.
+王一飞|好。李文来电话了，你帮我接一下。|Được. Lý Văn gọi điện đến, em nghe giúp thầy một chút.
+白家月|喂，李文，王老师开着车呢，你找她有事吗？|A lô, Lý Văn, thầy Vương đang lái xe, bạn tìm thầy có việc gì không?
+李文|没什么事。今天雪这么大，你们开车去哪儿啊？|Không có việc gì. Hôm nay tuyết rơi to thế, các bạn lái xe đi đâu vậy?
+白家月|去医院，我头有点儿疼。|Đến bệnh viện, tôi hơi đau đầu.
+李文|那我一会儿去看看你。|Vậy lát nữa tôi đến thăm bạn.
+# Bài khóa 3 · Thăm bệnh
+白家月|李文，快请进！|Lý Văn, mời vào nhanh!
+李文|家月，你怎么样了？头还疼吗？|Gia Nguyệt, bạn thế nào rồi? Đầu còn đau không?
+白家月|不那么疼了。医生开了一些药，吃完就好多了。|Không đau đến thế nữa. Bác sĩ kê một ít thuốc, uống xong đã đỡ nhiều.
+李文|那就好！|Thế thì tốt!
+王一飞|家月，你想不想吃点儿东西？|Gia Nguyệt, em có muốn ăn chút gì không?
+李文|吃点儿吧，身体不舒服时更要好好吃饭。|Ăn một chút đi, lúc cơ thể không khỏe càng phải ăn uống đàng hoàng.
+白家月|吃点儿什么呢？|Ăn gì bây giờ nhỉ?
+王一飞|你最喜欢吃中国菜，我做几个中国菜吧。|Em thích ăn món Trung Quốc nhất, để thầy nấu vài món nhé.
+白家月|好的，谢谢王老师。|Vâng, em cảm ơn thầy Vương.
+
+@h2-12
+# Bài khóa 1 · Gọi điện trò chuyện
+王一雪|喂，家月，是你呀！有什么事情吗？|A lô, Gia Nguyệt, là em à! Có việc gì không?
+白家月|没什么事，就想跟您说说话。|Không có việc gì ạ, chỉ muốn trò chuyện với chị.
+王一雪|好啊。你今天没课吗？|Được thôi. Hôm nay em không có tiết à?
+白家月|下午有课。您那里天气怎么样？|Chiều em có tiết. Chỗ chị thời tiết thế nào?
+王一雪|北京这几天虽然是晴天，但是有点儿冷。|Mấy ngày nay Bắc Kinh tuy trời nắng nhưng hơi lạnh.
+白家月|我这里比北京冷多了，外边还正下着雪呢！|Chỗ em lạnh hơn Bắc Kinh nhiều, bên ngoài còn đang có tuyết rơi!
+# Bài khóa 2 · Chị em gọi điện
+王一雪|喂，一飞，听家月说你那边下雪了，下得大不大？|A lô, Nhất Phi, nghe Gia Nguyệt nói chỗ em có tuyết rơi, có to không?
+王一飞|今天不大，昨天比今天下得大。|Hôm nay không to, hôm qua rơi to hơn hôm nay.
+王一雪|天气不好，你去外面的时候多穿点儿衣服。|Thời tiết xấu, lúc ra ngoài em mặc thêm quần áo.
+王一飞|这几天我在网上上课，没出去过。|Mấy hôm nay em dạy trực tuyến, chưa ra ngoài.
+王一雪|那就好，有事记得给我打电话。|Thế thì tốt, có việc nhớ gọi điện cho chị.
+王一飞|好的。现在不下雪了，我出去买点儿吃的。|Vâng. Bây giờ tuyết ngừng rồi, em ra ngoài mua chút đồ ăn.
+王一雪|一次多买点儿，阴天下雪什么的就少出去吧。|Mua nhiều một lần, những hôm trời âm u có tuyết thì ít ra ngoài thôi.
+# Bài khóa 3 · Rủ đi chạy bộ
+李文|喂，家月，今天天气不错，我们去跑步吧！|A lô, Gia Nguyệt, hôm nay thời tiết đẹp, chúng ta đi chạy bộ đi!
+白家月|你跑步跑得比我快，我们能一起跑吗？|Bạn chạy nhanh hơn tôi, chúng ta chạy cùng nhau được không?
+李文|可以的，我慢慢跑，等着你。|Được chứ, tôi chạy chậm thôi, đợi bạn.
+白家月|好吧。你真爱跑步啊！|Được rồi. Bạn thích chạy bộ thật đấy!
+李文|我从小就经常跟爸爸跑步，跑步能让人快乐！|Từ nhỏ tôi đã thường chạy bộ cùng bố, chạy bộ khiến người ta vui vẻ!
+白家月|好，那我准备一下。|Được, vậy tôi chuẩn bị một chút.
+李文|我现在坐地铁去找你，一会儿楼下见。|Bây giờ tôi đi tàu điện ngầm đến tìm bạn, lát nữa gặp nhau dưới lầu.
+
+@h2-13
+# Bài khóa 1 · Chuẩn bị quà năm mới cho cô giáo
+白家月|时间过得真快啊！新年就要到了。|Thời gian trôi nhanh thật! Năm mới sắp đến rồi.
+陈天中|这一年王老师教我们中文，每天工作都很累。|Cả năm nay cô Vương dạy chúng ta tiếng Trung, mỗi ngày làm việc đều rất mệt.
+白家月|是啊，她教得很好。因为她，我们都非常爱上中文课了。|Đúng vậy, cô dạy rất hay. Nhờ cô, chúng ta đều rất yêu thích giờ tiếng Trung.
+陈天中|我们给她准备个新年礼物吧。你觉得送给她什么好呢？|Chúng ta chuẩn bị cho cô một món quà năm mới nhé. Bạn thấy tặng cô gì thì tốt?
+白家月|王老师喜欢花，就送给她花吧。|Cô Vương thích hoa, vậy tặng cô hoa đi.
+陈天中|那我们去花店看看，现在买花的人多，希望花店还有漂亮的花。|Vậy chúng ta đến tiệm hoa xem, bây giờ người mua hoa nhiều, hy vọng tiệm vẫn còn hoa đẹp.
+# Bài khóa 2 · Trong giờ học
+白家月|王老师，今天的词比昨天多了十个。|Thầy Vương, từ hôm nay nhiều hơn hôm qua mười từ ạ.
+王一飞|是啊！你们都学会了吗？|Đúng vậy! Các em đều học thuộc rồi chứ?
+安妮|学会了，没有问题。|Học xong rồi ạ, không có vấn đề gì.
+王一飞|好。现在我来说，你们在本子上面写。|Tốt. Bây giờ thầy đọc, các em viết vào vở.
+王一飞|同学们，“洗手间”的“间”字写错了，它的里面是“日”，不是“口”。|Các em, chữ “间” trong “洗手间” viết sai rồi, bên trong là “日”, không phải “口”.
+白家月|“日”比“口”多一笔，写“口”就是“问题”的“问”了。|“日” nhiều hơn “口” một nét, viết “口” thì thành chữ “问” trong “问题” rồi.
+王一飞|没错，你说得很对。|Đúng thế, em nói rất đúng.
+# Bài khóa 3 · Mua vở
+安妮|家月，你觉得这个本子怎么样？|Gia Nguyệt, bạn thấy quyển vở này thế nào?
+白家月|很漂亮，多少钱一个？|Rất đẹp, bao nhiêu tiền một quyển?
+安妮|比我们一起买的那个本子贵一点儿。|Đắt hơn quyển chúng ta cùng mua một chút.
+白家月|这么漂亮的本子，不可能贵一点儿吧？|Quyển vở đẹp thế này, không thể chỉ đắt hơn một chút đâu nhỉ?
+安妮|我是上网买的，真没那么贵。我买了两个，送你一个。|Tôi mua trên mạng, thật sự không đắt đến thế. Tôi mua hai quyển, tặng bạn một quyển.
+白家月|谢谢！那我送给你什么呢？|Cảm ơn! Vậy tôi tặng bạn gì đây?
+安妮|咖啡杯吧，我最喜欢喝咖啡了。|Tặng cốc cà phê đi, tôi thích uống cà phê nhất.
+白家月|好，那样我们就都有新年礼物了！|Được, như vậy chúng ta đều có quà năm mới rồi!
+
+@h2-14
+# Bài khóa 1 · Người lạ dưới lầu
+李文|王老师，你家楼下站着一个人。|Thầy Vương, dưới lầu nhà thầy có một người đang đứng.
+王一飞|我家楼下？我看看。|Dưới lầu nhà tôi? Để tôi xem.
+李文|那个人穿着黑色的裤子，手里还拿着一个黑色的包。|Người đó mặc quần đen, tay còn cầm một chiếc túi đen.
+王一飞|我看见那个人了，他是我男朋友。|Tôi thấy người đó rồi, anh ấy là bạn trai của tôi.
+李文|那我们快过去吧。|Vậy chúng ta mau xuống đó đi.
+# Bài khóa 2 · Gặp lại bạn trai
+王一飞|同乐，真是你呀！上次打电话，你说有时间过来看我，没想到这么快就来了！|Đồng Nhạc, đúng là anh rồi! Lần trước gọi điện anh nói có thời gian sẽ sang thăm em, không ngờ anh đến nhanh thế!
+杨同乐|就要过年了，你一个人在这儿多没意思啊，所以我就早过来了。|Sắp đến Tết rồi, em ở đây một mình chán lắm, nên anh sang sớm.
+王一飞|你能来，我太高兴了！|Anh đến được, em vui quá!
+杨同乐|一飞，你旁边这位是？|Nhất Phi, vị bên cạnh em là ai vậy?
+王一飞|同乐，这是李文，他在我们学校学医。李文，这是我男朋友杨同乐。|Đồng Nhạc, đây là Lý Văn, cậu ấy học y ở trường chúng em. Lý Văn, đây là bạn trai tôi, Dương Đồng Nhạc.
+杨同乐|李文，很高兴认识你！|Lý Văn, rất vui được làm quen với bạn!
+李文|认识你我也很高兴！我家就在前面那个楼，有时间回来玩。|Quen anh tôi cũng rất vui! Nhà tôi ở ngay tòa nhà phía trước, có thời gian anh ghé chơi nhé.
+# Bài khóa 3 · Người hàng xóm
+杨同乐|一飞，你住的房子真不错，很大，离学校也不远。|Nhất Phi, nhà em ở đẹp thật, rộng, cách trường cũng không xa.
+王一飞|是啊！我楼下还住着一家中国人，他们人很好。|Đúng vậy! Dưới lầu em còn có một gia đình người Trung Quốc ở, họ rất tốt.
+杨同乐|这样你有事情就可以找他们帮忙。|Như vậy em có việc là có thể nhờ họ giúp.
+王一飞|对，我也帮他们家的小孩儿学中文。|Vâng, em cũng giúp bọn trẻ nhà họ học tiếng Trung.
+杨同乐|我记得你跟我说过，是个女孩儿，学得也很好。|Anh nhớ em từng nói, là một bé gái, học cũng rất giỏi.
+王一飞|没错，她经常跑上来找我玩。|Đúng vậy, bé thường chạy lên tìm em chơi.
+杨同乐|你问问他们什么时候有时间，我请他们吃午饭。|Em hỏi họ khi nào rảnh, anh mời họ ăn trưa.
+
+@h2-15
+# Bài khóa 1 · Giờ thi
+王一飞|考试就要开始了，请大家先写上姓名，写好后就可以做题了。|Bài thi sắp bắt đầu, mời mọi người ghi họ tên trước, ghi xong là có thể làm bài.
+白家月|老师，我做完了。|Thưa thầy, em làm xong rồi ạ.
+陈天中|老师，我也做完了。|Thưa thầy, em cũng làm xong rồi ạ.
+王一飞|对了，你们考完试想做什么？|À này, thi xong các em muốn làm gì?
+白家月|我很想去中国，虽然去过一次，但是很想再去一次。|Em rất muốn đến Trung Quốc, tuy đã đi một lần nhưng rất muốn đi thêm lần nữa.
+王一飞|不错，到中国后你就可以经常说中文了。|Hay đấy, đến Trung Quốc rồi em có thể thường xuyên nói tiếng Trung.
+# Bài khóa 2 · Kế hoạch đi Bắc Kinh
+白家月|考试完了，我现在可以出国旅游了。|Thi xong rồi, giờ tôi có thể ra nước ngoài du lịch.
+李文|你要去哪儿？|Bạn định đi đâu?
+白家月|我要再去一次北京。|Tôi sẽ đi Bắc Kinh thêm một lần nữa.
+李文|为什么还去北京？|Sao lại còn đi Bắc Kinh?
+白家月|因为我想再吃一次烤鸭，再喝一次奶茶，再去北京大学看一次电影……|Vì tôi muốn ăn thêm một lần vịt quay, uống thêm một lần trà sữa, lại đến Đại học Bắc Kinh xem thêm một lần phim…
+李文|你想做的事情很多呀！|Bạn muốn làm nhiều việc thật đấy!
+白家月|是呀，你看，我还在网上买好颐和园的门票了呢。|Đúng vậy, bạn xem, tôi còn mua sẵn vé Di Hòa Viên trên mạng rồi đấy.
+白家月|我的高中同学就在颐和园上班，可以让他给你好好介绍介绍。|Bạn học cấp ba của tôi làm việc ngay ở Di Hòa Viên, có thể nhờ cậu ấy giới thiệu cho bạn thật kỹ.
+李文|太好了！出门旅游，多个朋友多条路。|Tuyệt quá! Đi du lịch, thêm một người bạn là thêm một con đường.
+# Bài khóa 3 · Chuyến bay về nước
+白家月|李文，你有一年没回国了吧？|Lý Văn, bạn đã một năm chưa về nước rồi nhỉ?
+李文|不到一年。我六月的时候回去了一次。|Chưa đến một năm. Tháng Sáu tôi có về một lần.
+白家月|我怎么忘了？还是我送你去的机场呢。|Sao tôi lại quên? Còn là tôi đưa bạn ra sân bay nữa chứ.
+李文|是呀。|Đúng vậy.
+白家月|我记得你那次的机票很便宜。|Tôi nhớ vé máy bay lần đó của bạn rất rẻ.
+李文|没错，可能因为那个时候去北京的人不多吧。|Đúng thế, có lẽ vì lúc đó người đi Bắc Kinh không nhiều.
+白家月|这次的机票虽然有点儿贵，但想到就要飞北京了，我还是很高兴的。|Vé máy bay lần này tuy hơi đắt, nhưng nghĩ đến sắp bay đi Bắc Kinh, tôi vẫn rất vui.
